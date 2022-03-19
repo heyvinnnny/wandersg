@@ -8,7 +8,7 @@
   >
     <div class="md-toolbar-row md-collapse-lateral">
       <div class="md-toolbar-section-start">
-        <h3 class="md-title"><img src="@/assets/img/sg-logo1.png" /></h3>
+        <h3 class="md-title"><img src="@/assets/img/navbarimg_nobg.png" /></h3>
       </div>
       <div class="md-toolbar-section-end">
         <md-button
@@ -284,7 +284,7 @@ export default {
   },
   computed: {
     showDownload() {
-      const excludedRoutes = ["login", "landing", "profile"];
+      const excludedRoutes = ["login", "profile"];
       return excludedRoutes.every(r => r !== this.$route.name);
     }
   },

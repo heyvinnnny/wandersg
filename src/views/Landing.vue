@@ -6,19 +6,17 @@
           <div
             class="md-layout-item md-size-50 md-small-size-70 md-xsmall-size-100"
           >
-            <h1 class="title">Your Story Starts With Us.</h1>
+            <h1 class="title">Your Adventure Begins With Us.</h1>
             <h4>
-              Every landing page needs a small description after the big bold
-              title, that's why we added this text here. Add here all the
-              information that can make you or your product create the first
-              impression.
+              A one-stop Singapore Itinerary Planner, designed to meet your
+              every need.
             </h4>
             <br />
             <md-button
               href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
               class="md-success md-lg"
               target="_blank"
-              ><i class="fas fa-play"></i> Watch video</md-button
+              ><i class="fas fa-play"></i> Get Started</md-button
             >
           </div>
         </div>
@@ -31,13 +29,14 @@
             <div
               class="md-layout-item md-size-66 md-xsmall-size-100 mx-auto text-center"
             >
-              <h2 class="title text-center">Let's talk product</h2>
+              <h2 class="title text-center">About Us</h2>
               <h5 class="description">
-                This is the paragraph where you can write more details about
-                your product. Keep you user engaged by providing meaningful
-                information. Remember that by this time, the user is curious,
-                otherwise he wouldn't scroll to get here. Add a button if you
-                want the user to see more.
+                Wander@SG is a one-stop Singapore itinerary planner that aims to
+                provide greater convenience to Singaporeans eager to spend a fun
+                day out in Singapore. Here at Wander@SG, our team has prepared
+                everything you would possibly need to plan a fun day out in
+                Singapore. If you still miss something, let us know and we will
+                try to include it in future updates.
               </h5>
             </div>
           </div>
@@ -45,40 +44,40 @@
             <div class="md-layout">
               <div class="md-layout-item md-medium-size-33 md-small-size-100">
                 <div class="info">
-                  <div class="icon icon-info">
-                    <md-icon>chat</md-icon>
+                  <div class="icon icon-primary">
+                    <md-icon>fact_check</md-icon>
                   </div>
-                  <h4 class="info-title">Free Chat</h4>
+                  <h4 class="info-title">Tell Us More</h4>
                   <p>
-                    Divide details about your product or agency work into parts.
-                    Write a few lines about each one. A paragraph describing a
-                    feature will be enough.
+                    Complete our quick onboarding quiz when you first create
+                    your account to let us know what types of attractions and
+                    activities you are interested in.
                   </p>
                 </div>
               </div>
               <div class="md-layout-item md-medium-size-33 md-small-size-100">
                 <div class="info">
                   <div class="icon icon-success">
-                    <md-icon>verified_user</md-icon>
+                    <md-icon>android</md-icon>
                   </div>
-                  <h4 class="info-title">Verified Users</h4>
+                  <h4 class="info-title">Customized Suggestions</h4>
                   <p>
-                    Divide details about your product or agency work into parts.
-                    Write a few lines about each one. A paragraph describing a
-                    feature will be enough.
+                    Our proprietary algorithm will recommend a personalized
+                    collection of attractions and activities tailored to your
+                    indicated interests.
                   </p>
                 </div>
               </div>
               <div class="md-layout-item md-medium-size-33 md-small-size-100">
                 <div class="info">
-                  <div class="icon icon-danger">
-                    <md-icon>fingerprint</md-icon>
+                  <div class="icon icon-info">
+                    <md-icon>book_online</md-icon>
                   </div>
-                  <h4 class="info-title">Fingerprint</h4>
+                  <h4 class="info-title">Save and Book</h4>
                   <p>
-                    Divide details about your product or agency work into parts.
-                    Write a few lines about each one. A paragraph describing a
-                    feature will be enough.
+                    Bookmark attractions and activities, find out additional
+                    information, and make bookings all from our one-stop
+                    web-app.
                   </p>
                 </div>
               </div>
@@ -86,11 +85,13 @@
           </div>
         </div>
       </div>
+
       <div class="section text-center">
         <div class="container">
-          <h2 class="title">Here is our team</h2>
+          <h2 class="title">Our Team</h2>
           <div class="team">
             <div class="md-layout">
+              <!-- start of team member 1 -->
               <div class="md-layout-item md-medium-size-33 md-small-size-100">
                 <div class="team-player">
                   <md-card class="md-card-plain">
@@ -102,22 +103,21 @@
                       />
                     </div>
                     <h4 class="card-title">
-                      Gigi Hadid
+                      Chua Wee Hng
                       <br />
-                      <small class="card-description text-muted">Model</small>
+                      <small class="card-description text-muted">Founder</small>
                     </h4>
-
-                    <md-card-content>
+                    <!-- <md-card-content>
                       <p class="card-description">
                         You can write here details about one of your team
                         members. You can give more details about what they do.
                         Feel free to add some <a href="#">links</a> for people
                         to be able to follow them outside the site.
                       </p>
-                    </md-card-content>
+                    </md-card-content> -->
 
                     <md-card-actions class="text-center">
-                      <md-button
+                      <!-- <md-button
                         href="javascript:void(0)"
                         class="md-just-icon md-simple"
                       >
@@ -134,11 +134,19 @@
                         class="md-just-icon md-simple"
                       >
                         <i class="fab fa-facebook-square"></i>
+                      </md-button> -->
+                      <md-button
+                        href="javascript:void(0)"
+                        class="md-just-icon md-simple"
+                      >
+                        <i class="fab fa-linkedin"></i>
                       </md-button>
                     </md-card-actions>
                   </md-card>
                 </div>
               </div>
+              <!-- end of team member 1 -->
+
               <div class="md-layout-item md-medium-size-33 md-small-size-100">
                 <div class="team-player">
                   <md-card class="md-card-plain">
@@ -150,29 +158,12 @@
                       />
                     </div>
                     <h4 class="card-title">
-                      Carla Hortensia
+                      Isaac Hay
                       <br />
-                      <small class="card-description text-muted"
-                        >Designer</small
-                      >
+                      <small class="card-description text-muted">CTO</small>
                     </h4>
 
-                    <md-card-content>
-                      <p class="card-description">
-                        You can write here details about one of your team
-                        members. You can give more details about what they do.
-                        Feel free to add some <a href="#">links</a> for people
-                        to be able to follow them outside the site.
-                      </p>
-                    </md-card-content>
-
                     <md-card-actions class="text-center">
-                      <md-button
-                        href="javascript:void(0)"
-                        class="md-just-icon md-simple"
-                      >
-                        <i class="fab fa-twitter"></i>
-                      </md-button>
                       <md-button
                         href="javascript:void(0)"
                         class="md-just-icon md-simple"
@@ -183,6 +174,7 @@
                   </md-card>
                 </div>
               </div>
+
               <div class="md-layout-item md-medium-size-33 md-small-size-100">
                 <div class="team-player">
                   <md-card class="md-card-plain">
@@ -194,38 +186,79 @@
                       />
                     </div>
                     <h4 class="card-title">
-                      Kendall Jenner
+                      Kevin Yew
                       <br />
-                      <small class="card-description text-muted">Model</small>
+                      <small class="card-description text-muted"
+                        >Team Leader</small
+                      >
                     </h4>
-
-                    <md-card-content>
-                      <p class="card-description">
-                        You can write here details about one of your team
-                        members. You can give more details about what they do.
-                        Feel free to add some <a href="#">links</a> for people
-                        to be able to follow them outside the site.
-                      </p>
-                    </md-card-content>
 
                     <md-card-actions class="text-center">
                       <md-button
                         href="javascript:void(0)"
                         class="md-just-icon md-simple"
                       >
-                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-linkedin"></i>
                       </md-button>
+                    </md-card-actions>
+                  </md-card>
+                </div>
+              </div>
+
+              <div class="md-layout-item md-medium-size-33 md-small-size-100">
+                <div class="team-player">
+                  <md-card class="md-card-plain">
+                    <div class="md-layout-item md-size-50 mx-auto">
+                      <img
+                        :src="teamImg4"
+                        alt="Thumbnail Image"
+                        class="img-raised rounded-circle img-fluid"
+                      />
+                    </div>
+                    <h4 class="card-title">
+                      Elton Ng
+                      <br />
+                      <small class="card-description text-muted"
+                        >Lead Developer</small
+                      >
+                    </h4>
+
+                    <md-card-actions class="text-center">
                       <md-button
                         href="javascript:void(0)"
                         class="md-just-icon md-simple"
                       >
-                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-linkedin"></i>
                       </md-button>
+                    </md-card-actions>
+                  </md-card>
+                </div>
+              </div>
+
+              <div class="md-layout-item md-medium-size-33 md-small-size-100">
+                <div class="team-player">
+                  <md-card class="md-card-plain">
+                    <div class="md-layout-item md-size-50 mx-auto">
+                      <img
+                        :src="teamImg5"
+                        alt="Thumbnail Image"
+                        class="img-raised rounded-circle img-fluid"
+                      />
+                    </div>
+                    <h4 class="card-title">
+                      Oliver Gui
+                      <br />
+                      <small class="card-description text-muted"
+                        >Solutions Architect</small
+                      >
+                    </h4>
+
+                    <md-card-actions class="text-center">
                       <md-button
                         href="javascript:void(0)"
                         class="md-just-icon md-simple"
                       >
-                        <i class="fab fa-facebook-square"></i>
+                        <i class="fab fa-linkedin"></i>
                       </md-button>
                     </md-card-actions>
                   </md-card>
@@ -235,7 +268,7 @@
           </div>
         </div>
       </div>
-      <div class="section section-contacts">
+      <!-- <div class="section section-contacts">
         <div class="container">
           <div class="md-layout">
             <div class="md-layout-item md-size-66 md-xsmall-size-100 mx-auto">
@@ -274,6 +307,24 @@
             </div>
           </div>
         </div>
+      </div> -->
+
+      <div class="section">
+        <div class="container">
+          <div class="md-layout">
+            <div
+              class="md-layout-item md-size-66 md-xsmall-size-100 mx-auto text-center"
+            >
+              <h2 class="title text-center">From the Blog</h2>
+              <h5 class="description">
+                Wander@SG curates and recommends a collection of blog articles
+                on the hottest places to go to in Singapore at the moment! These
+                cover a variety of interests, from scenic attractions to the
+                tastiest food in town!
+              </h5>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -285,19 +336,27 @@ export default {
   props: {
     header: {
       type: String,
-      default: require("@/assets/img/bg7.jpg")
+      default: require("@/assets/img/sg3.jpg")
     },
     teamImg1: {
       type: String,
-      default: require("@/assets/img/faces/avatar.jpg")
+      default: require("@/assets/img/faces/weehng.jpg")
     },
     teamImg2: {
       type: String,
-      default: require("@/assets/img/faces/christian.jpg")
+      default: require("@/assets/img/faces/isaac.jpg")
     },
     teamImg3: {
       type: String,
-      default: require("@/assets/img/faces/kendall.jpg")
+      default: require("@/assets/img/faces/kevin.png")
+    },
+    teamImg4: {
+      type: String,
+      default: require("@/assets/img/faces/elton.jpg")
+    },
+    teamImg5: {
+      type: String,
+      default: require("@/assets/img/faces/oliver.jpg")
     }
   },
   data() {

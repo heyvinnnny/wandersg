@@ -12,7 +12,7 @@
     </md-card-content>
 
     <md-card-actions>
-      <slot name="footer" style="margin:0px"></slot>
+      <slot name="footer"></slot>
     </md-card-actions>
 
     <div>
@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: "login-card",
+  name: "register-card",
   props: {
     headerColor: {
       type: String,
@@ -33,7 +33,7 @@ export default {
   },
   data() {
     return {
-      cardHidden: true
+      cardHidden: false
     };
   },
   beforeMount() {

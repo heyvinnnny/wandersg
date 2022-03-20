@@ -15,13 +15,13 @@
               >
                 <i class="fab fa-facebook-square"></i>
               </md-button>
-              <md-button
+              <!-- <md-button
                 slot="buttons"
                 href="javascript:void(0)"
                 class="md-just-icon md-simple md-white"
               >
                 <i class="fab fa-twitter"></i>
-              </md-button>
+              </md-button> -->
               <md-button
                 slot="buttons"
                 href="javascript:void(0)"
@@ -29,12 +29,12 @@
               >
                 <i class="fab fa-google-plus-g"></i>
               </md-button>
-              <p slot="description" class="description">Or Be Classical</p>
-              <md-field class="md-form-group" slot="inputs">
+
+              <!-- <md-field class="md-form-group" slot="inputs">
                 <md-icon>face</md-icon>
                 <label>First Name...</label>
                 <md-input v-model="firstname"></md-input>
-              </md-field>
+              </md-field> -->
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>email</md-icon>
                 <label>Email...</label>
@@ -45,8 +45,12 @@
                 <label>Password...</label>
                 <md-input v-model="password"></md-input>
               </md-field>
-              <md-button slot="footer" class="md-simple md-success md-lg">
-                Get Started
+              <md-button slot="footer" class="md-simple md-success md-lg" style="margin:0px">
+                Login
+              </md-button>
+              <p slot="description" class="description" style="margin:0px;">New user? Register here!</p>
+              <md-button slot="end" class="md-simple md-success md-lg" style="left:32%">
+                Register
               </md-button>
             </login-card>
           </div>
@@ -57,7 +61,7 @@
 </template>
 
 <script>
-import { LoginCard } from "@/components";
+import { LoginCard } from "@/components/";
 
 export default {
   components: {

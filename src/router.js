@@ -8,6 +8,7 @@ import Profile from "./views/Profile.vue";
 import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
 import Register from "./views/Register";
+import Suggested from "./views/Suggested";
 
 Vue.use(Router);
 
@@ -57,6 +58,15 @@ export default new Router({
 				footer: { backgroundColor: "black" },
 			},
 		},
+		{
+			path: "/suggested",
+			name: "Suggested",
+			components: { default: Suggested, header: MainNavbar, footer: MainFooter },
+			props: {
+				header: { colorOnScroll: 400 },
+				footer: { backgroundColor: "black" },
+			},
+		}
 	],
 	scrollBehavior: (to) => {
 		if (to.hash) {

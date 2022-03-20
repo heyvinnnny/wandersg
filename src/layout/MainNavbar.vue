@@ -8,7 +8,7 @@
   >
     <div class="md-toolbar-row md-collapse-lateral">
       <div class="md-toolbar-section-start">
-        <h3 class="md-title">Vue Material Kit</h3>
+        <h3 class="md-title"><img src="@/assets/img/navbarimg_nobg.png" /></h3>
       </div>
       <div class="md-toolbar-section-end">
         <md-button
@@ -27,6 +27,10 @@
               <!-- Here you can add your items from the section-start of your toolbar -->
             </mobile-menu>
             <md-list>
+              <!-- this part is so that the navbar will appear differently on other pages -->
+              <!-- adding the "md-list-item" for every item on the navbar -->
+
+              <!-- components item -->
               <li class="md-list-item" v-if="!showDownload">
                 <a
                   href="javascript:void(0)"
@@ -62,25 +66,42 @@
                   </div>
                 </a>
               </li>
+              <!-- end of components item -->
 
+              <!-- Documentation item (going to be replaced with suggested) -->
               <md-list-item
                 href="https://demos.creative-tim.com/vue-material-kit/documentation/"
                 target="_blank"
                 v-if="showDownload"
               >
-                <i class="material-icons">content_paste</i>
-                <p>Documentation</p>
+                <i class="material-icons">explore</i>
+                <p>Suggested</p>
               </md-list-item>
+              <!-- end of suggested item -->
 
+              <!-- Download item (going to be replaced with saved) -->
               <md-list-item
                 href="javascript:void(0)"
                 @click="scrollToElement()"
                 v-if="showDownload"
               >
-                <i class="material-icons">cloud_download</i>
-                <p>Download</p>
+                <i class="material-icons">bookmark</i>
+                <p>Saved</p>
               </md-list-item>
+              <!-- end of saved item -->
 
+              <!-- Download item (going to be replaced with settings) -->
+              <md-list-item
+                href="javascript:void(0)"
+                @click="scrollToElement()"
+                v-if="showDownload"
+              >
+                <i class="material-icons">settings</i>
+                <p>Settings</p>
+              </md-list-item>
+              <!-- end of settings item -->
+
+              <!-- Examples item -->
               <li class="md-list-item" v-else>
                 <a
                   href="javascript:void(0)"
@@ -120,8 +141,55 @@
                   </div>
                 </a>
               </li>
+              <!-- end of examples item -->
 
-              <md-list-item
+              <!-- register button -->
+              <li class="md-list-item">
+                <a
+                  href="javascript:void(0)"
+                  class="md-list-item-router md-list-item-container md-button-clean"
+                >
+                  <div class="md-list-item-content">
+                    <md-button class="md-rose md-round">Register</md-button>
+                  </div>
+                </a>
+              </li>
+              <!-- end of register button -->
+
+              <!-- account bubble item -->
+              <li class="md-list-item">
+                <a
+                  href="javascript:void(0)"
+                  class="md-list-item-router md-list-item-container md-button-clean dropdown"
+                >
+                  <div class="md-list-item-content">
+                    <drop-down direction="down" class="profile-photo">
+                      <div
+                        class="profile-photo-small"
+                        slot="title"
+                        data-toggle="dropdown"
+                      >
+                        <img :src="img" alt="Circle Image" />
+                      </div>
+                      <ul class="dropdown-menu dropdown-menu-right">
+                        <li class="dropdown-header">Dropdown header</li>
+                        <li>
+                          <a href="#pablo" class="dropdown-item">Me</a>
+                        </li>
+                        <li>
+                          <a href="#pablo" class="dropdown-item">Settings</a>
+                        </li>
+                        <li>
+                          <a href="#pablo" class="dropdown-item">Sign Out</a>
+                        </li>
+                      </ul>
+                    </drop-down>
+                  </div>
+                </a>
+              </li>
+
+              <!-- twitter icon -->
+              <!-- <md-list-item
                 href="https://twitter.com/CreativeTim"
                 target="_blank"
               >
@@ -130,8 +198,10 @@
                 <md-tooltip md-direction="bottom"
                   >Follow us on Twitter</md-tooltip
                 >
-              </md-list-item>
-              <md-list-item
+              </md-list-item> -->
+              <!-- end of twitter icon -->
+              <!-- facebook icon -->
+              <!-- <md-list-item
                 href="https://www.facebook.com/CreativeTim"
                 target="_blank"
               >
@@ -140,8 +210,10 @@
                 <md-tooltip md-direction="bottom"
                   >Like us on Facebook</md-tooltip
                 >
-              </md-list-item>
-              <md-list-item
+              </md-list-item> -->
+              <!-- end of facebook icon -->
+              <!-- instagram icon -->
+              <!-- <md-list-item
                 href="https://www.instagram.com/CreativeTimOfficial"
                 target="_blank"
               >
@@ -150,7 +222,8 @@
                 <md-tooltip md-direction="bottom"
                   >Follow us on Instagram</md-tooltip
                 >
-              </md-list-item>
+              </md-list-item> -->
+              <!-- end of instagram icon -->
             </md-list>
           </div>
         </div>
@@ -197,6 +270,10 @@ export default {
     colorOnScroll: {
       type: Number,
       default: 0
+    },
+    img: {
+      type: String,
+      default: require("@/assets/img/faces/isaac.jpg")
     }
   },
   data() {
@@ -207,7 +284,7 @@ export default {
   },
   computed: {
     showDownload() {
-      const excludedRoutes = ["login", "landing", "profile"];
+      const excludedRoutes = ["login", "profile"];
       return excludedRoutes.every(r => r !== this.$route.name);
     }
   },

@@ -12,7 +12,6 @@ import Register from "./views/Register";
 Vue.use(Router);
 
 export default new Router({
-<<<<<<< HEAD
 	routes: [
 		{
 			path: "/",
@@ -49,6 +48,15 @@ export default new Router({
 				footer: { backgroundColor: "black" },
 			},
 		},
+		{
+			path: "/register",
+			name: "register",
+			components: { default: Register, header: MainNavbar, footer: MainFooter },
+			props: {
+				header: { colorOnScroll: 400 },
+				footer: { backgroundColor: "black" },
+			},
+		},
 	],
 	scrollBehavior: (to) => {
 		if (to.hash) {
@@ -57,59 +65,4 @@ export default new Router({
 			return { x: 0, y: 0 };
 		}
 	},
-=======
-  routes: [
-    {
-      path: "/",
-      name: "index",
-      components: { default: Index, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
-    },
-    {
-      path: "/landing",
-      name: "landing",
-      components: { default: Landing, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
-    },
-    {
-      path: "/login",
-      name: "login",
-      components: { default: Login, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400 }
-      }
-    },
-    {
-      path: "/profile",
-      name: "profile",
-      components: { default: Profile, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
-    },
-    {
-      path: "/register",
-      name: "register",
-      components: { default: Register, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
-    }
-  ],
-  scrollBehavior: to => {
-    if (to.hash) {
-      return { selector: to.hash };
-    } else {
-      return { x: 0, y: 0 };
-    }
-  }
->>>>>>> 155cdd94753229ee223a931014ac9c64e5bfe4ab
 });

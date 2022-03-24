@@ -27,18 +27,18 @@
               <section id="preference">
                 <h2 class="card-title">Please select your preferences</h2>
                 <!--<button type="button" id="pref_Button1"> <img id="pref_Image" src="https://imageio.forbes.com/specials-images/imageserve/610c352d8091b398825ab21f/Anaheim-Exteriors-And-Landmarks---2021/960x0.jpg?fit=bounds&format=jpg&width=960" height="100%" width="100%"></button> -->
-                <button type='button' id="pref_Adventure"></button>
-                <button type='button' id="pref_Children"></button>
-                <button type='button' id="pref_Family"></button>
-                <button type='button' id="pref_Fantasy"></button>
-                <button type='button' id="pref_Food"></button>
-                <button type='button' id="pref_Nature"></button>
-                <button type='button' id="pref_Romantic"></button>
-                <button type='button' id="pref_Scifi"></button>
-                <button type='button' id="pref_Lifestyle"></button>
-                <button type='button' id="pref_Staycation"></button>
-                <button type='button' id="pref_Animals"></button>
-                <button type='button' id="pref_Heritage"></button>
+                <button type="button" id="pref_Adventure"></button>
+                <button type="button" id="pref_Children"></button>
+                <button type="button" id="pref_Family"></button>
+                <button type="button" id="pref_Fantasy"></button>
+                <button type="button" id="pref_Food"></button>
+                <button type="button" id="pref_Nature"></button>
+                <button type="button" id="pref_Romantic"></button>
+                <button type="button" id="pref_Scifi"></button>
+                <button type="button" id="pref_Lifestyle"></button>
+                <button type="button" id="pref_Staycation"></button>
+                <button type="button" id="pref_Animals"></button>
+                <button type="button" id="pref_Heritage"></button>
               </section>
 
               <md-button

@@ -85,6 +85,60 @@
           </div>
         </div>
       </div>
+      <div class="section">
+        <div class="container">
+          <div class="md-layout">
+            <div class="md-layout-item md-size-66 mx-auto md-small-size-100">
+              <h2 class="title text-center">Trending Activities</h2>
+              <md-card>
+                <carousel
+                  :per-page="1"
+                  loop
+                  :speed="700"
+                  autoplay
+                  :autoplay-timeout="5000"
+                  :mouse-drag="false"
+                  navigationEnabled
+                  navigationNextLabel="<i class='material-icons'>keyboard_arrow_right</i>"
+                  navigationPrevLabel="<i class='material-icons'>keyboard_arrow_left</i>"
+                >
+                  <slide>
+                    <div class="carousel-caption">
+                      <h4>
+                        <md-icon>location_on</md-icon>
+                        Gardens By The Bay
+                      </h4>
+                    </div>
+                    <img :src="carousel1" alt="carousel1" />
+                  </slide>
+                  <slide>
+                    <div class="carousel-caption">
+                      <h4>
+                        <md-icon>location_on</md-icon>
+                        Newton Food Centre
+                      </h4>
+                    </div>
+                    <img
+                      :src="carousel2"
+                      alt="carousel2"
+                      class="img-raised img-fluid"
+                    />
+                  </slide>
+                  <slide>
+                    <div class="carousel-caption">
+                      <h4>
+                        <md-icon>location_on</md-icon>
+                        Universal Studios Singapore
+                      </h4>
+                    </div>
+                    <img :src="carousel3" alt="carousel3" />
+                  </slide>
+                </carousel>
+              </md-card>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="section text-center">
         <div class="container">
@@ -363,7 +417,10 @@ export default {
     return {
       name: null,
       email: null,
-      message: null
+      message: null,
+      carousel1: require("@/assets/img/gbtb.jpg"),
+      carousel2: require("@/assets/img/newton.jpg"),
+      carousel3: require("@/assets/img/uss.jpg")
     };
   },
   computed: {

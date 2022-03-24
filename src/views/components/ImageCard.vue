@@ -1,5 +1,5 @@
 <template>
- <!-- <div class="flex-container">
+  <!-- <div class="flex-container">
     diaplay saved attractions
     <div class="wrapper">
       <div class="container">
@@ -30,7 +30,7 @@
       <md-card-area md-inset>
         <md-card-media md-ratio="16:9">
           <!-- retrieve image from firebase -->
-          <img src="" >
+          <img src="" />
         </md-card-media>
 
         <md-card-header>
@@ -45,7 +45,12 @@
 
       <md-card-actions>
         <!-- add url to attractions -->
-        <md-button class="md-primary" onclick="location.href='https://www.Google.com'"> Reserve </md-button>
+        <md-button
+          class="md-primary"
+          onclick="location.href='https://www.Google.com'"
+        >
+          Reserve
+        </md-button>
         <!-- v-on:click to remove from wishlist -->
         <md-button class="md-primary md-just-icon md-round md-rose">
           <md-icon>favorite</md-icon>
@@ -56,10 +61,7 @@
 </template>
 
 <script>
-export default {
-
-};
-
+export default {};
 </script>
 
 <style lang="scss" scoped>
@@ -93,8 +95,8 @@ export default {
     .md-icon {
       margin: 8px;
     }
-  }  
-  
+  }
+
   .md-button-group {
     display: flex;
 

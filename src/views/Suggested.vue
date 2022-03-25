@@ -21,24 +21,25 @@
         </div>
       </div>
     </parallax>
+    <div id="border-wrapper">
+      <h1>Food</h1>
+      <div id="border"></div>
+    </div>
     <VueSlickCarousel v-bind="settings">
       <div class="wrapper">
-        <div class="container">
-          <img class="top" src="@/assets/img/bg.jpg" alt="" />
-          <div class="bottom">
-            <div class="left">
-              <div class="details">
-                <h2 class="txt_products">The Feather Blade</h2>
-                <p>61 Tanjong Pagar Road, Singapore 088482</p>
-                <br />
-                <span class="text-span">Central</span>
-                <span class="text-span">Steakhouse</span>
-              </div>
-              <div class="buy">
-                <md-button class="md-primary md-just-icon md-round"
-                  ><md-icon>favorite</md-icon></md-button
-                >
-              </div>
+        <img class="top" src="@/assets/img/bg.jpg" alt="" />
+        <div class="bottom">
+          <div class="left">
+            <div class="details">
+              <h2 class="txt_products">The Feather Blade</h2>
+              <p>61 Tanjong Pagar Road, Singapore 088482</p>
+              <span class="text-span">Central</span>
+              <span class="text-span">Steakhouse</span>
+            </div>
+            <div class="buy">
+              <md-button class="md-primary md-just-icon md-round"
+                ><md-icon>favorite</md-icon></md-button
+              >
             </div>
           </div>
         </div>
@@ -65,22 +66,103 @@
         </div>
       </div>
       <div class="wrapper">
-        <div class="container">
-          <img class="top" src="@/assets/img/bg.jpg" alt="" />
-          <div class="bottom">
-            <div class="left">
-              <div class="details">
-                <h2 class="txt_products">The Feather Blade</h2>
-                <p>61 Tanjong Pagar Road, Singapore 088482</p>
-                <br />
-                <span class="text-span">Central</span>
-                <span class="text-span">Steakhouse</span>
-              </div>
-              <div class="buy">
-                <md-button class="md-primary md-just-icon md-round"
-                  ><md-icon>favorite</md-icon></md-button
-                >
-              </div>
+        <img class="top" src="@/assets/img/bg.jpg" alt="" />
+        <div class="bottom">
+          <div class="left">
+            <div class="details">
+              <h2 class="txt_products">The Feather Blade</h2>
+              <p>61 Tanjong Pagar Road, Singapore 088482</p>
+              <span class="text-span">Central</span>
+              <span class="text-span">Steakhouse</span>
+            </div>
+            <div class="buy">
+              <md-button class="md-primary md-just-icon md-round"
+                ><md-icon>favorite</md-icon></md-button
+              >
+            </div>
+          </div>
+        </div>
+        <div class="inside">
+          <div class="icon">
+            <i class="fa fa-eye"></i>
+          </div>
+          <div class="contents">
+            <h1>The Feather Blade</h1>
+            <br />
+            <p>Price: ⭐️⭐️⭐️⭐️</p>
+            <br />
+            <p>Ambience: ⭐️⭐️⭐️</p>
+            <br />
+            <p>Food: ⭐️⭐️⭐️⭐️</p>
+            <br />
+            <p>Service: ⭐️⭐️⭐️</p>
+            <br /><br />
+
+            <p>Opening hours: 5:30 PM - 02:00 AM</p>
+            <br />
+            <p>Reservations: Recommended</p>
+          </div>
+        </div>
+      </div>
+    </VueSlickCarousel>
+    <div id="border-wrapper">
+      <h1>Activities</h1>
+      <div id="border"></div>
+    </div>
+    <VueSlickCarousel v-bind="settings">
+      <div class="wrapper">
+        <img class="top" src="@/assets/img/bg.jpg" alt="" />
+        <div class="bottom">
+          <div class="left">
+            <div class="details">
+              <h2 class="txt_products">The Feather Blade</h2>
+              <p>61 Tanjong Pagar Road, Singapore 088482</p>
+              <span class="text-span">Central</span>
+              <span class="text-span">Steakhouse</span>
+            </div>
+            <div class="buy">
+              <md-button class="md-primary md-just-icon md-round"
+                ><md-icon>favorite</md-icon></md-button
+              >
+            </div>
+          </div>
+        </div>
+        <div class="inside">
+          <div class="icon">
+            <i class="fa fa-eye"></i>
+          </div>
+          <div class="contents">
+            <h1>The Feather Blade</h1>
+            <br />
+            <p>Price: ⭐️⭐️⭐️⭐️</p>
+            <br />
+            <p>Ambience: ⭐️⭐️⭐️</p>
+            <br />
+            <p>Food: ⭐️⭐️⭐️⭐️</p>
+            <br />
+            <p>Service: ⭐️⭐️⭐️</p>
+            <br /><br />
+
+            <p>Opening hours: 5:30 PM - 02:00 AM</p>
+            <br />
+            <p>Reservations: Recommended</p>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper">
+        <img class="top" src="@/assets/img/bg.jpg" alt="" />
+        <div class="bottom">
+          <div class="left">
+            <div class="details">
+              <h2 class="txt_products">The Feather Blade</h2>
+              <p>61 Tanjong Pagar Road, Singapore 088482</p>
+              <span class="text-span">Central</span>
+              <span class="text-span">Steakhouse</span>
+            </div>
+            <div class="buy">
+              <md-button class="md-primary md-just-icon md-round"
+                ><md-icon>favorite</md-icon></md-button
+              >
             </div>
           </div>
         </div>
@@ -184,11 +266,6 @@ export default {
   color: black;
 }
 
-.container {
-  width: 1024px;
-  margin: 0 auto;
-}
-
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
@@ -211,23 +288,26 @@ body {
   box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
 }
 
-.wrapper .container {
+/* .wrapper {
   width: 100%;
   height: 100%;
-}
+  position: relative;
+} */
 
-.wrapper .container .top {
+.wrapper .top {
   height: 80%;
   width: 100%;
   background-size: 100%;
+  position: relative;
 }
-.wrapper .container .bottom {
+.wrapper .bottom {
   width: 100%;
   height: 20%;
   transition: transform 0.5s;
+  position: relative;
 }
 
-.wrapper .container .bottom .left {
+.wrapper .bottom .left {
   height: 100%;
   width: 100%;
   background: #f4f4f4;
@@ -235,14 +315,14 @@ body {
   float: left;
 }
 
-.wrapper .container .bottom .left .details {
+.wrapper .bottom .left .details {
   padding-left: 20px;
   padding-top: 8px;
   float: left;
   width: 70%;
 }
 
-.wrapper .container .bottom .left .details .txt_products {
+.wrapper .bottom .left .details .txt_products {
   font-size: 16px;
 }
 
@@ -250,21 +330,22 @@ p {
   font-size: 12px;
 }
 
-.wrapper .container .bottom .left .buy {
+.wrapper .bottom .left .buy {
   float: right;
+  display: flex;
   height: 100%;
   background: #f1f1f1;
   transition: background 0.5s;
   border-left: solid thin rgba(0, 0, 0, 0.1);
 }
-.wrapper .container .bottom .left .buy i {
-  font-size: 30px;
-  padding: 30px;
+.wrapper .bottom .left .buy {
+  font-size: 20px;
+  padding: 20px;
   color: black;
   transition: transform 0.5s;
 }
 
-.wrapper .container .bottom .left .buy:hover i {
+.wrapper .bottom .left .buy:hover i {
   transform: scale(1.5);
 }
 

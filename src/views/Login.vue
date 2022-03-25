@@ -49,19 +49,13 @@
                 slot="footer"
                 class="md-simple md-success md-lg"
                 style="margin:0px"
+                @click="pressed()"
               >
                 Login
               </md-button>
-              <p slot="description" class="description" style="margin:0px;">
-                New user? Register here!
+              <p slot="description" class="description" style="border-bottom:10px;">
+                New user? Register <router-link to="/register">here</router-link>!
               </p>
-              <md-button
-                slot="end"
-                class="md-simple md-success md-lg"
-                style="left:32%"
-              >
-                Register
-              </md-button>
             </login-card>
           </div>
         </div>
@@ -72,6 +66,10 @@
 
 <script>
 import { LoginCard } from "@/components/";
+import firebase from "@/uifire.js";
+import "firebase/compat/auth";
+import * as firebaseui from "firebaseui";
+import "firebaseui/dist/firebaseui.css";
 
 export default {
   components: {
@@ -80,10 +78,40 @@ export default {
   bodyClass: "login-page",
   data() {
     return {
-      firstname: null,
+      //firstname: null,
       email: null,
       password: null
     };
+  },
+  // mounted() {
+  //   //Calling the ui instance
+  //   var ui = firebaseui.auth.AuthUI.getInstance();
+  //   if (!ui) {
+  //       //Need to create the instance only one at a time
+  //       //Initialise the FirebaseUI Widget using firebase
+  //       ui = new firebaseui.auth.AuthUI(firebase.auth());
+  //   }
+
+  //   var uiConfig = {
+  //       signInSuccessUrl: '/home',
+  //       signInOptions:[
+  //           //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+  //           firebase.auth.EmailAuthProvider.PROVIDER_ID,
+  //       ]
+  //   };
+
+  //   ui.start('#firebaseui-auth-container', uiConfig)
+  // },
+  methods: {
+    async pressed() {
+      try {
+        const val = await firebase.auth().signInWithEmailAndPassword(this.email, this.password);
+        console.log(val);
+        this.$router.replace({ name: "landing" });
+      } catch (err) {
+        console.log(err);
+      }
+    }
   },
   props: {
     header: {

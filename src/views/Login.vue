@@ -45,11 +45,21 @@
                 <label>Password...</label>
                 <md-input v-model="password"></md-input>
               </md-field>
-              <md-button slot="footer" class="md-simple md-success md-lg" style="margin:0px">
+              <md-button
+                slot="footer"
+                class="md-simple md-success md-lg"
+                style="margin:0px"
+              >
                 Login
               </md-button>
-              <p slot="description" class="description" style="margin:0px;">New user? Register here!</p>
-              <md-button slot="end" class="md-simple md-success md-lg" style="left:32%">
+              <p slot="description" class="description" style="margin:0px;">
+                New user? Register here!
+              </p>
+              <md-button
+                slot="end"
+                class="md-simple md-success md-lg"
+                style="left:32%"
+              >
                 Register
               </md-button>
             </login-card>

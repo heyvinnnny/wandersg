@@ -381,12 +381,24 @@
         </div>
       </div>
     </div>
+    <test-register />
+    <top-header />
+    <test-login />
   </div>
 </template>
 
 <script>
+import TestRegister from "./components/TestRegister.vue";
+import TopHeader from "./components/TopHeader.vue";
+import TestLogin from "./components/TestLogin.vue";
+
 export default {
   bodyClass: "landing-page",
+  components: {
+    "test-register": TestRegister,
+    "top-header": TopHeader,
+    "test-login": TestLogin
+  },
   props: {
     header: {
       type: String,

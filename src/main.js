@@ -18,6 +18,8 @@ import router from "./router";
 
 import MaterialKit from "./plugins/material-kit";
 
+import firebaseApp from "./firebase.js";
+
 Vue.config.productionTip = false;
 
 Vue.use(MaterialKit);

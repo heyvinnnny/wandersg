@@ -61,12 +61,16 @@ export default new Router({
 		{
 			path: "/suggested",
 			name: "Suggested",
-			components: { default: Suggested, header: MainNavbar, footer: MainFooter },
+			components: {
+				default: Suggested,
+				header: MainNavbar,
+				footer: MainFooter,
+			},
 			props: {
 				header: { colorOnScroll: 400 },
 				footer: { backgroundColor: "black" },
 			},
-		}
+		},
 	],
 	scrollBehavior: (to) => {
 		if (to.hash) {

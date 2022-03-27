@@ -70,23 +70,24 @@
 
               <!-- Documentation item (going to be replaced with suggested) -->
               <md-list-item
-                href="https://demos.creative-tim.com/vue-material-kit/documentation/"
+                href="/suggested"
                 target="_blank"
                 v-if="showDownload"
               >
                 <i class="material-icons">explore</i>
-                <p>Suggested</p>
+                <router-link :to="'/suggested'">Suggested</router-link>
               </md-list-item>
+              
               <!-- end of suggested item -->
 
               <!-- Download item (going to be replaced with saved) -->
               <md-list-item
                 href="javascript:void(0)"
                 @click="scrollToElement()"
-                v-if="showDownload"
+                v-if="showDownload" 
               >
                 <i class="material-icons">bookmark</i>
-                <p>Saved</p>
+                <router-link :to="'/saved'">Saved</router-link>
               </md-list-item>
               <!-- end of saved item -->
 

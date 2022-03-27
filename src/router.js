@@ -9,7 +9,7 @@ import Profile from "./views/Profile.vue";
 import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
 import Register from "./views/Register";
-import RegisterNew from "./views/RegisterNew";
+
 import Suggested from "./views/Suggested";
 
 Vue.use(Router);
@@ -49,7 +49,7 @@ export default new Router({
 			props: {
 			  header: { colorOnScroll: 400 },
 			},
-		  }
+		},
 		{
 			path: "/profile",
 			name: "profile",
@@ -76,7 +76,7 @@ export default new Router({
 			  header: { colorOnScroll: 400 },
 			  footer: { backgroundColor: "black" },
 			},
-		  },
+		},
 		{
 			path: "/suggested",
 			name: "Suggested",

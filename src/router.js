@@ -9,7 +9,7 @@ import Profile from "./views/Profile.vue";
 import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
 import Register from "./views/Register";
-
+import RegisterNew from "./views/RegisterNew.vue"
 import Suggested from "./views/Suggested";
 
 Vue.use(Router);

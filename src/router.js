@@ -4,10 +4,13 @@ import Router from "vue-router";
 import Index from "./views/Index.vue";
 import Landing from "./views/Landing.vue";
 import Login from "./views/Login.vue";
+import LoginNew from "./views/LoginNew.vue"
 import Profile from "./views/Profile.vue";
 import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
 import Register from "./views/Register";
+
+import Suggested from "./views/Suggested";
 
 Vue.use(Router);
 
@@ -40,6 +43,14 @@ export default new Router({
 			},
 		},
 		{
+			path: "/loginnew",
+			name: "loginnew",
+			components: { default: LoginNew, header: MainNavbar, footer: MainFooter },
+			props: {
+			  header: { colorOnScroll: 400 },
+			},
+		},
+		{
 			path: "/profile",
 			name: "profile",
 			components: { default: Profile, header: MainNavbar, footer: MainFooter },
@@ -52,6 +63,28 @@ export default new Router({
 			path: "/register",
 			name: "register",
 			components: { default: Register, header: MainNavbar, footer: MainFooter },
+			props: {
+				header: { colorOnScroll: 400 },
+				footer: { backgroundColor: "black" },
+			},
+		},
+		{
+			path: "/registernew",
+			name: "registernew",
+			components: { default: RegisterNew, header: MainNavbar, footer: MainFooter },
+			props: {
+			  header: { colorOnScroll: 400 },
+			  footer: { backgroundColor: "black" },
+			},
+		},
+		{
+			path: "/suggested",
+			name: "Suggested",
+			components: {
+				default: Suggested,
+				header: MainNavbar,
+				footer: MainFooter,
+			},
 			props: {
 				header: { colorOnScroll: 400 },
 				footer: { backgroundColor: "black" },

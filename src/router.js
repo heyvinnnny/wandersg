@@ -6,6 +6,7 @@ import Landing from "./views/Landing.vue";
 import Login from "./views/Login.vue";
 import LoginNew from "./views/LoginNew.vue"
 import Profile from "./views/Profile.vue";
+import IntermediateProfile from "./views/Profile.vue"
 import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
 import Register from "./views/Register";
@@ -54,6 +55,15 @@ export default new Router({
 			path: "/profile",
 			name: "profile",
 			components: { default: Profile, header: MainNavbar, footer: MainFooter },
+			props: {
+				header: { colorOnScroll: 400 },
+				footer: { backgroundColor: "black" },
+			},
+		},
+		{
+			path: "/profile2",
+			name: "profile2",
+			components: { default: IntermediateProfile, header: MainNavbar, footer: MainFooter },
 			props: {
 				header: { colorOnScroll: 400 },
 				footer: { backgroundColor: "black" },

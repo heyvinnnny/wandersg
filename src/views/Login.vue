@@ -53,8 +53,14 @@
               >
                 Login
               </md-button>
-              <p slot="description" class="description" style="border-bottom:10px;">
-                New user? Register <router-link to="/register">here</router-link>!
+              <p v-if="error" style="color:red">Wrong username or password!</p>
+              <p
+                slot="description"
+                class="description"
+                style="border-bottom:10px;"
+              >
+                New user? Register
+                <router-link to="/register">here</router-link>!
               </p>
             </login-card>
           </div>
@@ -80,7 +86,8 @@ export default {
     return {
       //firstname: null,
       email: null,
-      password: null
+      password: null,
+      error: ""
     };
   },
   // mounted() {
@@ -105,11 +112,15 @@ export default {
   methods: {
     async pressed() {
       try {
-        const val = await firebase.auth().signInWithEmailAndPassword(this.email, this.password);
+        const val = await firebase
+          .auth()
+          .signInWithEmailAndPassword(this.email, this.password);
         console.log(val);
         this.$router.replace({ name: "landing" });
       } catch (err) {
         console.log(err);
+        this.error = err;
+        alert("Wrong username or password!");
       }
     }
   },

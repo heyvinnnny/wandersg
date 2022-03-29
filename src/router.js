@@ -4,14 +4,13 @@ import Router from "vue-router";
 import Index from "./views/Index.vue";
 import Landing from "./views/Landing.vue";
 import Login from "./views/Login.vue";
-import LoginNew from "./views/LoginNew.vue"
 import Profile from "./views/Profile.vue";
-import IntermediateProfile from "./views/Profile.vue"
 import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
 import Register from "./views/Register";
-import RegisterNew from "./views/RegisterNew.vue"
+import RegisterNew from "./views/RegisterNew.vue";
 import Suggested from "./views/Suggested";
+import WishList from "./views/WishList";
 
 Vue.use(Router);
 
@@ -44,26 +43,9 @@ export default new Router({
 			},
 		},
 		{
-			path: "/loginnew",
-			name: "loginnew",
-			components: { default: LoginNew, header: MainNavbar, footer: MainFooter },
-			props: {
-			  header: { colorOnScroll: 400 },
-			},
-		},
-		{
 			path: "/profile",
 			name: "profile",
 			components: { default: Profile, header: MainNavbar, footer: MainFooter },
-			props: {
-				header: { colorOnScroll: 400 },
-				footer: { backgroundColor: "black" },
-			},
-		},
-		{
-			path: "/profile2",
-			name: "profile2",
-			components: { default: IntermediateProfile, header: MainNavbar, footer: MainFooter },
 			props: {
 				header: { colorOnScroll: 400 },
 				footer: { backgroundColor: "black" },
@@ -81,10 +63,14 @@ export default new Router({
 		{
 			path: "/registernew",
 			name: "registernew",
-			components: { default: RegisterNew, header: MainNavbar, footer: MainFooter },
+			components: {
+				default: RegisterNew,
+				header: MainNavbar,
+				footer: MainFooter,
+			},
 			props: {
-			  header: { colorOnScroll: 400 },
-			  footer: { backgroundColor: "black" },
+				header: { colorOnScroll: 400 },
+				footer: { backgroundColor: "black" },
 			},
 		},
 		{
@@ -92,6 +78,19 @@ export default new Router({
 			name: "Suggested",
 			components: {
 				default: Suggested,
+				header: MainNavbar,
+				footer: MainFooter,
+			},
+			props: {
+				header: { colorOnScroll: 400 },
+				footer: { backgroundColor: "black" },
+			},
+		},
+		{
+			path: "/wishlist",
+			name: "Wishlist",
+			components: {
+				default: WishList,
 				header: MainNavbar,
 				footer: MainFooter,
 			},

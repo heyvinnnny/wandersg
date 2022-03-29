@@ -15,6 +15,7 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
+import * as VueGoogleMaps from "vue2-google-maps";
 
 import MaterialKit from "./plugins/material-kit";
 // import { library } from "@fortawesome/fontawesome-svg-core";
@@ -30,19 +31,25 @@ Vue.config.productionTip = false;
 
 Vue.use(MaterialKit);
 
+Vue.use(VueGoogleMaps, {
+	load: {
+		key: "AIzaSyDFQW4_kv4f7b5RqrK88pxEOSssfQsx-Lo",
+		libraries: "activities",
+	},
+});
 const NavbarStore = {
-  showNavbar: false
+	showNavbar: false,
 };
 
 Vue.mixin({
-  data() {
-    return {
-      NavbarStore
-    };
-  }
+	data() {
+		return {
+			NavbarStore,
+		};
+	},
 });
 
 new Vue({
-  router,
-  render: h => h(App)
+	router,
+	render: (h) => h(App),
 }).$mount("#app");

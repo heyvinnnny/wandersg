@@ -6,7 +6,7 @@ import Landing from "./views/Landing.vue";
 import Login from "./views/Login.vue";
 import LoginNew from "./views/LoginNew.vue"
 import Profile from "./views/Profile.vue";
-import IntermediateProfile from "./views/Profile.vue"
+import IntermediateProfile from "./views/IntermediateProfile.vue"
 import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
 import Register from "./views/Register";

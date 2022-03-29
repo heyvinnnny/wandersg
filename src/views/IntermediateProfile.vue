@@ -18,7 +18,7 @@
                   />
                 </div>
                 <div class="name">
-                  <h3 class="title">Carla Hortensia</h3>
+                  <h3 class="title">Continue creating your profile</h3>
                   <h6>Designer</h6>
                   <md-button
                     href="javascript:void(0)"
@@ -59,6 +59,7 @@
               <template slot="tab-pane-1">
                 <div class="md-layout">
                   <div class="md-layout-item md-size-25 ml-auto">
+                    <md-button type="button">Hello</md-button>
                     <img :src="tabPane1[0].image" class="rounded" />
                     <img :src="tabPane1[1].image" class="rounded" />
                   </div>
@@ -104,7 +105,9 @@
 
 <script>
 import { Tabs } from "@/components";
+import { getAuth } from "firebase/auth";
 export default {
+  name: "profile2",
   components: {
     Tabs
   },
@@ -112,7 +115,7 @@ export default {
   data() {
     return {
       tabPane1: [
-        { image: require("@/assets/img/examples/studio-1.jpg") },
+        { image: require("@/assets/img/preferences/Adventure\ unclicked.jpg") },
         { image: require("@/assets/img/examples/studio-2.jpg") },
         { image: require("@/assets/img/examples/studio-4.jpg") },
         { image: require("@/assets/img/examples/studio-5.jpg") }

@@ -8,7 +8,9 @@
   >
     <div class="md-toolbar-row md-collapse-lateral">
       <div class="md-toolbar-section-start">
-        <h3 class="md-title"><img src="@/assets/img/navbarimg_nobg.png" /></h3>
+        <h3 class="md-title">
+          <a href="#/"><img src="@/assets/img/navbarimg_nobg.png"/></a>
+        </h3>
       </div>
       <div class="md-toolbar-section-end">
         <md-button
@@ -31,7 +33,7 @@
               <!-- adding the "md-list-item" for every item on the navbar -->
 
               <!-- components item -->
-              <li class="md-list-item" v-if="!showDownload">
+              <!-- <li class="md-list-item" v-if="!showDownload">
                 <a
                   href="javascript:void(0)"
                   class="md-list-item-router md-list-item-container md-button-clean dropdown"
@@ -65,26 +67,22 @@
                     </drop-down>
                   </div>
                 </a>
-              </li>
+              </li> -->
               <!-- end of components item -->
 
               <!-- Documentation item (going to be replaced with suggested) -->
-              <md-list-item
-                href="/suggested"
-                target="_blank"
-                v-if="showDownload"
-              >
+              <md-list-item href="/suggested" target="_blank" v-if="loggedIn">
                 <i class="material-icons">explore</i>
                 <router-link :to="'/suggested'">Suggested</router-link>
               </md-list-item>
-              
+
               <!-- end of suggested item -->
 
               <!-- Download item (going to be replaced with saved) -->
               <md-list-item
                 href="javascript:void(0)"
                 @click="scrollToElement()"
-                v-if="showDownload" 
+                v-if="loggedIn"
               >
                 <i class="material-icons">bookmark</i>
                 <router-link :to="'/saved'">Saved</router-link>
@@ -95,7 +93,7 @@
               <md-list-item
                 href="javascript:void(0)"
                 @click="scrollToElement()"
-                v-if="showDownload"
+                v-if="loggedIn"
               >
                 <i class="material-icons">settings</i>
                 <p>Settings</p>
@@ -103,7 +101,7 @@
               <!-- end of settings item -->
 
               <!-- Examples item -->
-              <li class="md-list-item" v-else>
+              <!-- <li class="md-list-item" v-else>
                 <a
                   href="javascript:void(0)"
                   class="md-list-item-router md-list-item-container md-button-clean dropdown"
@@ -141,11 +139,11 @@
                     </drop-down>
                   </div>
                 </a>
-              </li>
+              </li> -->
               <!-- end of examples item -->
 
               <!-- register button -->
-              <li class="md-list-item">
+              <li class="md-list-item" v-if="!loggedIn">
                 <a
                   href="javascript:void(0)"
                   class="md-list-item-router md-list-item-container md-button-clean"
@@ -158,7 +156,7 @@
               <!-- end of register button -->
 
               <!-- account bubble item -->
-              <li class="md-list-item">
+              <li class="md-list-item" v-if="loggedIn">
                 <a
                   href="javascript:void(0)"
                   class="md-list-item-router md-list-item-container md-button-clean dropdown"
@@ -234,6 +232,7 @@
 </template>
 
 <script>
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 let resizeTimeout;
 function resizeThrottler(actualResizeHandler) {
   // ignore resize events as long as an actualResizeHandler execution is in the queue
@@ -280,15 +279,16 @@ export default {
   data() {
     return {
       extraNavClasses: "",
-      toggledClass: false
+      toggledClass: false,
+      loggedIn: false
     };
   },
-  computed: {
-    showDownload() {
-      const excludedRoutes = ["login", "profile"];
-      return excludedRoutes.every(r => r !== this.$route.name);
-    }
-  },
+  // computed: {
+  //   showDownload() {
+  //     const excludedRoutes = ["login", "profile"];
+  //     return excludedRoutes.every(r => r !== this.$route.name);
+  //   }
+  // },
   methods: {
     bodyClick() {
       let bodyClick = document.getElementById("bodyClick");
@@ -333,10 +333,25 @@ export default {
       if (element_id) {
         element_id.scrollIntoView({ block: "end", behavior: "smooth" });
       }
+    },
+    setupFirebase() {
+      const auth = getAuth();
+      onAuthStateChanged(auth, user => {
+        if (user) {
+          // User is signed in.
+          console.log("signed in");
+          this.loggedIn = true;
+        } else {
+          // No user is signed in.
+          this.loggedIn = false;
+          console.log("signed out", this.loggedIn);
+        }
+      });
     }
   },
   mounted() {
     document.addEventListener("scroll", this.scrollListener);
+    this.setupFirebase();
   },
   beforeDestroy() {
     document.removeEventListener("scroll", this.scrollListener);

@@ -5,10 +5,13 @@ import Index from "./views/Index.vue";
 import Landing from "./views/Landing.vue";
 import Login from "./views/Login.vue";
 import Profile from "./views/Profile.vue";
+import IntermediateProfile from "./views/IntermediateProfile.vue";
 import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
 import Register from "./views/Register";
+import RegisterNew from "./views/RegisterNew.vue";
 import Suggested from "./views/Suggested";
+import WishList from "./views/WishList";
 
 Vue.use(Router);
 
@@ -59,10 +62,36 @@ export default new Router({
 			},
 		},
 		{
+			path: "/registernew",
+			name: "registernew",
+			components: {
+				default: RegisterNew,
+				header: MainNavbar,
+				footer: MainFooter,
+			},
+			props: {
+				header: { colorOnScroll: 400 },
+				footer: { backgroundColor: "black" },
+			},
+		},
+		{
 			path: "/suggested",
 			name: "Suggested",
 			components: {
 				default: Suggested,
+				header: MainNavbar,
+				footer: MainFooter,
+			},
+			props: {
+				header: { colorOnScroll: 400 },
+				footer: { backgroundColor: "black" },
+			},
+		},
+		{
+			path: "/wishlist",
+			name: "WishList",
+			components: {
+				default: WishList,
 				header: MainNavbar,
 				footer: MainFooter,
 			},

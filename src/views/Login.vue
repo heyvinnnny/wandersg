@@ -43,7 +43,7 @@
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>lock_outline</md-icon>
                 <label>Password...</label>
-                <md-input v-model="password"></md-input>
+                <md-input v-model="password" type="password"></md-input>
               </md-field>
               <md-button
                 slot="footer"
@@ -53,8 +53,14 @@
               >
                 Login
               </md-button>
-              <p slot="description" class="description" style="border-bottom:10px;">
-                New user? Register <router-link to="/register">here</router-link>!
+              <p v-if="error" style="color:red">Wrong username or password!</p>
+              <p
+                slot="description"
+                class="description"
+                style="border-bottom:10px;"
+              >
+                New user? Register
+                <router-link to="/register">here</router-link>!
               </p>
             </login-card>
           </div>
@@ -80,7 +86,8 @@ export default {
     return {
       //firstname: null,
       email: null,
-      password: null
+      password: null,
+      error: ""
     };
   },
   // mounted() {
@@ -105,11 +112,15 @@ export default {
   methods: {
     async pressed() {
       try {
-        const val = await firebase.auth().signInWithEmailAndPassword(this.email, this.password);
+        const val = await firebase
+          .auth()
+          .signInWithEmailAndPassword(this.email, this.password);
         console.log(val);
         this.$router.replace({ name: "landing" });
       } catch (err) {
         console.log(err);
+        this.error = err;
+        alert("Wrong username or password!");
       }
     }
   },

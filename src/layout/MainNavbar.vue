@@ -152,7 +152,7 @@
                   class="md-list-item-router md-list-item-container md-button-clean"
                 >
                   <div class="md-list-item-content">
-                    <md-button class="md-rose md-round">Register</md-button>
+                    <md-button class="md-rose md-round">Login</md-button>
                   </div>
                 </a>
               </li>

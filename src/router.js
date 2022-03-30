@@ -100,6 +100,19 @@ export default new Router({
         footer: { backgroundColor: "black" },
       },
     },
+    {
+			path: "/wishlist",
+			name: "WishList",
+			components: {
+				default: WishList,
+				header: MainNavbar,
+				footer: MainFooter,
+			},
+			props: {
+				header: { colorOnScroll: 400 },
+				footer: { backgroundColor: "black" },
+			},
+		},
   ],
   scrollBehavior: (to) => {
     if (to.hash) {

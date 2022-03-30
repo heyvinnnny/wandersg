@@ -47,7 +47,9 @@
       </div>
       <div class="right">
         <div class="buy">
-          <md-button class="md-primary md-just-icon md-round"
+          <md-button
+            class="md-primary md-just-icon md-round"
+            v-on:click="remove"
             ><md-icon>favorite</md-icon></md-button
           >
         </div>
@@ -57,6 +59,12 @@
 </template>
 
 <script>
+import firebaseApp from "@/firebase.js";
+import { getFirestore, QuerySnapshot } from "firebase/firestore";
+import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
+const db = getFirestore(firebaseApp);
+
 export default {
   data() {
     return {};
@@ -70,7 +78,19 @@ export default {
   methods: {
     redirect(url) {
       window.location = url;
+    },
+
+    // function to remove from wishlist
+    remove: async function() {
+      alert("You are going to delete" + name);
+      await deleteDoc(doc(db, "test-food", name));
+      console.log("deleted", name);
+      windows.location.reload();
     }
+  },
+
+  mounted() {
+    this.remove;
   }
 };
 </script>
@@ -174,10 +194,10 @@ export default {
 }
 
 .wrapper .bottom .left .details {
-  padding-left: 25px;
+  padding-left: 20px;
   padding-top: 8px;
   float: left;
-  width: 75%;
+  width: 80%;
   background: #f1f1f1;
 }
 

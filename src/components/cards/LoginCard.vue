@@ -12,7 +12,7 @@
     </md-card-content>
 
     <md-card-actions>
-      <slot name="footer" style="margin:0px"></slot>
+      <slot name="footer"></slot>
     </md-card-actions>
 
     <div>

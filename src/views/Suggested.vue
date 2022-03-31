@@ -25,25 +25,73 @@
         </div>
       </div>
     </div>
-    <div id="border-wrapper">
-      <h1>Food</h1>
-      <div id="border"></div>
-    </div>
-    <div class="flex-container">
-      <SuggestedCard
-        v-for="item in this.items"
-        :key="item.key"
-        :image="item.image"
-        :name="item.name"
-        :address="item.address"
-        :category="item.category"
-      ></SuggestedCard>
-    </div>
-
-    <br /><br />
-    <div id="border-wrapper">
-      <h1>Activities</h1>
-      <div id="border"></div>
+    <div class="md-layout" md-alignment="centered">
+      <div class="md-layout-item md-size-100 md-small-size-100">
+        <tabs
+          :tab-name="['Food', 'Activities', 'Events']"
+          :tab-icon="['restaurant_menu', 'rowing', 'theater_comedy']"
+          plain
+          nav-pills-icons
+          color-button="primary"
+          md-alignment="centered"
+        >
+          <!-- here you can add your content for tab-content -->
+          <template slot="tab-pane-1">
+            <div id="border-wrapper">
+              <h1>Food</h1>
+              <div id="border"></div>
+            </div>
+            <br /><br />
+            <div class="flex-container">
+              <SuggestedCard
+                @added="change"
+                v-for="item in this.items"
+                :key="item.key"
+                :image="item.image"
+                :name="item.name"
+                :address="item.address"
+                :category="item.category"
+              ></SuggestedCard>
+            </div>
+          </template>
+          <template slot="tab-pane-2">
+            <div id="border-wrapper">
+              <h1>Activities</h1>
+              <div id="border"></div>
+            </div>
+            <br /><br />
+            <div class="flex-container">
+              <SuggestedCard
+                @added="change"
+                v-for="item in this.items"
+                :key="item.key"
+                :image="item.image"
+                :name="item.name"
+                :address="item.address"
+                :category="item.category"
+              ></SuggestedCard>
+            </div>
+          </template>
+          <template slot="tab-pane-3">
+            <div id="border-wrapper">
+              <h1>Events</h1>
+              <div id="border"></div>
+            </div>
+            <br /><br />
+            <div class="flex-container">
+              <SuggestedCard
+                @added="change"
+                v-for="item in this.items"
+                :key="item.key"
+                :image="item.image"
+                :name="item.name"
+                :address="item.address"
+                :category="item.category"
+              ></SuggestedCard>
+            </div>
+          </template>
+        </tabs>
+      </div>
     </div>
   </div>
 </template>
@@ -53,6 +101,8 @@ import firebaseApp from "../firebase.js";
 import { getFirestore } from "firebase/firestore";
 import { collection, getDocs, doc } from "firebase/firestore";
 import SuggestedCard from "@/views/components/SuggestedCard.vue";
+import { Tabs } from "@/components";
+// import { tabs, tab } from "vue-material-tabs";
 // import VueSlickCarousel from "vue-slick-carousel";
 // import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 // import { VueAgile } from "vue-agile";
@@ -64,16 +114,26 @@ const db = getFirestore(firebaseApp);
 export default {
   name: "Carousel",
   components: {
-    SuggestedCard
+    SuggestedCard,
+    Tabs
+    // tabs,
+    // tabItem
   },
   data() {
     return {
       items: []
+      // food: [],
+      // activities: []
     };
   },
   // this.fbuser = auth.currentUser.email;
   methods: {
+    change() {
+      window.location.reload();
+    },
     display: async function() {
+      // const food = [];
+      // const activities = [];
       const items = [];
       const querySnapshot = await getDocs(collection(db, "test-food"));
       querySnapshot.forEach(doc => {

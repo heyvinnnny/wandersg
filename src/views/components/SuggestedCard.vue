@@ -5,12 +5,12 @@
       <div class="left">
         <div class="details">
           <h2 class="txt_products">{{ name }}</h2>
-          <p>{{ address }}</p>
+          <p class="address">{{ address }}</p>
           <span class="text-span">{{ category }}</span>
         </div>
         <div class="buy">
-          <md-button class="md-primary md-just-icon md-round"
-            ><md-icon>favorite</md-icon></md-button
+          <md-button v-bind:class="getClass()" v-on:click="checkIfFav()"
+            ><md-icon class="heartIcon">favorite</md-icon></md-button
           >
         </div>
       </div>
@@ -41,15 +41,90 @@
 </template>
 
 <script>
+import firebaseApp from "@/firebase.js";
+import { getFirestore } from "firebase/firestore";
+import { doc, setDoc, addDoc, deleteDoc } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
+import VueStar from "vue-star";
+const db = getFirestore(firebaseApp);
+
 export default {
   data() {
-    return {};
+    return {
+      liked: false
+    };
   },
+  // components: {
+  //   VueStar
+  // },
   props: {
     image: String,
     name: String,
     address: String,
     category: String
+  },
+  methods: {
+    getClass() {
+      return {
+        "md-primary md-just-icon md-round": this.liked,
+        "md-just-icon md-round": !this.liked
+      };
+    },
+    checkIfFav() {
+      if (this.liked) {
+        this.removeFromFav();
+      } else {
+        this.addToFav();
+      }
+    },
+    async addToFav() {
+      // const auth = getAuth();
+      // this.fbuser = auth.currentUser.email;
+      this.liked = true;
+      alert("Saving Item: " + this.name);
+      try {
+        // const colRef = collection(db, "users", "eltonng123@gmail.com");
+        await setDoc(
+          doc(db, "users", "eltonng123@gmail.com", "wishlist", this.name),
+          {
+            name: this.name,
+            category: this.category,
+            image: this.image,
+            address: this.address
+          }
+        );
+        // console.log(colRef);
+        // console.log(name1);
+        // document.getElementById('myform').reset();
+        // this.$emit("added")
+      } catch (error) {
+        console.error("Error adding document: ", error);
+      }
+    },
+    async removeFromFav() {
+      // const auth = getAuth();
+      // this.fbuser = auth.currentUser.email;
+      this.liked = false;
+      alert("Removing Item: " + this.name);
+      try {
+        // const colRef = collection(db, "users", "eltonng123@gmail.com");
+        await deleteDoc(
+          doc(db, "users", "eltonng123@gmail.com", "wishlist", this.name),
+          {
+            name: this.name,
+            category: this.category,
+            image: this.image,
+            address: this.address
+          }
+        );
+        console.log(colRef);
+        console.log(name1);
+        // document.getElementById('myform').reset();
+        // this.$emit("added")
+      } catch (error) {
+        console.error("Error adding document: ", error);
+      }
+    }
   }
 };
 </script>
@@ -231,6 +306,10 @@ p {
   height: 3px;
   background-color: #4fbfa8;
   margin: 0px auto 15px auto;
+}
+
+.heartIcon {
+  color: red;
 }
 </style>
 

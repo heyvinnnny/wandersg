@@ -12,11 +12,8 @@
               every need.
             </h4>
             <br />
-            <md-button
-              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-              class="md-success md-lg"
-              target="_blank"
-              ><i class="fas fa-play"></i> Get Started</md-button
+            <md-button href="#/register" class="md-success md-lg"
+              ><i class="fas fa-play"></i>Register now</md-button
             >
           </div>
         </div>

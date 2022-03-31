@@ -82,10 +82,10 @@ export default {
 
     // function to remove from wishlist
     remove: async function() {
-      alert("You are going to delete" + name);
-      await deleteDoc(doc(db, "test-food", name));
-      console.log("deleted", name);
-      windows.location.reload();
+      alert("You are going to delete " + this.name);
+      await deleteDoc(doc(db, "users", "eltonng123@gmail.com"));
+      console.log("deleted", this.name);
+      window.location.reload();
     }
   },
 

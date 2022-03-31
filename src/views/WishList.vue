@@ -12,6 +12,7 @@
         :website="a.website"
       >
       </ImageCard>
+      <!-- display map with markers for all activities -->
       <Map
         v-for="a in activities"
         :key="a.key"
@@ -46,11 +47,26 @@ export default {
     readData: async function() {
       // retrieve a list of saved activities from firebase to display
       const activities = [];
-      const querySnapshot = await getDocs(collection(db, "test-food"));
-      querySnapshot.forEach(doc => {
+      const querySnapshotA = await getDocs(
+        collection(db, "users", "eltonng123@gmail.com", "activity")
+      );
+      const querySnapshotR = await getDocs(
+        collection(db, "users", "eltonng123@gmail.com", "food")
+      );
+      querySnapshotA.forEach(doc => {
         activities.push({
           key: doc.data().objectId,
-          name: doc.data().restaurantName,
+          name: doc.data().name,
+          address: doc.data().address,
+          image: doc.data().image,
+          website: doc.data().website
+        });
+      });
+
+      querySnapshotR.forEach(doc => {
+        activities.push({
+          key: doc.data().objectId,
+          name: doc.data().name,
           address: doc.data().address,
           image: doc.data().image,
           website: doc.data().website

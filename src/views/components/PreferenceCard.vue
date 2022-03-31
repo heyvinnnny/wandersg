@@ -10,16 +10,27 @@
         </md-card-media>
 
         <md-card-area>
-          <md-card-header>
-            <span class="md-title" style="text-align:center;" id="adventure">
-              {{ name }}
+          <md-card-header
+            style="background-color:rgba(0,0,0,0); border:0%; margin:0%; padding:0%; outline:none;"
+          >
+            <span
+              class="md-title"
+              style="text-align:center; color:whiter;"
+              id="title"
+            >
+              <strong>{{ name }}</strong>
             </span>
           </md-card-header>
           <md-card-actions>
-            <md-button class="category" @click="pressed1" v-if="!this.category"
+            <md-button
+              class="category md-raised md-success"
+              @click="pressed1"
+              v-if="!this.category"
               >Select</md-button
             >
-            <md-button @click="unpressed1" v-else>Remove</md-button>
+            <md-button class="md-raised md-danger" @click="unpressed1" v-else
+              >Remove</md-button
+            >
           </md-card-actions>
         </md-card-area>
       </md-card-media-cover>
@@ -47,7 +58,7 @@ export default {
       const user = auth.currentUser;
       if (user) {
         this.category = true;
-        console.log(this.email + "user adventure " + this.category);
+        console.log(this.email + " " + this.name + " " + this.category);
       }
     },
     unpressed1() {
@@ -55,7 +66,7 @@ export default {
       const user = auth.currentUser;
       if (user) {
         this.category = false;
-        console.log(this.email + " adventure " + this.category);
+        console.log(this.email + " " + this.name + " " + this.category);
       }
     }
   }

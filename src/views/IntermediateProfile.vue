@@ -71,8 +71,23 @@
                 :name="Food"
                 :image="tabPane1[5].image"
               ></PreferenceCard>
+              <PreferenceCard
+                :name="Heritage"
+                :image="tabPane1[6].image"
+              ></PreferenceCard>
+              <PreferenceCard
+                :name="Lifestyle"
+                :image="tabPane1[7].image"
+              ></PreferenceCard>
+              <PreferenceCard
+                :name="Nature"
+                :image="tabPane1[8].image"
+              ></PreferenceCard>
             </div>
           </div>
+          <md-button class="register md-success" @click="register">
+            Register
+          </md-button>
         </div>
       </div>
     </div>
@@ -96,7 +111,10 @@ export default {
         { image: require("@/assets/img/preferences/Children\ unclicked.jpg") },
         { image: require("@/assets/img/preferences/Family\ unclicked.jpg") },
         { image: require("@/assets/img/preferences/Fantasy\ unclicked.jpg") },
-        { image: require("@/assets/img/preferences/Food\ unclicked.jpg") }
+        { image: require("@/assets/img/preferences/Food\ unclicked.jpg") },
+        { image: require("@/assets/img/preferences/Heritage\ unclicked.jpg") },
+        { image: require("@/assets/img/preferences/Lifestyle\ unclicked.jpg") },
+        { image: require("@/assets/img/preferences/Nature\ unclicked.jpg") }
       ],
       email: getAuth().currentUser.email,
       adventure: false,
@@ -114,11 +132,18 @@ export default {
       heritage: false,
       Heritage: "Heritage",
       lifestyle: false,
+      Lifestyle: "Lifestyle",
       nature: false,
+      Nature: "Nature",
       romantic: false,
       scifi: false,
       staycation: false
     };
+  },
+  methods:{
+    register() {
+      
+    }
   },
   props: {
     header: {

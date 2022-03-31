@@ -90,6 +90,7 @@ export default {
           updatePassword(user, newPassword)
             .then(() => {
               console.log("password changed");
+              this.$router.push({ name: "landing" });
             })
             .catch(error => {
               console.log("error occurred");
@@ -100,6 +101,9 @@ export default {
           console.log("error");
           window.alert(error);
         });
+      this.newPassword1 = "";
+      this.newPassword2 = "";
+      this.oldPassword = "";
     }
     // after pressed, redirect user back to landing page
     // have alert box that pops up saying password has been successfully changed

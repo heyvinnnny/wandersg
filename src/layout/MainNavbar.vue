@@ -9,7 +9,7 @@
     <div class="md-toolbar-row md-collapse-lateral">
       <div class="md-toolbar-section-start">
         <h3 class="md-title">
-          <a href="#/"><img src="@/assets/img/navbarimg_nobg.png"/></a>
+          <a href="#/landing"><img src="@/assets/img/navbarimg_nobg.png"/></a>
         </h3>
       </div>
       <div class="md-toolbar-section-end">
@@ -81,6 +81,17 @@
               </md-list-item>
               <!-- end of suggested item -->
 
+              <!-- Download item (going to be replaced with settings) -->
+              <md-list-item
+                href="javascript:void(0)"
+                @click="scrollToElement()"
+                v-if="loggedIn"
+              >
+                <i class="material-icons">search</i>
+                <p>Search</p>
+              </md-list-item>
+              <!-- end of settings item -->
+
               <!-- Download item (going to be replaced with saved) -->
               <md-list-item
                 href="javascript:void(0)"
@@ -91,17 +102,6 @@
                 <p>Saved</p>
               </md-list-item>
               <!-- end of saved item -->
-
-              <!-- Download item (going to be replaced with settings) -->
-              <md-list-item
-                href="javascript:void(0)"
-                @click="scrollToElement()"
-                v-if="loggedIn"
-              >
-                <i class="material-icons">settings</i>
-                <p>Settings</p>
-              </md-list-item>
-              <!-- end of settings item -->
 
               <!-- Examples item -->
               <!-- <li class="md-list-item" v-else>
@@ -174,15 +174,19 @@
                         <img :src="img" alt="Circle Image" />
                       </div>
                       <ul class="dropdown-menu dropdown-menu-right">
-                        <li class="dropdown-header">Dropdown header</li>
+                        <!-- <li class="dropdown-header">My Information</li> -->
                         <li>
-                          <a href="#pablo" class="dropdown-item">Me</a>
+                          <a href="#pablo" class="dropdown-item"
+                            >Update Profile Information</a
+                          >
                         </li>
                         <li>
-                          <a href="#pablo" class="dropdown-item">Settings</a>
+                          <a href="#/changepassword" class="dropdown-item"
+                            >Change Password</a
+                          >
                         </li>
                         <li>
-                          <a href="#pablo" class="dropdown-item">Sign Out</a>
+                          <a @click="signOut" class="dropdown-item">Sign Out</a>
                         </li>
                       </ul>
                     </drop-down>
@@ -235,7 +239,7 @@
 </template>
 
 <script>
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 let resizeTimeout;
 function resizeThrottler(actualResizeHandler) {
   // ignore resize events as long as an actualResizeHandler execution is in the queue
@@ -350,6 +354,17 @@ export default {
           console.log("signed out", this.loggedIn);
         }
       });
+    },
+    signOut() {
+      const auth = getAuth();
+      signOut(auth)
+        .then(() => {
+          console.log("signed out");
+        })
+        .catch(error => {
+          console.log(error);
+        });
+      // after signout, remember to push to landing page
     }
   },
   mounted() {

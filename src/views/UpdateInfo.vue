@@ -33,6 +33,13 @@
                       />
                     </div>
                   </form>
+                  <md-button
+                    @click="uploadImage()"
+                    class="md-simple md-success md-lg"
+                    style="margin:0px;"
+                  >
+                    Save Changes
+                  </md-button>
                   <h3 class="title">Carla Hortensia</h3>
                   <h6>Designer</h6>
                   <md-button
@@ -119,6 +126,9 @@
 
 <script>
 import { Tabs } from "@/components";
+import { getStorage, ref, uploadBytes } from "firebase/storage";
+import { getAuth } from "firebase/auth";
+
 export default {
   components: {
     Tabs
@@ -145,13 +155,26 @@ export default {
         { image: require("@/assets/img/examples/clem-onojeghuo.jpg") },
         { image: require("@/assets/img/examples/olu-eletu.jpg") },
         { image: require("@/assets/img/examples/studio-1.jpg") }
-      ]
+      ],
+      file: {}
     };
   },
   methods: {
     chooseFile(e) {
-      const file = e.target.files[0];
-      console.log(file);
+      this.file = e.target.files[0];
+      console.log(this.file);
+    },
+    uploadImage() {
+      const auth = getAuth();
+      const storage = getStorage();
+      const storageRef = ref(
+        storage,
+        "users/" + auth.currentUser.uid + "/profile.jpg"
+      );
+      uploadBytes(storageRef, this.file).then(snapshot => {
+        console.log("Uploaded a blob or file!");
+      });
+      console.log("uploadImage");
     }
   },
   props: {

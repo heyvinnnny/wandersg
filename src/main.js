@@ -26,6 +26,7 @@ import MaterialKit from "./plugins/material-kit";
 // Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 import firebaseApp from "./firebase.js";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 Vue.config.productionTip = false;
 
@@ -48,8 +49,15 @@ Vue.mixin({
     };
   }
 });
-
-new Vue({
-  router,
-  render: h => h(App)
-}).$mount("#app");
+let app;
+const auth = getAuth();
+const user = auth.currentUser;
+onAuthStateChanged(auth, user => {
+  console.log(user);
+  if (!app) {
+    new Vue({
+      router,
+      render: h => h(App)
+    }).$mount("#app");
+  }
+});

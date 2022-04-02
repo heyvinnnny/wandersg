@@ -12,7 +12,8 @@ import Register from "./views/Register";
 import Suggested from "./views/Suggested";
 import ChangePassword from "./views/ChangePassword.vue";
 import WishList from "./views/WishList";
-import PageNotFound from "./views/components/PageNotFound.vue"
+import PageNotFound from "./views/components/PageNotFound.vue";
+import UpdateInfo from "./views/UpdateInfo.vue";
 
 Vue.use(Router);
 
@@ -48,6 +49,15 @@ export default new Router({
       path: "/profile",
       name: "profile",
       components: { default: Profile, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: "black" },
+      },
+    },
+    {
+      path: "/updateinfo",
+      name: "updateinfo",
+      components: { default: UpdateInfo, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "black" },

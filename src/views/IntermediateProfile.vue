@@ -97,6 +97,11 @@
 <script>
 import { getAuth } from "firebase/auth";
 import PreferenceCard from "@/views/components/PreferenceCard.vue";
+import { firebaseApp } from "../firebase.js";
+import { collection, getDocs, doc, setDoc, getFirestore } from "firebase/firestore";
+
+const db = getFirestore(firebaseApp);
+
 export default {
   name: "profile2",
   components: {
@@ -140,9 +145,14 @@ export default {
       staycation: false
     };
   },
-  methods:{
+  methods: {
     register() {
-      
+      let z = setDoc(doc(db, "users", String(this.email), "preference", "preferences"), {
+        Adventure: this.adventure,
+        Animals: this.animals,
+        Children: this.children,
+        Family: this.family
+      });
     }
   },
   props: {

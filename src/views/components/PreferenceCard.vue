@@ -39,7 +39,11 @@
 </template>
 
 <script>
+import firebaseApp from "@/firebase.js";
+import { getFirestore } from "firebase/firestore";
+import { doc, setDoc, addDoc, deleteDoc } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
+const db = getFirestore(firebaseApp);
 
 export default {
   data() {
@@ -53,20 +57,49 @@ export default {
     name: String
   },
   methods: {
-    pressed1() {
+    async pressed1() {
       const auth = getAuth();
       const user = auth.currentUser;
       if (user) {
         this.category = true;
         console.log(this.email + " " + this.name + " " + this.category);
+        // alert("Added Preference: " + this.name);
+        try {
+          // const colRef = collection(db, "users", "eltonng123@gmail.com");
+          await setDoc(doc(db, "users", this.email, "preferences", this.name), {
+            name: this.name
+          });
+          // console.log(colRef);
+          // console.log(name1);
+          // document.getElementById('myform').reset();
+          // this.$emit("added")
+        } catch (error) {
+          console.error("Error adding document: ", error);
+        }
       }
     },
-    unpressed1() {
+    async unpressed1() {
       const auth = getAuth();
       const user = auth.currentUser;
       if (user) {
         this.category = false;
         console.log(this.email + " " + this.name + " " + this.category);
+        // alert("Removing Preference: " + this.name);
+        try {
+          // const colRef = collection(db, "users", "eltonng123@gmail.com");
+          await deleteDoc(
+            doc(db, "users", this.email, "preferences", this.name),
+            {
+              name: this.name
+            }
+          );
+          // console.log(colRef);
+          // console.log(name1);
+          // document.getElementById('myform').reset();
+          // this.$emit("added")
+        } catch (error) {
+          console.error("Error adding document: ", error);
+        }
       }
     }
   }

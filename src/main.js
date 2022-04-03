@@ -36,8 +36,8 @@ Vue.use(InstantSearch);
 
 Vue.use(VueGoogleMaps, {
   load: {
-    key: "AIzaSyDFQW4_kv4f7b5RqrK88pxEOSssfQsx-Lo",
-    libraries: "activities"
+    key: "AIzaSyC3rSWaQKBooTC3fnEyB_ZsFjUWJJk6RCU",
+    libraries: "places"
   }
 });
 const NavbarStore = {

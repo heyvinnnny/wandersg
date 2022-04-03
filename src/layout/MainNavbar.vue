@@ -9,7 +9,7 @@
     <div class="md-toolbar-row md-collapse-lateral">
       <div class="md-toolbar-section-start">
         <h3 class="md-title">
-          <a href="#/landing"><img src="@/assets/img/navbarimg_nobg.png"/></a>
+          <a href="#/landing"><img src="@/assets/img/navbarimg_nobg.png" style="height:70px;"/></a>
         </h3>
       </div>
       <div class="md-toolbar-section-end">

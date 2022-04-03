@@ -8,8 +8,8 @@
       <nav>
         <ul>
           <li>
-            <a href="https://www.creative-tim.com">
-              Creative Tim
+            <a href="#/landing">
+              Wander @ SG
             </a>
           </li>
           <li>
@@ -18,21 +18,20 @@
             </a>
           </li>
           <li>
-            <a href="https:///blog.creative-tim.com">
-              Blog
+            <a href="https://www.klook.com/en-SG/">
+              Klook
             </a>
           </li>
           <li>
-            <a href="https://www.creative-tim.com/license">
-              Licenses
+            <a href="https://www.kkday.com/en-sg">
+              KKDAY
             </a>
           </li>
         </ul>
       </nav>
       <div class="copyright">
         &copy; {{ year }}, made with <md-icon>favorite</md-icon> by
-        <a href="https://www.creative-tim.com/" target="_blank">Creative Tim</a>
-        for a better web.
+        <a href="https://github.com/heyvinnnny/wandersg" target="_blank">Wander @ SG <br> BT3103 Group L1-14</a>
       </div>
     </div>
   </footer>

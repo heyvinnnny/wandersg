@@ -98,7 +98,13 @@
 import { getAuth } from "firebase/auth";
 import PreferenceCard from "@/views/components/PreferenceCard.vue";
 import { firebaseApp } from "../firebase.js";
-import { collection, getDocs, doc, setDoc, getFirestore } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  doc,
+  setDoc,
+  getFirestore
+} from "firebase/firestore";
 
 const db = getFirestore(firebaseApp);
 
@@ -147,12 +153,16 @@ export default {
   },
   methods: {
     register() {
-      let z = setDoc(doc(db, "users", String(this.email), "preference", "preferences"), {
-        Adventure: this.adventure,
-        Animals: this.animals,
-        Children: this.children,
-        Family: this.family
-      });
+      let z = setDoc(
+        doc(db, "users", String(this.email), "preference", "preferences"),
+        {
+          Adventure: this.adventure,
+          Animals: this.animals,
+          Children: this.children,
+          Family: this.family
+        }
+      );
+      this.$router.push({ name: "landing" });
     }
   },
   props: {

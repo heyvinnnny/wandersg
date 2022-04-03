@@ -18,6 +18,7 @@ import router from "./router";
 import * as VueGoogleMaps from "vue2-google-maps";
 
 import MaterialKit from "./plugins/material-kit";
+import InstantSearch from 'vue-instantsearch';
 // import { library } from "@fortawesome/fontawesome-svg-core";
 // import { faUserSecret } from "@fortawesome/free-regular-svg-icons";
 // import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -31,6 +32,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 Vue.config.productionTip = false;
 
 Vue.use(MaterialKit);
+Vue.use(InstantSearch);
 
 Vue.use(VueGoogleMaps, {
   load: {

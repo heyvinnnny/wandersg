@@ -171,7 +171,7 @@
                         slot="title"
                         data-toggle="dropdown"
                       >
-                        <img :src="img" alt="Circle Image" />
+                        <img :src="img" alt="Circle Image" id="myimg" />
                       </div>
                       <ul class="dropdown-menu dropdown-menu-right">
                         <!-- <li class="dropdown-header">My Information</li> -->
@@ -240,6 +240,7 @@
 
 <script>
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
 let resizeTimeout;
 function resizeThrottler(actualResizeHandler) {
   // ignore resize events as long as an actualResizeHandler execution is in the queue
@@ -288,6 +289,10 @@ export default {
       extraNavClasses: "",
       toggledClass: false,
       loggedIn: false
+      // img: {
+      //   type: String,
+      //   default: require("@/assets/img/faces/isaac.jpg")
+      // }
     };
   },
   // computed: {
@@ -343,11 +348,18 @@ export default {
     },
     setupFirebase() {
       const auth = getAuth();
+      const user = auth.currentUser;
+      const storage = getStorage();
       onAuthStateChanged(auth, user => {
         if (user) {
           // User is signed in.
           console.log("signed in");
           this.loggedIn = true;
+          const storageRef = ref(storage, "users/" + user.uid + "/profile.jpg");
+          getDownloadURL(storageRef).then(url => {
+            const img = document.getElementById("myimg");
+            img.setAttribute("src", url);
+          });
         } else {
           // No user is signed in.
           this.loggedIn = false;

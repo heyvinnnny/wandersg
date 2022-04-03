@@ -47,13 +47,10 @@ export default {
     readData: async function() {
       // retrieve a list of saved activities from firebase to display
       const activities = [];
-      const querySnapshotA = await getDocs(
-        collection(db, "users", "eltonng123@gmail.com", "activity")
+      const querySnapshot = await getDocs(
+        collection(db, "users", "eltonng123@gmail.com", "wishlist")
       );
-      const querySnapshotR = await getDocs(
-        collection(db, "users", "eltonng123@gmail.com", "food")
-      );
-      querySnapshotA.forEach(doc => {
+      querySnapshot.forEach(doc => {
         activities.push({
           key: doc.data().objectId,
           name: doc.data().name,
@@ -63,15 +60,6 @@ export default {
         });
       });
 
-      querySnapshotR.forEach(doc => {
-        activities.push({
-          key: doc.data().objectId,
-          name: doc.data().name,
-          address: doc.data().address,
-          image: doc.data().image,
-          website: doc.data().website
-        });
-      });
       this.activities = activities;
     }
   },

@@ -56,32 +56,44 @@
                 :image="tabPane1[1].image"
               ></PreferenceCard>
               <PreferenceCard
-                :name="Children"
+                :name="Arts"
                 :image="tabPane1[2].image"
               ></PreferenceCard>
               <PreferenceCard
-                :name="Family"
+                :name="Asian"
                 :image="tabPane1[3].image"
               ></PreferenceCard>
               <PreferenceCard
-                :name="Fantasy"
+                :name="Cafe"
                 :image="tabPane1[4].image"
               ></PreferenceCard>
               <PreferenceCard
-                :name="Food"
+                :name="Family"
                 :image="tabPane1[5].image"
               ></PreferenceCard>
               <PreferenceCard
-                :name="Heritage"
+                :name="Lifestyle"
                 :image="tabPane1[6].image"
               ></PreferenceCard>
               <PreferenceCard
-                :name="Lifestyle"
+                :name="Mediterranean"
                 :image="tabPane1[7].image"
               ></PreferenceCard>
               <PreferenceCard
                 :name="Nature"
                 :image="tabPane1[8].image"
+              ></PreferenceCard>
+              <PreferenceCard
+                :name="Romantic"
+                :image="tabPane1[9].image"
+              ></PreferenceCard>
+              <PreferenceCard
+                :name="Social"
+                :image="tabPane1[10].image"
+              ></PreferenceCard>
+              <PreferenceCard
+                :name="Western"
+                :image="tabPane1[11].image"
               ></PreferenceCard>
             </div>
           </div>
@@ -119,36 +131,42 @@ export default {
       tabPane1: [
         { image: require("@/assets/img/preferences/Adventure\ unclicked.jpg") },
         { image: require("@/assets/img/preferences/Animals\ unclicked.jpg") },
-        { image: require("@/assets/img/preferences/Children\ unclicked.jpg") },
+        { image: require("@/assets/img/preferences/Arts\ unclicked.jpg") },
+        { image: require("@/assets/img/preferences/Asian\ unclicked.jpg") },
+        { image: require("@/assets/img/preferences/Cafe\ unclicked.jpg") },
         { image: require("@/assets/img/preferences/Family\ unclicked.jpg") },
-        { image: require("@/assets/img/preferences/Fantasy\ unclicked.jpg") },
-        { image: require("@/assets/img/preferences/Food\ unclicked.jpg") },
-        { image: require("@/assets/img/preferences/Heritage\ unclicked.jpg") },
         { image: require("@/assets/img/preferences/Lifestyle\ unclicked.jpg") },
-        { image: require("@/assets/img/preferences/Nature\ unclicked.jpg") }
+        { image: require("@/assets/img/preferences/Mediterranean\ unclicked.jpg") },
+        { image: require("@/assets/img/preferences/Nature\ unclicked.jpg") },
+        { image: require("@/assets/img/preferences/Romantic\ unclicked.jpg") },
+        { image: require("@/assets/img/preferences/Social\ unclicked.jpg") },
+        { image: require("@/assets/img/preferences/Western\ unclicked.jpg") }
       ],
       email: getAuth().currentUser.email,
       adventure: false,
       Adventure: "Adventure",
       animals: false,
       Animals: "Animals",
-      children: false,
-      Children: "Children",
+      arts: false,
+      Arts: "Arts",
+      asian: false,
+      Asian: "Asian",
+      cafe: false,
+      Cafe: "Cafe",
       family: false,
       Family: "Family",
-      fantasy: false,
-      Fantasy: "Fantasy",
-      food: false,
-      Food: "Food",
-      heritage: false,
-      Heritage: "Heritage",
       lifestyle: false,
       Lifestyle: "Lifestyle",
+      mediterranean: false,
+      Mediterranean: "Mediterranean",
       nature: false,
       Nature: "Nature",
       romantic: false,
-      scifi: false,
-      staycation: false
+      Romantic: "Romantic",
+      social: false,
+      Social: "Social",
+      western: false,
+      Western: "Western"
     };
   },
   methods: {
@@ -158,8 +176,16 @@ export default {
         {
           Adventure: this.adventure,
           Animals: this.animals,
-          Children: this.children,
-          Family: this.family
+          Arts: this.arts,
+          Asian: this.asian,
+          Cafe: this.cafe,
+          Family: this.family,
+          Lifestyle: this.lifestyle,
+          Mediterranean: this.mediterranean,
+          Nature: this.nature,
+          Romantic: this.romantic,
+          Social: this.social,
+          Western: this.western
         }
       );
       this.$router.push({ name: "landing" });

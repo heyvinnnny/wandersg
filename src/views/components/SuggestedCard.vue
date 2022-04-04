@@ -44,8 +44,8 @@
 import firebaseApp from "@/firebase.js";
 import { getFirestore } from "firebase/firestore";
 import { doc, setDoc, addDoc, deleteDoc } from "firebase/firestore";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-// import VueStar from "vue-star";
+import { getAuth } from "firebase/auth";
+
 const db = getFirestore(firebaseApp);
 
 export default {

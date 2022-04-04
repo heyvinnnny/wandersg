@@ -23,7 +23,7 @@
       <div class="contents">
         <!-- <h1>The Feather Blade</h1>
         <br /> -->
-        <p>Price: ⭐️⭐️⭐️⭐️</p>
+        <p>Price: {{ price }}</p>
         <br />
         <p>Ambience: ⭐️⭐️⭐️</p>
         <br />
@@ -32,7 +32,7 @@
         <p>Service: ⭐️⭐️⭐️</p>
         <br /><br />
 
-        <p>Opening hours: 5:30 PM - 02:00 AM</p>
+        <p>Opening hours: {{ openinghours }}</p>
         <br />
         <p>Reservations: Recommended</p>
       </div>
@@ -44,14 +44,15 @@
 import firebaseApp from "@/firebase.js";
 import { getFirestore } from "firebase/firestore";
 import { doc, setDoc, addDoc, deleteDoc } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
-import VueStar from "vue-star";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+// import VueStar from "vue-star";
 const db = getFirestore(firebaseApp);
 
 export default {
   data() {
     return {
       liked: false
+      // email: getAuth().currentUser.email
     };
   },
   // components: {
@@ -61,7 +62,10 @@ export default {
     image: String,
     name: String,
     address: String,
-    category: String
+    category: String,
+    price: String,
+    openinghours: String,
+    user: String
   },
   methods: {
     getClass() {
@@ -78,21 +82,16 @@ export default {
       }
     },
     async addToFav() {
-      // const auth = getAuth();
-      // this.fbuser = auth.currentUser.email;
       this.liked = true;
       alert("Saving Item: " + this.name);
       try {
         // const colRef = collection(db, "users", "eltonng123@gmail.com");
-        await setDoc(
-          doc(db, "users", "eltonng123@gmail.com", "wishlist", this.name),
-          {
-            name: this.name,
-            category: this.category,
-            image: this.image,
-            address: this.address
-          }
-        );
+        await setDoc(doc(db, "users", this.user, "wishlist", this.name), {
+          name: this.name,
+          category: this.category,
+          image: this.image,
+          address: this.address
+        });
         // console.log(colRef);
         // console.log(name1);
         // document.getElementById('myform').reset();
@@ -108,15 +107,12 @@ export default {
       alert("Removing Item: " + this.name);
       try {
         // const colRef = collection(db, "users", "eltonng123@gmail.com");
-        await deleteDoc(
-          doc(db, "users", "eltonng123@gmail.com", "wishlist", this.name),
-          {
-            name: this.name,
-            category: this.category,
-            image: this.image,
-            address: this.address
-          }
-        );
+        await deleteDoc(doc(db, "users", this.user, "wishlist", this.name), {
+          name: this.name,
+          category: this.category,
+          image: this.image,
+          address: this.address
+        });
         console.log(colRef);
         console.log(name1);
         // document.getElementById('myform').reset();

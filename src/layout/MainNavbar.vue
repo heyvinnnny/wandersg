@@ -9,7 +9,9 @@
     <div class="md-toolbar-row md-collapse-lateral">
       <div class="md-toolbar-section-start">
         <h3 class="md-title">
-          <a href="#/landing"><img src="@/assets/img/navbarimg_nobg.png" style="height:70px;"/></a>
+          <a href="#/landing"
+            ><img src="@/assets/img/navbarimg_nobg.png" style="height:70px;"
+          /></a>
         </h3>
       </div>
       <div class="md-toolbar-section-end">
@@ -71,7 +73,11 @@
               <!-- end of components item -->
 
               <!-- Documentation item (going to be replaced with suggested) -->
-              <md-list-item href="/suggested" target="_blank" v-if="loggedIn">
+              <md-list-item
+                href="javascript:void(0)"
+                @click="scrollToElement()"
+                v-if="loggedIn"
+              >
                 <i class="material-icons">explore</i>
                 <router-link :to="'/suggested'">Suggested</router-link>
               </md-list-item>

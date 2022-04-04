@@ -1,10 +1,8 @@
 <template>
   <div>
-    <gmap-map
-      :center="center"
-      :zoom="12"
-      style="width:100%;  height: 450px;"
-    ></gmap-map>
+    <gmap-map :center="center" :zoom="12" style="width:100%;  height: 450px;">
+      <gmap-marker :key="index" , :position="m.position"></gmap-marker>
+    </gmap-map>
   </div>
 </template>
 
@@ -17,8 +15,8 @@ export default {
     };
   },
   props: {
-    latitude: String,
-    longitude: String
+    latitude: Number,
+    longitude: Number
   },
   methods: {
     addMarker() {

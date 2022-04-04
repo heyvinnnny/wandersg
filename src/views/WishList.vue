@@ -13,19 +13,31 @@
       >
       </ImageCard>
       <!-- display map with markers for all activities -->
-      <Map
+      <!-- <Map
         v-for="a in activities"
         :key="a.key"
         :latitude="a.latitude"
         :longitude="a.longitude"
-      ></Map>
+      ></Map> -->
+      <GMapMap :center="center" :zoom="12" style="width:100%;  height: 450px;">
+        <GMapCluster :zoomOnClick="true">
+          <GMapMarker
+            :key="index"
+            v-for="(m, index) in activities"
+            :position="m.position"
+            :clickable="true"
+            :draggable="true"
+            @click="center = m.position"
+          />
+        </GMapCluster>
+      </GMapMap>
     </div>
   </div>
 </template>
 
 <script>
 import ImageCard from "@/views/components/ImageCard.vue";
-import Map from "@/views/components/Map.vue";
+// import Map from "@/views/components/Map.vue";
 import firebaseApp from "../firebase.js";
 import { getFirestore, QuerySnapshot } from "firebase/firestore";
 import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
@@ -34,22 +46,27 @@ const db = getFirestore(firebaseApp);
 
 export default {
   components: {
-    ImageCard,
-    Map
+    ImageCard
   },
   data() {
     return {
       activities: [],
-      map: null
+      center: { lat: 1.2789, lng: 103.8536 },
+      markers: []
     };
   },
   methods: {
     readData: async function() {
       // retrieve a list of saved activities from firebase to display
       const activities = [];
+      // const marker = {
+      //     lat: doc.geometry.location.lat(),
+      //     lng: doc.geometry.location.lng()
+      //   };
       const querySnapshot = await getDocs(
         collection(db, "users", "eltonng123@gmail.com", "wishlist")
       );
+
       querySnapshot.forEach(doc => {
         activities.push({
           key: doc.data().objectId,
@@ -57,12 +74,26 @@ export default {
           address: doc.data().address,
           image: doc.data().image,
           website: doc.data().website
+          // marker: { position: marker }
         });
       });
-
       this.activities = activities;
     }
   },
+
+  // const querySnapshot2 = await getDocs(
+  //   collection(db, "users", "eltonng123@gmail.com", "wishlist")
+  // );
+  //     querySnapshot2.forEach(doc => {
+  //       const marker = {
+  //         lat: doc.geometry.location.lat(),
+  //         lng: doc.geometry.location.lng()
+  //       };
+  //       markers.push({ position: marker });
+  //     });
+  //     this.markers = markers;
+  //   }
+  // },
   mounted() {
     // const auth = getAuth();
     // either user email or id

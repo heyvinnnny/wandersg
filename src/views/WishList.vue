@@ -41,7 +41,7 @@ import ImageCard from "@/views/components/ImageCard.vue";
 import firebaseApp from "../firebase.js";
 import { getFirestore, QuerySnapshot } from "firebase/firestore";
 import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 const db = getFirestore(firebaseApp);
 
 export default {
@@ -56,7 +56,7 @@ export default {
     };
   },
   methods: {
-    readData: async function() {
+    readData: async function(user) {
       // retrieve a list of saved activities from firebase to display
       const activities = [];
       // const marker = {
@@ -64,12 +64,12 @@ export default {
       //     lng: doc.geometry.location.lng()
       //   };
       const querySnapshot = await getDocs(
-        collection(db, "users", "eltonng123@gmail.com", "wishlist")
+        collection(db, "users", user, "wishlist")
       );
 
       querySnapshot.forEach(doc => {
         activities.push({
-          key: doc.data().objectId,
+          key: doc.data().objectID,
           name: doc.data().name,
           address: doc.data().address,
           image: doc.data().image,
@@ -95,11 +95,16 @@ export default {
   //   }
   // },
   mounted() {
-    // const auth = getAuth();
-    // either user email or id
-    // this.fbuser = auth.currentUser.email;
-    this.readData();
-    // this.remove(key);
+    const auth = getAuth();
+    // user email
+    onAuthStateChanged(auth, currUser => {
+      if (currUser) {
+        const userEmail = currUser.email;
+        this.user = userEmail;
+        console.log(this.user);
+        this.readData(this.user);
+      }
+    })
   }
 };
 </script>

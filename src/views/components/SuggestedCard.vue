@@ -85,8 +85,10 @@ export default {
       this.liked = true;
       alert("Saving Item: " + this.name);
       try {
+        const auth = getAuth();
+        const user = auth.currentUser.email;
         // const colRef = collection(db, "users", "eltonng123@gmail.com");
-        await setDoc(doc(db, "users", this.user, "wishlist", this.name), {
+        await setDoc(doc(db, "users", user, "wishlist", this.name), {
           name: this.name,
           category: this.category,
           image: this.image,
@@ -106,8 +108,10 @@ export default {
       this.liked = false;
       alert("Removing Item: " + this.name);
       try {
+        const auth = getAuth();
+        const user = auth.currentUser.email;
         // const colRef = collection(db, "users", "eltonng123@gmail.com");
-        await deleteDoc(doc(db, "users", this.user, "wishlist", this.name), {
+        await deleteDoc(doc(db, "users", user, "wishlist", this.name), {
           name: this.name,
           category: this.category,
           image: this.image,

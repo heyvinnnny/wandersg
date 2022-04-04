@@ -62,7 +62,7 @@
 import firebaseApp from "@/firebase.js";
 import { getFirestore, QuerySnapshot } from "firebase/firestore";
 import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 const db = getFirestore(firebaseApp);
 
 export default {
@@ -82,18 +82,15 @@ export default {
 
     // function to remove from wishlist
     remove: async function() {
+      const auth = getAuth();
+      const user = auth.currentUser.email;
       alert("You are going to delete " + this.name);
-      await deleteDoc(
-        doc(db, "users", "eltonng123@gmail.com", "wishlist", this.name)
-      );
+      await deleteDoc(doc(db, "users", user, "wishlist", this.name));
       console.log("deleted", this.name);
       window.location.reload();
     }
   },
 
-  mounted() {
-    this.remove;
-  }
 };
 </script>
 

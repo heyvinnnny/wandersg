@@ -102,7 +102,7 @@
                 v-if="loggedIn"
               >
                 <i class="material-icons">bookmark</i>
-                <router-link :to="'/saved'">Saved</router-link>
+                <router-link :to="'/wishlist'">WishList</router-link>
               </md-list-item>
               <!-- end of saved item -->
 

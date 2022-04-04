@@ -28,8 +28,8 @@
     <div class="md-layout" md-alignment="centered">
       <div class="md-layout-item md-size-100 md-small-size-100">
         <tabs
-          :tab-name="['Food', 'Activities', 'Events']"
-          :tab-icon="['restaurant_menu', 'rowing', 'theater_comedy']"
+          :tab-name="['Food', 'Activities']"
+          :tab-icon="['restaurant_menu', 'rowing']"
           plain
           nav-pills-icons
           color-button="primary"
@@ -47,12 +47,15 @@
                 @added="change"
                 v-for="item in this.foodItems"
                 :key="item.key"
+                :objectID="item.objectID"
                 :image="item.image"
                 :name="item.name"
                 :address="item.address"
                 :category="item.category"
                 :price="item.price"
                 :openinghours="item.openinghours"
+                :website="item.website"
+                :isFood="item.isFood"
               ></SuggestedCard>
             </div>
           </template>
@@ -67,12 +70,15 @@
                 @added="change"
                 v-for="item in this.activityItems"
                 :key="item.key"
+                :objectID="item.objectID"
                 :image="item.image"
                 :name="item.name"
                 :address="item.address"
                 :category="item.category"
                 :price="item.price"
                 :openinghours="item.openinghours"
+                :website="item.website"
+                :isFood="item.isFood"
               ></SuggestedCard>
             </div>
           </template>
@@ -154,7 +160,8 @@ export default {
           image: i.image,
           price: i.price,
           preferences: i.preferences,
-          website: i.website
+          website: i.website,
+          isFood: i.isFood
         });
       });
       this.activityData.forEach(x => {
@@ -170,7 +177,8 @@ export default {
           image: x.image,
           price: x.price,
           preferences: x.preferences,
-          website: x.website
+          website: x.website,
+          isFood: x.isFood
         });
       });
     },
@@ -203,13 +211,16 @@ export default {
       foodSnap.forEach(doc => {
         foodItems.push({
           key: doc.data().objectID,
+          objectID: doc.data().objectID,
           name: doc.data().restaurantname,
           address: doc.data().address,
           postalCode: doc.data().postalcode,
           image: doc.data().image,
           category: doc.data().category,
           price: doc.data().price,
-          openinghours: doc.data().openinghours
+          openinghours: doc.data().openinghours,
+          website: doc.data().website,
+          isFood: doc.data().isFood
         });
         // console.log(doc.data());
       });
@@ -225,13 +236,16 @@ export default {
       activitySnap.forEach(doc => {
         activityItems.push({
           key: doc.data().objectID,
-          name: doc.data().restaurantname,
+          objectID: doc.data().objectID,
+          name: doc.data().activityname,
           address: doc.data().address,
           postalCode: doc.data().postalcode,
           image: doc.data().image,
           category: doc.data().category,
           price: doc.data().price,
-          openinghours: doc.data().openinghours
+          openinghours: doc.data().openinghours,
+          website: doc.data().website,
+          isFood: doc.data().isFood
         });
         // console.log(doc.data());
       });
@@ -247,7 +261,7 @@ export default {
         this.user = userEmail;
         console.log(this.user);
         this.display(this.user);
-        this.insertData();
+        // this.insertData();
       } else {
         console.log(currUser, "user not found....");
       }

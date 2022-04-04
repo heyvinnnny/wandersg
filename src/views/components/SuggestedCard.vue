@@ -24,17 +24,18 @@
         <!-- <h1>The Feather Blade</h1>
         <br /> -->
         <p>Price: {{ price }}</p>
-        <br />
-        <p>Ambience: ⭐️⭐️⭐️</p>
-        <br />
-        <p>Food: ⭐️⭐️⭐️⭐️</p>
-        <br />
-        <p>Service: ⭐️⭐️⭐️</p>
+        <br v-if="isFood" />
+        <p v-if="isFood">Ambience: ⭐️⭐️⭐️</p>
+        <br v-if="isFood" />
+        <p v-if="isFood">Food: ⭐️⭐️⭐️⭐️</p>
+        <br v-if="isFood" />
+        <p v-if="isFood">Service: ⭐️⭐️⭐️</p>
         <br /><br />
 
         <p>Opening hours: {{ openinghours }}</p>
         <br />
-        <p>Reservations: Recommended</p>
+        <p v-if="isFood">Reservations: Recommended</p>
+        <p v-else>Bookings: Recommended</p>
       </div>
     </div>
   </div>
@@ -65,7 +66,10 @@ export default {
     category: String,
     price: String,
     openinghours: String,
-    user: String
+    objectID: String,
+    user: String,
+    website: String,
+    isFood: Boolean
   },
   methods: {
     getClass() {
@@ -83,14 +87,18 @@ export default {
     },
     async addToFav() {
       this.liked = true;
-      alert("Saving Item: " + this.name);
+      const auth = getAuth();
+      const user = auth.currentUser.email;
+      // alert("Saving Item: " + this.name);
       try {
         // const colRef = collection(db, "users", "eltonng123@gmail.com");
-        await setDoc(doc(db, "users", this.user, "wishlist", this.name), {
+        await setDoc(doc(db, "users", user, "wishlist", this.name), {
+          objectID: this.objectID,
           name: this.name,
           category: this.category,
           image: this.image,
-          address: this.address
+          address: this.address,
+          website: this.website
         });
         // console.log(colRef);
         // console.log(name1);
@@ -103,15 +111,19 @@ export default {
     async removeFromFav() {
       // const auth = getAuth();
       // this.fbuser = auth.currentUser.email;
+      const auth = getAuth();
+      const user = auth.currentUser.email;
       this.liked = false;
-      alert("Removing Item: " + this.name);
+      // alert("Removing Item: " + this.name);
       try {
         // const colRef = collection(db, "users", "eltonng123@gmail.com");
-        await deleteDoc(doc(db, "users", this.user, "wishlist", this.name), {
+        await deleteDoc(doc(db, "users", user, "wishlist", this.name), {
+          objectID: this.objectID,
           name: this.name,
           category: this.category,
           image: this.image,
-          address: this.address
+          address: this.address,
+          website: this.website
         });
         console.log(colRef);
         console.log(name1);
@@ -177,14 +189,14 @@ body {
 }
 
 .wrapper .top {
-  height: 75%;
+  height: 72%;
   width: 100%;
   background-size: 100%;
   position: relative;
 }
 .wrapper .bottom {
   width: 100%;
-  height: 25%;
+  height: 28%;
   transition: transform 0.5s;
   position: relative;
 }

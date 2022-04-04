@@ -28,8 +28,8 @@
     <div class="md-layout" md-alignment="centered">
       <div class="md-layout-item md-size-100 md-small-size-100">
         <tabs
-          :tab-name="['Food', 'Activities', 'Events']"
-          :tab-icon="['restaurant_menu', 'rowing', 'theater_comedy']"
+          :tab-name="['Food', 'Activities']"
+          :tab-icon="['restaurant_menu', 'rowing']"
           plain
           nav-pills-icons
           color-button="primary"
@@ -47,12 +47,15 @@
                 @added="change"
                 v-for="item in this.foodItems"
                 :key="item.key"
+                :objectID="item.objectID"
                 :image="item.image"
                 :name="item.name"
                 :address="item.address"
                 :category="item.category"
                 :price="item.price"
                 :openinghours="item.openinghours"
+                :website="item.website"
+                :isFood="item.isFood"
               ></SuggestedCard>
             </div>
           </template>
@@ -67,12 +70,15 @@
                 @added="change"
                 v-for="item in this.activityItems"
                 :key="item.key"
+                :objectID="item.objectID"
                 :image="item.image"
                 :name="item.name"
                 :address="item.address"
                 :category="item.category"
                 :price="item.price"
                 :openinghours="item.openinghours"
+                :website="item.website"
+                :isFood="item.isFood"
               ></SuggestedCard>
             </div>
           </template>
@@ -103,7 +109,14 @@
 <script>
 import firebaseApp from "../firebase.js";
 import { getFirestore } from "firebase/firestore";
-import { collection, getDocs, doc, query, where } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  doc,
+  query,
+  where,
+  setDoc
+} from "firebase/firestore";
 import SuggestedCard from "@/views/components/SuggestedCard.vue";
 import { Tabs } from "@/components";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
@@ -122,7 +135,10 @@ export default {
     return {
       foodItems: [],
       activityItems: [],
+<<<<<<< HEAD
       foodData: [],
+=======
+>>>>>>> 4d4e32fdbea43434ef17d5cdf0bb6d26428c14e3
       user: ""
       // email: getAuth().currentUser.email
       // food: [],
@@ -133,6 +149,42 @@ export default {
   methods: {
     change() {
       window.location.reload();
+    },
+    insertData() {
+      this.foodData.forEach(i => {
+        setDoc(doc(db, "wander-food", i.restaurantname), {
+          objectID: i.objectID,
+          restaurantname: i.restaurantname,
+          description: i.description,
+          district: i.district,
+          location: i.location,
+          address: i.address,
+          openinghours: i.openinghours,
+          category: i.category,
+          image: i.image,
+          price: i.price,
+          preferences: i.preferences,
+          website: i.website,
+          isFood: i.isFood
+        });
+      });
+      this.activityData.forEach(x => {
+        setDoc(doc(db, "wander-activity", x.activityname), {
+          objectID: x.objectID,
+          activityname: x.activityname,
+          description: x.description,
+          district: x.district,
+          location: x.location,
+          address: x.address,
+          openinghours: x.openinghours,
+          category: x.category,
+          image: x.image,
+          price: x.price,
+          preferences: x.preferences,
+          website: x.website,
+          isFood: x.isFood
+        });
+      });
     },
     display: async function(user) {
       // const food = [];
@@ -163,13 +215,16 @@ export default {
       foodSnap.forEach(doc => {
         foodItems.push({
           key: doc.data().objectID,
+          objectID: doc.data().objectID,
           name: doc.data().restaurantname,
           address: doc.data().address,
           postalCode: doc.data().postalcode,
           image: doc.data().image,
           category: doc.data().category,
           price: doc.data().price,
-          openinghours: doc.data().openinghours
+          openinghours: doc.data().openinghours,
+          website: doc.data().website,
+          isFood: doc.data().isFood
         });
         // console.log(doc.data());
       });
@@ -185,13 +240,16 @@ export default {
       activitySnap.forEach(doc => {
         activityItems.push({
           key: doc.data().objectID,
-          name: doc.data().restaurantname,
+          objectID: doc.data().objectID,
+          name: doc.data().activityname,
           address: doc.data().address,
           postalCode: doc.data().postalcode,
           image: doc.data().image,
           category: doc.data().category,
           price: doc.data().price,
-          openinghours: doc.data().openinghours
+          openinghours: doc.data().openinghours,
+          website: doc.data().website,
+          isFood: doc.data().isFood
         });
         // console.log(doc.data());
       });
@@ -207,6 +265,7 @@ export default {
         this.user = userEmail;
         console.log(this.user);
         this.display(this.user);
+        // this.insertData();
       } else {
         console.log(currUser, "user not found....");
       }

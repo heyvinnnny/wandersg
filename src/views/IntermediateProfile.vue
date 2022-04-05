@@ -188,6 +188,7 @@ export default {
           Western: this.western
         }
       );
+      console.log("user with email:" + this.email + " created");
       this.$router.push({ name: "landing" });
     }
   },

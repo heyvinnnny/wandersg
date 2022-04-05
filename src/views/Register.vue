@@ -9,19 +9,19 @@
             <login-card header-color="green">
               <h4 slot="title" class="card-title">Register</h4>
               <md-field class="md-form-group" slot="inputs">
-                <!-- <md-icon>email</md-icon> -->
+                <md-icon>email</md-icon>
                 <label>Enter Email</label>
                 <md-input v-model="email" type="email"></md-input>
               </md-field>
               <md-field class="md-form-group" slot="inputs">
-                <!-- <md-icon>lock_outline</md-icon> -->
+                <md-icon>lock_outline</md-icon>
                 <label>Enter Password</label>
-                <md-input v-model="password"></md-input>
+                <md-input v-model="password" type="password"></md-input>
               </md-field>
               <md-field class="md-form-group" slot="inputs">
-                <!-- <md-icon>lock_outline</md-icon> -->
+                <md-icon>lock_outline</md-icon>
                 <label>Re-enter Password</label>
-                <md-input v-model="password"></md-input>
+                <md-input v-model="password2" type="password"></md-input>
               </md-field>
 
               <!-- <div id="preference">
@@ -82,6 +82,7 @@ export default {
       lastname: "",
       email: "",
       password: "",
+      password2: "",
       adventure: false,
       animals: false,
       children: false,
@@ -99,24 +100,28 @@ export default {
   methods: {
     pressed() {
       const auth = getAuth();
-      createUserWithEmailAndPassword(auth, this.email, this.password)
-        .then(userCredential => {
-          // Signed in
-          const user = userCredential.user;
-          console.log(user);
-          this.$router.replace({ name: "profile2" });
-        })
-        .catch(error => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          // ..
-        });
+      if (this.password == this.password2) {
+        createUserWithEmailAndPassword(auth, this.email, this.password)
+          .then(userCredential => {
+            // Signed in
+            const user = userCredential.user;
+            console.log(user);
+            this.$router.replace({ name: "profile2" });
+          })
+          .catch(error => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // ..
+          });
+      } else {
+        alert("Passwords do not match!");
+      }
     }
   },
   props: {
     header: {
       type: String,
-      default: require("@/assets/img/profile_city.jpg")
+      default: require("@/assets/img/sg3.jpg")
     }
   },
   computed: {

@@ -53,7 +53,7 @@
               >
                 Login
               </md-button>
-              <p v-if="error" style="color:red">Wrong username or password!</p>
+              <p class="error text-danger" v-if="error">Wrong username or password!</p>
               <p
                 slot="description"
                 class="description"
@@ -127,7 +127,7 @@ export default {
   props: {
     header: {
       type: String,
-      default: require("@/assets/img/profile_city.jpg")
+      default: require("@/assets/img/sg3.jpg")
     }
   },
   computed: {

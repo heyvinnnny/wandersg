@@ -223,7 +223,14 @@ export default {
       password: null,
       loggedIn: false,
       liked: false,
-
+      objectID: "",
+      name: "",
+      category: "",
+      img: "",
+      address: "",
+      website: "",
+      latitude: 1,
+      longtitude: 1,
       center: { lat: 45.508, lng: -73.587 },
       currentPlace: null,
       markers: [],
@@ -234,9 +241,20 @@ export default {
     const db = getFirestore(firebaseApp);
     const auth = getAuth();
     const user = auth.currentUser.email;
+    const item = doc(db, "wander-food", "Restaurant Labyrinth");
+    const querySnapshot = await getDoc(item);
+    this.objectID = querySnapshot.data().objectID;
+    this.name = querySnapshot.data().restaurantname;
+    this.category = querySnapshot.data().category;
+    this.img = querySnapshot.data().image;
+    this.address = querySnapshot.data().address;
+    this.website = querySnapshot.data().website;
+    this.latitude = querySnapshot.data().latitude;
+    this.longtitude = querySnapshot.data().longtitude;
+
     if (user) {
       this.loggedIn = true;
-      const docRef = doc(db, "users", user, "wishlist", "S.E.A Aquarium");
+      const docRef = doc(db, "users", user, "wishlist", this.name);
       const docSnap = await getDoc(docRef);
       console.log(docSnap.exists());
       if (docSnap.exists()) {
@@ -296,17 +314,15 @@ export default {
       try {
         const auth = getAuth();
         const user = auth.currentUser.email;
-        await setDoc(doc(db, "users", user, "wishlist", "S.E.A Aquarium"), {
-          objectID: "A0001",
-          name: "S.E.A Aquarium",
-          category: "Aquariums, zoos & farms",
-          image:
-            "https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1295,h_864/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/ccfgnagsrilolytkoegu/SEAAquarium%E2%84%A2One-DayTicket.webp",
-          address: "8 Sentosa Gateway, Sentosa Island, S098269",
-          website:
-            "https://www.rwsentosa.com/en/attractions/sea-aquarium/tickets",
-          latitude: 1.2583462651555766,
-          longtitude: 103.82056881757651
+        await setDoc(doc(db, "users", user, "wishlist", this.name), {
+          objectID: this.objectID,
+          name: this.name,
+          category: this.category,
+          image: this.img,
+          address: this.address,
+          website: this.website,
+          latitude: this.latitude,
+          longtitude: this.longtitude
         });
       } catch (error) {
         console.error("Error adding document: ", error);
@@ -317,7 +333,7 @@ export default {
       try {
         const auth = getAuth();
         const user = auth.currentUser.email;
-        await deleteDoc(doc(db, "users", user, "wishlist", "S.E.A Aquarium"));
+        await deleteDoc(doc(db, "users", user, "wishlist", this.name));
       } catch (error) {
         console.error("Error adding document: ", error);
       }

@@ -164,6 +164,9 @@
                         <img :src="img" alt="Circle Image" id="myimg" />
                       </div>
                       <ul class="dropdown-menu dropdown-menu-right">
+                        <li class="dropdown-header">
+                          Welcome, {{ fetchUserEmail }}
+                        </li>
                         <!-- <li class="dropdown-header">My Information</li> -->
                         <li>
                           <a href="#pablo" class="dropdown-item"
@@ -250,6 +253,13 @@ export default {
   //     return excludedRoutes.every(r => r !== this.$route.name);
   //   }
   // },
+  computed: {
+    fetchUserEmail() {
+      const auth = getAuth();
+      const user = auth.currentUser;
+      return user.email;
+    }
+  },
   methods: {
     bodyClick() {
       let bodyClick = document.getElementById("bodyClick");
@@ -321,6 +331,7 @@ export default {
       signOut(auth)
         .then(() => {
           console.log("signed out");
+          this.$router.push({ name: "landing" });
         })
         .catch(error => {
           console.log(error);

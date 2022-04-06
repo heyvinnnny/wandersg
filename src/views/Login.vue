@@ -53,7 +53,9 @@
               >
                 Login
               </md-button>
-              <p class="error text-danger" v-if="error">Wrong username or password!</p>
+              <p class="error text-danger" v-if="error">
+                Wrong username or password!
+              </p>
               <p
                 slot="description"
                 class="description"

@@ -135,10 +135,7 @@ export default {
     return {
       foodItems: [],
       activityItems: [],
-<<<<<<< HEAD
       foodData: [],
-=======
->>>>>>> 4d4e32fdbea43434ef17d5cdf0bb6d26428c14e3
       user: ""
       // email: getAuth().currentUser.email
       // food: [],

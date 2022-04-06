@@ -9,7 +9,7 @@
     <div class="md-toolbar-row md-collapse-lateral">
       <div class="md-toolbar-section-start">
         <h3 class="md-title">
-          <a href="#/landing"
+          <a href="#/"
             ><img src="@/assets/img/navbarimg_nobg.png" style="height:70px;"
           /></a>
         </h3>
@@ -35,7 +35,7 @@
               <!-- adding the "md-list-item" for every item on the navbar -->
 
               <!-- components item -->
-              <!-- <li class="md-list-item" v-if="!showDownload">
+              <li class="md-list-item">
                 <a
                   href="javascript:void(0)"
                   class="md-list-item-router md-list-item-container md-button-clean dropdown"
@@ -47,29 +47,27 @@
                         class="md-button md-button-link md-white md-simple dropdown-toggle"
                         data-toggle="dropdown"
                       >
-                        <i class="material-icons">apps</i>
-                        <p>Components</p>
+                        <i class="material-icons">search</i>
+                        <p>Search</p>
                       </md-button>
                       <ul class="dropdown-menu dropdown-with-icons">
                         <li>
-                          <a href="#/">
-                            <i class="material-icons">layers</i>
-                            <p>All Components</p>
+                          <a href="#/search">
+                            <i class="material-icons">dinner_dining</i>
+                            <p>Search Restaurants</p>
                           </a>
                         </li>
                         <li>
-                          <a
-                            href="https://demos.creative-tim.com/vue-material-kit/documentation/"
-                          >
-                            <i class="material-icons">content_paste</i>
-                            <p>Documentation</p>
+                          <a href="#/searchact">
+                            <i class="material-icons">attractions</i>
+                            <p>Search Activities</p>
                           </a>
                         </li>
                       </ul>
                     </drop-down>
                   </div>
                 </a>
-              </li> -->
+              </li>
               <!-- end of components item -->
 
               <!-- Documentation item (going to be replaced with suggested) -->
@@ -83,17 +81,6 @@
               </md-list-item>
 
               <!-- end of suggested item -->
-
-              <!-- Download item (going to be replaced with settings) -->
-              <md-list-item
-                href="javascript:void(0)"
-                @click="scrollToElement()"
-                v-if="loggedIn"
-              >
-                <i class="material-icons">search</i>
-                <p>Search</p>
-              </md-list-item>
-              <!-- end of settings item -->
 
               <!-- Download item (going to be replaced with saved) -->
               <md-list-item
@@ -151,7 +138,7 @@
               <!-- register button -->
               <li class="md-list-item" v-if="!loggedIn">
                 <a
-                  href="javascript:void(0)"
+                  href="#/login"
                   class="md-list-item-router md-list-item-container md-button-clean"
                 >
                   <div class="md-list-item-content">

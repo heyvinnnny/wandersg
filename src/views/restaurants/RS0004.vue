@@ -24,8 +24,10 @@
             <h1 class="text-uppercase lined mb-4" style="color:palevioletred">
               13% Wine Bistro @ Telok Ayer
               <md-button
-                class="md-primary md-just-icon md-round"
-                style="margin-left:525px; margin-top:10px"
+                v-if="loggedIn"
+                v-bind:class="getClass()"
+                v-on:click="checkIfFav()"
+                style="margin-left:10px; margin-top:10px"
                 ><md-icon>favorite</md-icon></md-button
               >
             </h1>
@@ -120,7 +122,9 @@
                   Favourite
                 </h3>
                 <md-button
-                  class="md-primary md-just-icon md-round"
+                  v-if="loggedIn"
+                  v-bind:class="getClass()"
+                  v-on:click="checkIfFav()"
                   style="margin:auto;"
                   ><md-icon>favorite</md-icon></md-button
                 >
@@ -176,6 +180,19 @@
 // import TypographyImages from "./components/TypographyImagesSection";
 //import JavascriptComponents from "./components/JavascriptComponentsSection";
 //import { LoginCard } from "@/components";
+import firebaseApp from "@/firebase.js";
+import { getFirestore } from "firebase/firestore";
+import {
+  doc,
+  setDoc,
+  addDoc,
+  deleteDoc,
+  updateDoc,
+  getDoc
+} from "firebase/firestore";
+import { getAuth } from "firebase/auth";
+
+const db = getFirestore(firebaseApp);
 
 export default {
   components: {
@@ -223,7 +240,16 @@ export default {
       email: null,
       password: null,
       leafShow: false,
-
+      loggedIn: false,
+      liked: false,
+      objectID: "",
+      name: "",
+      category: "",
+      img: "",
+      address: "",
+      website: "",
+      latitude: 1,
+      longtitude: 1,
       center: {
         lat: 1.29027,
         lng: 103.851959
@@ -232,6 +258,33 @@ export default {
       locPlaces: [],
       existingPlace: null
     };
+  },
+  async created() {
+    const db = getFirestore(firebaseApp);
+    const auth = getAuth();
+    const user = auth.currentUser.email;
+    const item = doc(db, "wander-food", "13% Wine Bistro @ Telok Ayer");
+    const querySnapshot = await getDoc(item);
+    this.objectID = querySnapshot.data().objectID;
+    this.name = querySnapshot.data().restaurantname;
+    this.category = querySnapshot.data().category;
+    this.img = querySnapshot.data().image;
+    this.address = querySnapshot.data().address;
+    this.website = querySnapshot.data().website;
+    this.latitude = querySnapshot.data().latitude;
+    this.longtitude = querySnapshot.data().longtitude;
+
+    if (user) {
+      this.loggedIn = true;
+      const docRef = doc(db, "users", user, "wishlist", this.name);
+      const docSnap = await getDoc(docRef);
+      console.log(docSnap.exists());
+      if (docSnap.exists()) {
+        this.liked = true;
+      } else {
+        this.liked = false;
+      }
+    }
   },
   methods: {
     leafActive() {
@@ -264,6 +317,48 @@ export default {
           lng: res.coords.longitude
         };
       });
+    },
+    getClass() {
+      return {
+        "md-primary md-just-icon md-round": this.liked,
+        "md-just-icon md-round": !this.liked
+      };
+    },
+    checkIfFav() {
+      if (this.liked) {
+        this.removeFromFav();
+      } else {
+        this.addToFav();
+      }
+    },
+    async addToFav() {
+      this.liked = true;
+      try {
+        const auth = getAuth();
+        const user = auth.currentUser.email;
+        await setDoc(doc(db, "users", user, "wishlist", this.name), {
+          objectID: this.objectID,
+          name: this.name,
+          category: this.category,
+          image: this.img,
+          address: this.address,
+          website: this.website,
+          latitude: this.latitude,
+          longtitude: this.longtitude
+        });
+      } catch (error) {
+        console.error("Error adding document: ", error);
+      }
+    },
+    async removeFromFav() {
+      this.liked = false;
+      try {
+        const auth = getAuth();
+        const user = auth.currentUser.email;
+        await deleteDoc(doc(db, "users", user, "wishlist", this.name));
+      } catch (error) {
+        console.error("Error adding document: ", error);
+      }
     }
   },
   computed: {

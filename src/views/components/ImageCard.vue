@@ -38,12 +38,12 @@
         <div class="details">
           <h2 class="txt_products">{{ name }}</h2>
           <p>{{ address }}</p>
+          <span class="text-span">{{ category }}</span>
         </div>
         <div class="reserve">
           <md-button class="md-primary" v-on:click="redirect(website)">
             Reserve
           </md-button>
-          <span class="text-span">{{ category }}</span>
         </div>
       </div>
       <div class="right">
@@ -163,7 +163,7 @@ export default {
   transform: scale(0.93);
   transition: box-shadow 0.5s, transform 0.5s;
   z-index: 1000;
-  background: #f1f1f1;
+  background: #e0e0e0;
 }
 
 .wrapper:hover {
@@ -182,13 +182,13 @@ export default {
   height: 30%;
   transition: transform 0.5s;
   position: relative;
-  background: #f1f1f1;
+  background: #e0e0e0;
 }
 
 .wrapper .bottom .left {
   height: 100%;
   width: 70%;
-  background: #f1f1f1;
+  background: #e0e0e0;
   position: relative;
   float: left;
 }
@@ -198,35 +198,35 @@ export default {
   padding-top: 8px;
   float: left;
   width: 85%;
-  background: #f1f1f1;
+  background: #e0e0e0;
 }
 
 .wrapper .bottom .left .details .txt_products {
   font-size: 18px;
-  background: #f1f1f1;
+  background: #e0e0e0;
 }
 
 .wrapper .bottom .left .details p {
   font-size: 12px;
-  background: #f1f1f1;
+  background: #e0e0e0;
 }
 
 .wrapper .bottom .left .reserve {
-  background: #f1f1f1;
+  background: #e0e0e0;
   position: fixed;
   bottom: 15px;
-  left: 15px;
+  right: 15px;
 }
 
 p {
   font-size: 15px;
-  background: #f1f1f1;
+  background: #e0e0e0;
 }
 
 .wrapper .bottom .right {
   height: 100%;
   width: 30%;
-  background: #f1f1f1;
+  background: #e0e0e0;
   position: relative;
   float: right;
 }
@@ -236,16 +236,15 @@ p {
   display: flex;
   height: 100%;
   width: 70%;
-  background: #f1f1f1;
+  background: #e0e0e0;
   transition: background 0.5s;
-  border-left: solid thin rgba(0, 0, 0, 0.4);
 }
 .wrapper .bottom .right .buy {
   font-size: 20px;
   padding: 12px;
   color: black;
   transition: transform 0.5s;
-  background: #f1f1f1;
+  background: #e0e0e0;
 }
 
 .wrapper .bottom .right .buy:hover i {
@@ -261,9 +260,6 @@ p {
   font-weight: 500;
   border: 1px solid transparent;
   border-radius: 2em;
-  background-color: lightgrey;
-  position: fixed;
-  bottom: 20px;
-  left: 150px;
+  background-color: #c0c0c0;
 }
 </style>

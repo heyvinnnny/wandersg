@@ -139,6 +139,7 @@ export default {
     return {
       foodItems: [],
       activityItems: [],
+      foodData: [],
       user: ""
       // email: getAuth().currentUser.email
       // food: [],

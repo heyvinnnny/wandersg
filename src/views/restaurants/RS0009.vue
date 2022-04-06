@@ -6,7 +6,9 @@
           <div class="image-wrapper">
             <div class="brand">
               <h1 style="color:white;">Description</h1>
-              <h3 style="color:white;">Information of your favourite activity and restaurant.</h3>
+              <h3 style="color:white;">
+                Information of your favourite activity and restaurant.
+              </h3>
             </div>
           </div>
         </div>
@@ -15,143 +17,157 @@
 
     <div class="main main-raised">
       <div class="section section-basic">
-
         <!-- RESTAURANT CAROUSEL SECTION-->
 
-      
+        <div class="md-layout">
+          <div class="md-layout-item md-size-66 mx-auto md-small-size-100">
+            <h1 class="text-uppercase lined mb-4" style="color:palevioletred">
+              49 Seats
+              <md-button
+                class="md-primary md-just-icon md-round"
+                style="margin-left:525px; margin-top:10px"
+                ><md-icon>favorite</md-icon></md-button
+              >
+            </h1>
 
-      <div class="md-layout">
-        <div class="md-layout-item md-size-66 mx-auto md-small-size-100">
-          <h1 class="text-uppercase lined mb-4" style="color:palevioletred">49 Seats
-            <md-button class="md-primary md-just-icon md-round" style="margin-left:525px; margin-top:10px"><md-icon>favorite</md-icon></md-button>
-          </h1>
-          
-          <md-card>
-            <carousel
-              :per-page="1"
-              loop
-              :speed="700"
-              autoplay
-              :autoplay-timeout="5000"
-              :mouse-drag="false"
-              navigationEnabled
-              navigationNextLabel="<i class='material-icons'>keyboard_arrow_right</i>"
-              navigationPrevLabel="<i class='material-icons'>keyboard_arrow_left</i>"
-            >
-              <slide>
-                <div class="carousel-caption">
-                  <h4>
-                  
-                  </h4>
-                </div>
-                <img src="@/assets/res-img/rs0009-1.jpg" alt="carousel1" />
-              </slide>
-              <slide>
-                <div class="carousel-caption">
-                  <h4>
-                  
-                  </h4>
-                </div>
-                <img src="@/assets/res-img/rs0009-2.jpg" alt="carousel2" />
-              </slide>
-              <slide>
-                <div class="carousel-caption">
-                  <h4>
-                 
-                  </h4>
-                </div>
-                <img src="@/assets/res-img/rs0009-3.jpg" alt="carousel2" />
-              </slide>
-            </carousel>
-          </md-card>
+            <md-card>
+              <carousel
+                :per-page="1"
+                loop
+                :speed="700"
+                autoplay
+                :autoplay-timeout="5000"
+                :mouse-drag="false"
+                navigationEnabled
+                navigationNextLabel="<i class='material-icons'>keyboard_arrow_right</i>"
+                navigationPrevLabel="<i class='material-icons'>keyboard_arrow_left</i>"
+              >
+                <slide>
+                  <div class="carousel-caption">
+                    <h4></h4>
+                  </div>
+                  <img src="@/assets/res-img/rs0009-1.jpg" alt="carousel1" />
+                </slide>
+                <slide>
+                  <div class="carousel-caption">
+                    <h4></h4>
+                  </div>
+                  <img src="@/assets/res-img/rs0009-2.jpg" alt="carousel2" />
+                </slide>
+                <slide>
+                  <div class="carousel-caption">
+                    <h4></h4>
+                  </div>
+                  <img src="@/assets/res-img/rs0009-3.jpg" alt="carousel2" />
+                </slide>
+              </carousel>
+            </md-card>
+          </div>
         </div>
-      </div>
 
-      <br>
-      
-      <!-- DESCRIPTION SECTION        -->
-      <div class="pb-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8">
-              <h3 class="text-uppercase lined mb-4" style="color:#ff286c">Restaurant Information</h3>
-              <p class="text-muted">
-                A savoury twist to Singapore's food scene focused on affordable but quality experience, 49 Seats has been in the F&B industry since 2012 and has established a strong local presence. It is recognised for its fusion style meals with a slight twist of local flavour.
+        <br />
 
-              </p>
-              <p class="text-muted">49 Seats, the pioneer of Tom Yum Pasta as well as Fish and Chips with Tom Yum Sauce in Singapore, is our go-to for foods full of spicy and savoury flavours. Apart from their groundbreaking tom yum dish, 49 Seats is also famous for their Creamy Smoked Duck Pasta, which is one of the most popular smoked duck dishes on the market.
-
-              </p>
-            </div>
-            <br>
-            <div class="col-lg-4">
-              <h3 class="text-uppercase lined mb-4" style="color:#ff286c">Information</h3>
-              <h4 class="h5 text-uppercase">Cuisine</h4>
-              <p class="text-muted text-sm">Fusion, Local, Western</p>
-              <h4 class="h5 text-uppercase">Hours</h4>
-              <p class="text-muted text-sm">Mon-Thu: 11:30am-3:30pm, 5:30-11:30pm<br>
-Fri-Sun: 11:30am-4pm, 5-11:30pm</p>
-              <h4 class="h5 text-uppercase">Good for: </h4>
-              <p class="text-muted text-sm">Business Meetings, Casual Dining, Kid Friendly, Large Parties (16+)</p>
-              <h4 class="h5 text-uppercase">Location</h4>
-              <p class="text-muted text-sm">Orchard</p>
-              <h4 class="h5 text-uppercase">Address</h4>
-              <p class="text-muted text-sm">176 Orchard Road #01-49 <br>
-                The Centrepoint Singapore (238843)
+        <!-- DESCRIPTION SECTION        -->
+        <div class="pb-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8">
+                <h3 class="text-uppercase lined mb-4" style="color:#ff286c">
+                  Restaurant Information
+                </h3>
+                <p class="text-muted">
+                  A savoury twist to Singapore's food scene focused on
+                  affordable but quality experience, 49 Seats has been in the
+                  F&B industry since 2012 and has established a strong local
+                  presence. It is recognised for its fusion style meals with a
+                  slight twist of local flavour.
+                </p>
+                <p class="text-muted">
+                  49 Seats, the pioneer of Tom Yum Pasta as well as Fish and
+                  Chips with Tom Yum Sauce in Singapore, is our go-to for foods
+                  full of spicy and savoury flavours. Apart from their
+                  groundbreaking tom yum dish, 49 Seats is also famous for their
+                  Creamy Smoked Duck Pasta, which is one of the most popular
+                  smoked duck dishes on the market.
+                </p>
+              </div>
+              <br />
+              <div class="col-lg-4">
+                <h3 class="text-uppercase lined mb-4" style="color:#ff286c">
+                  Information
+                </h3>
+                <h4 class="h5 text-uppercase">Cuisine</h4>
+                <p class="text-muted text-sm">Fusion, Local, Western</p>
+                <h4 class="h5 text-uppercase">Hours</h4>
+                <p class="text-muted text-sm">
+                  Mon-Thu: 11:30am-3:30pm, 5:30-11:30pm<br />
+                  Fri-Sun: 11:30am-4pm, 5-11:30pm
+                </p>
+                <h4 class="h5 text-uppercase">Good for:</h4>
+                <p class="text-muted text-sm">
+                  Business Meetings, Casual Dining, Kid Friendly, Large Parties
+                  (16+)
+                </p>
+                <h4 class="h5 text-uppercase">Location</h4>
+                <p class="text-muted text-sm">Orchard</p>
+                <h4 class="h5 text-uppercase">Address</h4>
+                <p class="text-muted text-sm">
+                  176 Orchard Road #01-49 <br />
+                  The Centrepoint Singapore (238843)
                 </p>
 
-                <br>
-              <h3 class="text-uppercase lined mb-4" style="color:#ff286c">Favourite</h3>
-              <md-button class="md-primary md-just-icon md-round" style="margin:auto;"><md-icon>favorite</md-icon></md-button>
+                <br />
+                <h3 class="text-uppercase lined mb-4" style="color:#ff286c">
+                  Favourite
+                </h3>
+                <md-button
+                  class="md-primary md-just-icon md-round"
+                  style="margin:auto;"
+                  ><md-icon>favorite</md-icon></md-button
+                >
+              </div>
             </div>
           </div>
         </div>
 
-        
+        <br />
+        <br />
 
-      </div>
-      
+        <!-- Google API -->
 
-      <br>
-      <br>
+        <div style="width:1000px; margin:auto;">
+          <div>
+            <label>
+              <gmap-autocomplete
+                @place_changed="initMarker"
+                value="49 Seats"
+                readonly
+              ></gmap-autocomplete>
 
-      <!-- Google API -->
-
-      <div style="width:1000px; margin:auto;">
-        <div>
-          <label>
-            <gmap-autocomplete @place_changed="initMarker" value="49 Seats" readonly></gmap-autocomplete>
-
-            <button @click="addLocationMarker">Add</button>
-          </label>
-          <br/>
-    
-        </div>
-        <br>
-        <gmap-map
-            :zoom="14"    
+              <button @click="addLocationMarker">Add</button>
+            </label>
+            <br />
+          </div>
+          <br />
+          <gmap-map
+            :zoom="14"
             :center="center"
             style="width:100%;  height: 600px;"
           >
-          <gmap-marker
-            :key="index"
-            v-for="(m, index) in locationMarkers"
-            :position="m.position"
-            @click="center=m.position"
-          ></gmap-marker>
-        </gmap-map>
+            <gmap-marker
+              :key="index"
+              v-for="(m, index) in locationMarkers"
+              :position="m.position"
+              @click="center = m.position"
+            ></gmap-marker>
+          </gmap-map>
+        </div>
       </div>
-
-
-          
-        
     </div>
   </div>
-</div>
 </template>
 
 <script>
-
 //import BasicElements from "./components/BasicElementsSection";
 // import Navigation from "./components/NavigationSection";
 // import SmallNavigation from "./components/SmallNavigationSection";
@@ -209,8 +225,8 @@ export default {
       password: null,
       leafShow: false,
 
-      center: { 
-        lat: 1.290270,
+      center: {
+        lat: 1.29027,
         lng: 103.851959
       },
       locationMarkers: [],
@@ -272,12 +288,7 @@ export default {
     window.removeEventListener("resize", this.leafActive);
   }
 };
-
-
-
-
 </script>
-
 
 <style scoped>
 .section-download {
@@ -303,7 +314,7 @@ export default {
 }
 
 .lined::after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   bottom: 0;
@@ -322,21 +333,31 @@ export default {
 }
 
 .text-sm-start {
-    text-align: left !important;
-  }
-  .text-sm-end {
-    text-align: right !important;
-  }
-  .text-sm-center {
-    text-align: center !important;
-  }
+  text-align: left !important;
+}
+.text-sm-end {
+  text-align: right !important;
+}
+.text-sm-center {
+  text-align: center !important;
+}
 
 .text-sm {
   font-size: 0.9rem !important;
 }
 
-
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-weight: 700;
@@ -459,8 +480,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   background-color: #4fbfa8;
   border: 0;
   border-radius: 1rem;
-  -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  -webkit-transition: background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
   -webkit-appearance: none;
   appearance: none;
 }
@@ -515,5 +538,4 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-
 </style>

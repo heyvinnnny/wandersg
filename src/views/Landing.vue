@@ -360,7 +360,7 @@
         </div>
       </div> -->
 
-      <div class="section">
+      <!-- <div class="section">
         <div class="container">
           <div class="md-layout">
             <div
@@ -376,7 +376,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     <test-register />
     <top-header />

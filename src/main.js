@@ -18,7 +18,7 @@ import router from "./router";
 import * as VueGoogleMaps from "vue2-google-maps";
 
 import MaterialKit from "./plugins/material-kit";
-import InstantSearch from 'vue-instantsearch';
+import InstantSearch from "vue-instantsearch";
 // import { library } from "@fortawesome/fontawesome-svg-core";
 // import { faUserSecret } from "@fortawesome/free-regular-svg-icons";
 // import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";

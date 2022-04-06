@@ -8,7 +8,7 @@
           >
             <h1 class="title">Your Adventure Begins With Us.</h1>
             <h4>
-              A one-stop Singapore Itinerary Planner, designed to meet your
+              An all-in-one Singapore Itinerary Planner, designed to meet your
               every need.
             </h4>
             <br />
@@ -19,7 +19,7 @@
         </div>
       </div>
     </parallax>
-    <div class="main main-raised">
+    <div class="main main-raised" id="about">
       <div class="section">
         <div class="container">
           <div class="md-layout">
@@ -187,7 +187,7 @@
                         <i class="fab fa-facebook-square"></i>
                       </md-button> -->
                       <md-button
-                        href="javascript:void(0)"
+                        onclick="window.open('https://www.linkedin.com/in/wee-hng-chua-495616221/', '_blank');"
                         class="md-just-icon md-simple"
                       >
                         <i class="fab fa-linkedin"></i>
@@ -216,7 +216,7 @@
 
                     <md-card-actions class="text-center">
                       <md-button
-                        href="javascript:void(0)"
+                        onclick="window.open('https://www.linkedin.com/in/isaac-hay-81a7261a7/', '_blank');"
                         class="md-just-icon md-simple"
                       >
                         <i class="fab fa-linkedin"></i>
@@ -276,7 +276,7 @@
 
                     <md-card-actions class="text-center">
                       <md-button
-                        href="javascript:void(0)"
+                        onclick="window.open('https://www.linkedin.com/in/elton-ng-aa81091b7/', '_blank');"
                         class="md-just-icon md-simple"
                       >
                         <i class="fab fa-linkedin"></i>
@@ -306,7 +306,7 @@
 
                     <md-card-actions class="text-center">
                       <md-button
-                        href="javascript:void(0)"
+                        onclick="window.open('https://www.linkedin.com/in/oliver-gui/', '_blank');"
                         class="md-just-icon md-simple"
                       >
                         <i class="fab fa-linkedin"></i>
@@ -378,24 +378,24 @@
         </div>
       </div> -->
     </div>
-    <test-register />
+    <!-- <test-register />
     <top-header />
-    <test-login />
+    <test-login /> -->
   </div>
 </template>
 
 <script>
-import TestRegister from "./components/TestRegister.vue";
-import TopHeader from "./components/TopHeader.vue";
-import TestLogin from "./components/TestLogin.vue";
+// import TestRegister from "./components/TestRegister.vue";
+// import TopHeader from "./components/TopHeader.vue";
+// import TestLogin from "./components/TestLogin.vue";
 
 export default {
   bodyClass: "landing-page",
-  components: {
-    "test-register": TestRegister,
-    "top-header": TopHeader,
-    "test-login": TestLogin
-  },
+  // components: {
+  //   "test-register": TestRegister,
+  //   "top-header": TopHeader,
+  //   "test-login": TestLogin
+  // },
   props: {
     header: {
       type: String,

@@ -8,12 +8,12 @@
       <nav>
         <ul>
           <li>
-            <a href="#/landing">
+            <a href="#/">
               Wander @ SG
             </a>
           </li>
           <li>
-            <a href="https:///presentation.creative-tim.com">
+            <a href="#/#about">
               About Us
             </a>
           </li>

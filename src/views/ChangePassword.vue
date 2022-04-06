@@ -90,6 +90,9 @@ export default {
           updatePassword(user, newPassword)
             .then(() => {
               console.log("password changed");
+              window.alert(
+                "Password successfully changed!\nYou will now be redirected to the home page :D"
+              );
               this.$router.push({ name: "landing" });
             })
             .catch(error => {
@@ -111,7 +114,7 @@ export default {
   props: {
     header: {
       type: String,
-      default: require("@/assets/img/profile_city.jpg")
+      default: require("@/assets/img/sg4.jpg")
     }
   },
   computed: {

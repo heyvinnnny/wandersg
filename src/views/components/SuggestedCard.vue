@@ -44,7 +44,7 @@
 <script>
 import firebaseApp from "@/firebase.js";
 import { getFirestore } from "firebase/firestore";
-import { doc, setDoc, addDoc, deleteDoc } from "firebase/firestore";
+import { doc, setDoc, addDoc, deleteDoc, updateDoc, getDoc } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
 const db = getFirestore(firebaseApp);
@@ -73,6 +73,19 @@ export default {
     latitude: Number,
     longtitude: Number
   },
+  async created() {
+    const db = getFirestore(firebaseApp);
+    const auth = getAuth();
+    const user = auth.currentUser.email;
+    const docRef = doc(db, "users", user, "wishlist", this.name);
+    const docSnap = await getDoc(docRef);
+    console.log(docSnap.exists());
+    if (docSnap.exists()) {
+      this.liked = true;
+    } else {
+      this.liked = false;
+    }
+  },
   methods: {
     getClass() {
       return {
@@ -89,8 +102,8 @@ export default {
     },
     async addToFav() {
       this.liked = true;
-      const auth = getAuth();
-      const user = auth.currentUser.email;
+      // const auth = getAuth();
+      // const user = auth.currentUser.email;
       // alert("Saving Item: " + this.name);
       try {
         const auth = getAuth();
@@ -117,8 +130,8 @@ export default {
     async removeFromFav() {
       // const auth = getAuth();
       // this.fbuser = auth.currentUser.email;
-      const auth = getAuth();
-      const user = auth.currentUser.email;
+      // const auth = getAuth();
+      // const user = auth.currentUser.email;
       this.liked = false;
       // alert("Removing Item: " + this.name);
       try {
@@ -245,6 +258,7 @@ p {
 .wrapper .bottom .left .buy {
   font-size: 20px;
   padding: 20px;
+  padding-top: 35px;
   color: black;
   transition: transform 0.5s;
 }

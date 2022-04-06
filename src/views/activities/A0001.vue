@@ -24,7 +24,7 @@
             <h1 class="text-uppercase lined mb-4" style="color:palevioletred">
               S.E.A Aquarium
               <md-button
-                style="margin-left:70px; margin-top:10px"
+                style="margin-left:10px; margin-top:10px"
                 v-if="loggedIn"
                 v-bind:class="getClass()"
                 v-on:click="checkIfFav()"

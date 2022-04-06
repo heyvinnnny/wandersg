@@ -27,7 +27,7 @@
                 v-if="loggedIn"
                 v-bind:class="getClass()"
                 v-on:click="checkIfFav()"
-                style="margin-left:525px; margin-top:10px"
+                style="margin-left:10px; margin-top:10px"
                 ><md-icon>favorite</md-icon></md-button
               >
             </h1>

@@ -13,7 +13,7 @@
             </a>
           </li>
           <li>
-            <a href="https:///presentation.creative-tim.com">
+            <a href="#/landing">
               About Us
             </a>
           </li>

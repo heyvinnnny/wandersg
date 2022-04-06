@@ -10,28 +10,38 @@
         :name="a.name"
         :address="a.address"
         :website="a.website"
+        :category="a.category"
       >
       </ImageCard>
-      <!-- display map with markers for all activities -->
-      <!-- <Map
+    </div>
+    <!-- display map with markers for all activities -->
+    <!-- <Map
         v-for="a in activities"
         :key="a.key"
         :latitude="a.latitude"
-        :longitude="a.longitude"
+        :longtitude="a.longtitude"
       ></Map> -->
-      <GMapMap :center="center" :zoom="12" style="width:100%;  height: 450px;">
-        <GMapCluster :zoomOnClick="true">
-          <GMapMarker
-            :key="index"
-            v-for="(m, index) in activities"
-            :position="m.position"
-            :clickable="true"
-            :draggable="true"
-            @click="center = m.position"
-          />
-        </GMapCluster>
-      </GMapMap>
+    <br />
+    <br />
+    <br />
+    <br />
+    <div style="width:1000px; margin:auto;">
+      <gmap-map
+        :zoom="11.75"
+        :center="center"
+        style="width:100%;  height: 600px;"
+      >
+        <gmap-marker
+          :key="index"
+          v-for="(m, index) in markers"
+          :position="m.position"
+        ></gmap-marker>
+      </gmap-map>
     </div>
+
+    <br />
+    <br />
+    <div class="elfsight-app-6b747fdd-7533-418d-bd8b-6bdbe1c1fae6"></div>
   </div>
 </template>
 
@@ -51,18 +61,18 @@ export default {
   data() {
     return {
       activities: [],
-      center: { lat: 1.2789, lng: 103.8536 },
-      markers: []
+      markers: [],
+      center: {
+        lat: 1.29027,
+        lng: 103.851959
+      }
     };
   },
   methods: {
     readData: async function(user) {
       // retrieve a list of saved activities from firebase to display
       const activities = [];
-      // const marker = {
-      //     lat: doc.geometry.location.lat(),
-      //     lng: doc.geometry.location.lng()
-      //   };
+      const markers = [];
       const querySnapshot = await getDocs(
         collection(db, "users", user, "wishlist")
       );
@@ -73,27 +83,25 @@ export default {
           name: doc.data().name,
           address: doc.data().address,
           image: doc.data().image,
-          website: doc.data().website
-          // marker: { position: marker }
+          website: doc.data().website,
+          category: doc.data().category
         });
       });
       this.activities = activities;
+      const querySnapshot2 = await getDocs(
+        collection(db, "users", user, "wishlist")
+      );
+      querySnapshot2.forEach(doc => {
+        const marker = {
+          lat: doc.data().latitude,
+          lng: doc.data().longtitude
+        };
+        markers.push({ position: marker });
+      });
+      this.markers = markers;
     }
   },
 
-  // const querySnapshot2 = await getDocs(
-  //   collection(db, "users", "eltonng123@gmail.com", "wishlist")
-  // );
-  //     querySnapshot2.forEach(doc => {
-  //       const marker = {
-  //         lat: doc.geometry.location.lat(),
-  //         lng: doc.geometry.location.lng()
-  //       };
-  //       markers.push({ position: marker });
-  //     });
-  //     this.markers = markers;
-  //   }
-  // },
   mounted() {
     const auth = getAuth();
     // user email
@@ -104,7 +112,7 @@ export default {
         console.log(this.user);
         this.readData(this.user);
       }
-    })
+    });
   }
 };
 </script>

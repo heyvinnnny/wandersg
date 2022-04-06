@@ -69,7 +69,9 @@ export default {
     objectID: String,
     user: String,
     website: String,
-    isFood: Boolean
+    isFood: Boolean,
+    latitude: Number,
+    longtitude: Number
   },
   methods: {
     getClass() {
@@ -100,7 +102,9 @@ export default {
           category: this.category,
           image: this.image,
           address: this.address,
-          website: this.website
+          website: this.website,
+          latitude: this.latitude,
+          longtitude: this.longtitude
         });
         // console.log(colRef);
         // console.log(name1);
@@ -127,7 +131,9 @@ export default {
           category: this.category,
           image: this.image,
           address: this.address,
-          website: this.website
+          website: this.website,
+          latitude: this.latitude,
+          longtitude: this.longtitude
         });
         console.log(colRef);
         console.log(name1);

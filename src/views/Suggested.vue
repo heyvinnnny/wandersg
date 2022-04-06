@@ -56,6 +56,8 @@
                 :openinghours="item.openinghours"
                 :website="item.website"
                 :isFood="item.isFood"
+                :latitude="item.latitude"
+                :longtitude="item.longtitude"
               ></SuggestedCard>
             </div>
           </template>
@@ -79,6 +81,8 @@
                 :openinghours="item.openinghours"
                 :website="item.website"
                 :isFood="item.isFood"
+                :latitude="item.latitude"
+                :longtitude="item.longtitude"
               ></SuggestedCard>
             </div>
           </template>
@@ -135,10 +139,6 @@ export default {
     return {
       foodItems: [],
       activityItems: [],
-<<<<<<< HEAD
-      foodData: [],
-=======
->>>>>>> 4d4e32fdbea43434ef17d5cdf0bb6d26428c14e3
       user: ""
       // email: getAuth().currentUser.email
       // food: [],
@@ -165,7 +165,9 @@ export default {
           price: i.price,
           preferences: i.preferences,
           website: i.website,
-          isFood: i.isFood
+          isFood: i.isFood,
+          latitude: i.latitude,
+          longtitude: i.longtitude
         });
       });
       this.activityData.forEach(x => {
@@ -182,7 +184,9 @@ export default {
           price: x.price,
           preferences: x.preferences,
           website: x.website,
-          isFood: x.isFood
+          isFood: x.isFood,
+          latitude: i.latitude,
+          longtitude: i.longtitude
         });
       });
     },
@@ -224,7 +228,9 @@ export default {
           price: doc.data().price,
           openinghours: doc.data().openinghours,
           website: doc.data().website,
-          isFood: doc.data().isFood
+          isFood: doc.data().isFood,
+          latitude: doc.data().latitude,
+          longtitude: doc.data().longtitude
         });
         // console.log(doc.data());
       });
@@ -249,7 +255,9 @@ export default {
           price: doc.data().price,
           openinghours: doc.data().openinghours,
           website: doc.data().website,
-          isFood: doc.data().isFood
+          isFood: doc.data().isFood,
+          latitude: doc.data().latitude,
+          longtitude: doc.data().longtitude
         });
         // console.log(doc.data());
       });

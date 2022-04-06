@@ -43,6 +43,7 @@
           <md-button class="md-primary" v-on:click="redirect(website)">
             Reserve
           </md-button>
+          <span class="text-span">{{ category }}</span>
         </div>
       </div>
       <div class="right">
@@ -73,7 +74,8 @@ export default {
     image: String,
     name: String,
     address: String,
-    website: String
+    website: String,
+    category: String
   },
   methods: {
     redirect(url) {
@@ -196,12 +198,17 @@ export default {
   padding-left: 20px;
   padding-top: 8px;
   float: left;
-  width: 80%;
+  width: 85%;
   background: #f1f1f1;
 }
 
 .wrapper .bottom .left .details .txt_products {
-  font-size: 20px;
+  font-size: 18px;
+  background: #f1f1f1;
+}
+
+.wrapper .bottom .left .details p {
+  font-size: 12px;
   background: #f1f1f1;
 }
 
@@ -244,5 +251,20 @@ p {
 
 .wrapper .bottom .right .buy:hover i {
   transform: scale(1.5);
+}
+
+.text-span {
+  padding-right: 10px;
+  padding-left: 10px;
+  line-height: 22px;
+  padding: 0 7px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  border-radius: 2em;
+  background-color: lightgrey;
+  position: fixed;
+  bottom: 20px;
+  left: 150px;
 }
 </style>

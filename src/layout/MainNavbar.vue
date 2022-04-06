@@ -2,7 +2,7 @@
   <md-toolbar
     id="toolbar"
     md-elevation="0"
-    class="md-transparent md-absolute"
+    class="md-white md-absolute"
     :class="extraNavClasses"
     :color-on-scroll="colorOnScroll"
   >
@@ -77,7 +77,7 @@
                 v-if="loggedIn"
               >
                 <i class="material-icons">explore</i>
-                <router-link :to="'/suggested'">Suggested</router-link>
+                <a href="#/suggested">Suggested</a>
               </md-list-item>
 
               <!-- end of suggested item -->
@@ -89,7 +89,7 @@
                 v-if="loggedIn"
               >
                 <i class="material-icons">bookmark</i>
-                <router-link :to="'/wishlist'">WishList</router-link>
+                <a href="#/wishlist">WishList</a>
               </md-list-item>
               <!-- end of saved item -->
 
@@ -183,43 +183,6 @@
                   </div>
                 </a>
               </li>
-
-              <!-- twitter icon -->
-              <!-- <md-list-item
-                href="https://twitter.com/CreativeTim"
-                target="_blank"
-              >
-                <i class="fab fa-twitter"></i>
-                <p class="hidden-lg">Twitter</p>
-                <md-tooltip md-direction="bottom"
-                  >Follow us on Twitter</md-tooltip
-                >
-              </md-list-item> -->
-              <!-- end of twitter icon -->
-              <!-- facebook icon -->
-              <!-- <md-list-item
-                href="https://www.facebook.com/CreativeTim"
-                target="_blank"
-              >
-                <i class="fab fa-facebook-square"></i>
-                <p class="hidden-lg">Facebook</p>
-                <md-tooltip md-direction="bottom"
-                  >Like us on Facebook</md-tooltip
-                >
-              </md-list-item> -->
-              <!-- end of facebook icon -->
-              <!-- instagram icon -->
-              <!-- <md-list-item
-                href="https://www.instagram.com/CreativeTimOfficial"
-                target="_blank"
-              >
-                <i class="fab fa-instagram"></i>
-                <p class="hidden-lg">Instagram</p>
-                <md-tooltip md-direction="bottom"
-                  >Follow us on Instagram</md-tooltip
-                >
-              </md-list-item> -->
-              <!-- end of instagram icon -->
             </md-list>
           </div>
         </div>
@@ -279,10 +242,6 @@ export default {
       extraNavClasses: "",
       toggledClass: false,
       loggedIn: false
-      // img: {
-      //   type: String,
-      //   default: require("@/assets/img/faces/isaac.jpg")
-      // }
     };
   },
   // computed: {

@@ -255,7 +255,6 @@ export default {
       loggedIn: false,
       liked: false,
 
-
       center: {
         lat: 1.29027,
         lng: 103.851959

@@ -334,9 +334,6 @@ export default {
     },
     async addToFav() {
       this.liked = true;
-      // const auth = getAuth();
-      // const user = auth.currentUser.email;
-      // alert("Saving Item: " + this.name);
       try {
         const auth = getAuth();
         const user = auth.currentUser.email;
@@ -357,16 +354,10 @@ export default {
       }
     },
     async removeFromFav() {
-      // const auth = getAuth();
-      // this.fbuser = auth.currentUser.email;
-      // const auth = getAuth();
-      // const user = auth.currentUser.email;
       this.liked = false;
-      // alert("Removing Item: " + this.name);
       try {
         const auth = getAuth();
         const user = auth.currentUser.email;
-        // const colRef = collection(db, "users", "eltonng123@gmail.com");
         await deleteDoc(doc(db, "users", user, "wishlist", "S.E.A Aquarium"));
       } catch (error) {
         console.error("Error adding document: ", error);

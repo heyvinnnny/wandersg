@@ -129,8 +129,8 @@
                 </h3>
                 <md-button
                   v-if="loggedIn"
-                v-bind:class="getClass()"
-                v-on:click="checkIfFav()"
+                  v-bind:class="getClass()"
+                  v-on:click="checkIfFav()"
                   style="margin:auto;"
                   ><md-icon>favorite</md-icon></md-button
                 >

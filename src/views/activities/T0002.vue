@@ -205,7 +205,6 @@ import { getAuth } from "firebase/auth";
 
 const db = getFirestore(firebaseApp);
 
-
 export default {
   components: {
     //JavascriptComponents

@@ -104,7 +104,7 @@ export default {
         console.log(this.user);
         this.readData(this.user);
       }
-    })
+    });
   }
 };
 </script>

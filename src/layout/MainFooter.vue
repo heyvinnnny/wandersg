@@ -31,7 +31,10 @@
       </nav>
       <div class="copyright">
         &copy; {{ year }}, made with <md-icon>favorite</md-icon> by
-        <a href="https://github.com/heyvinnnny/wandersg" target="_blank">Wander @ SG <br> BT3103 Group L1-14</a>
+        <a href="https://github.com/heyvinnnny/wandersg" target="_blank"
+          >Wander @ SG <br />
+          BT3103 Group L1-14</a
+        >
       </div>
     </div>
   </footer>

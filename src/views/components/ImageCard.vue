@@ -89,8 +89,7 @@ export default {
       console.log("deleted", this.name);
       window.location.reload();
     }
-  },
-
+  }
 };
 </script>
 

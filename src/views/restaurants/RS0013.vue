@@ -6,7 +6,9 @@
           <div class="image-wrapper">
             <div class="brand">
               <h1 style="color:white;">Description</h1>
-              <h3 style="color:white;">Information of your favourite activity and restaurant.</h3>
+              <h3 style="color:white;">
+                Information of your favourite activity and restaurant.
+              </h3>
             </div>
           </div>
         </div>
@@ -15,142 +17,159 @@
 
     <div class="main main-raised">
       <div class="section section-basic">
-
         <!-- RESTAURANT CAROUSEL SECTION-->
 
-      
+        <div class="md-layout">
+          <div class="md-layout-item md-size-66 mx-auto md-small-size-100">
+            <h1 class="text-uppercase lined mb-4" style="color:palevioletred">
+              Al Forno Tapas and Wine Bar
+              <md-button
+                class="md-primary md-just-icon md-round"
+                style="margin-left:525px; margin-top:10px"
+                ><md-icon>favorite</md-icon></md-button
+              >
+            </h1>
 
-      <div class="md-layout">
-        <div class="md-layout-item md-size-66 mx-auto md-small-size-100">
-          <h1 class="text-uppercase lined mb-4" style="color:palevioletred">Al Forno Tapas and Wine Bar
-            <md-button class="md-primary md-just-icon md-round" style="margin-left:525px; margin-top:10px"><md-icon>favorite</md-icon></md-button>
-          </h1>
-          
-          <md-card>
-            <carousel
-              :per-page="1"
-              loop
-              :speed="700"
-              autoplay
-              :autoplay-timeout="5000"
-              :mouse-drag="false"
-              navigationEnabled
-              navigationNextLabel="<i class='material-icons'>keyboard_arrow_right</i>"
-              navigationPrevLabel="<i class='material-icons'>keyboard_arrow_left</i>"
-            >
-              <slide>
-                <div class="carousel-caption">
-                  <h4>
-                   
-                  </h4>
-                </div>
-                <img src="@/assets/res-img/rs0013-1.jpg" alt="carousel1" />
-              </slide>
-              <slide>
-                <div class="carousel-caption">
-                  <h4>
-                   
-                  </h4>
-                </div>
-                <img src="@/assets/res-img/rs0013-2.jpg" alt="carousel2" />
-              </slide>
-              <slide>
-                <div class="carousel-caption">
-                  <h4>
-                   
-                  </h4>
-                </div>
-                <img src="@/assets/res-img/rs0013-3.jpg" alt="carousel2" />
-              </slide>
-            </carousel>
-          </md-card>
+            <md-card>
+              <carousel
+                :per-page="1"
+                loop
+                :speed="700"
+                autoplay
+                :autoplay-timeout="5000"
+                :mouse-drag="false"
+                navigationEnabled
+                navigationNextLabel="<i class='material-icons'>keyboard_arrow_right</i>"
+                navigationPrevLabel="<i class='material-icons'>keyboard_arrow_left</i>"
+              >
+                <slide>
+                  <div class="carousel-caption">
+                    <h4></h4>
+                  </div>
+                  <img src="@/assets/res-img/rs0013-1.jpg" alt="carousel1" />
+                </slide>
+                <slide>
+                  <div class="carousel-caption">
+                    <h4></h4>
+                  </div>
+                  <img src="@/assets/res-img/rs0013-2.jpg" alt="carousel2" />
+                </slide>
+                <slide>
+                  <div class="carousel-caption">
+                    <h4></h4>
+                  </div>
+                  <img src="@/assets/res-img/rs0013-3.jpg" alt="carousel2" />
+                </slide>
+              </carousel>
+            </md-card>
+          </div>
         </div>
-      </div>
 
-      <br>
-      
-      <!-- DESCRIPTION SECTION        -->
-      <div class="pb-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8">
-              <h3 class="text-uppercase lined mb-4" style="color:#ff286c">Restaurant Information</h3>
-              <p class="text-muted">
-               With all the Italian options in Singapore, it's no wonder the competition is stiff enough to see many a restaurant come and go, but Al Forno has stood the test of time and tastiness with a beautifully simple philosophy. Take the freshest Italian ingredients, make dishes that people know and love, and the diners will come. And while it's now a common claim to source ingredients like vine ripened whole tomatoes and peppery parmigiana directly from Italy, Al Forno was the first to do so, with exclusive imports since 1995. That means the dishes here have been tasted, tweaked and perfected so that you can't go wrong with anything on the diligently genuine, yet approachable menu.
+        <br />
 
-              </p>
-              
-            </div>
-            <br>
-            <div class="col-lg-4">
-              <h3 class="text-uppercase lined mb-4" style="color:#ff286c">Information</h3>
-              <h4 class="h5 text-uppercase">Cuisine</h4>
-              <p class="text-muted text-sm">Bar, Italian, All-Day Breakfast, Vegetarian Friendly</p>
-              <h4 class="h5 text-uppercase">Hours</h4>
-              <p class="text-muted text-sm">Mon-Thu: 5-10:30pm<br>
-Fri-Sat: 3-10:30pm<br>
-Sun: 12-10pm</p>
-              <h4 class="h5 text-uppercase">Good for: </h4>
-              <p class="text-muted text-sm">Al Fresco, Business Meetings, Casual Dining, Kid Friendly, Drinks, Pet Friendly, Private Functions, Large Parties (16+)</p>
-              <h4 class="h5 text-uppercase">Location</h4>
-              <p class="text-muted text-sm">East Coast</p>
-              <h4 class="h5 text-uppercase">Address</h4>
-              <p class="text-muted text-sm">693A East Coast Road <br>
-Singapore (459058)
+        <!-- DESCRIPTION SECTION        -->
+        <div class="pb-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8">
+                <h3 class="text-uppercase lined mb-4" style="color:#ff286c">
+                  Restaurant Information
+                </h3>
+                <p class="text-muted">
+                  With all the Italian options in Singapore, it's no wonder the
+                  competition is stiff enough to see many a restaurant come and
+                  go, but Al Forno has stood the test of time and tastiness with
+                  a beautifully simple philosophy. Take the freshest Italian
+                  ingredients, make dishes that people know and love, and the
+                  diners will come. And while it's now a common claim to source
+                  ingredients like vine ripened whole tomatoes and peppery
+                  parmigiana directly from Italy, Al Forno was the first to do
+                  so, with exclusive imports since 1995. That means the dishes
+                  here have been tasted, tweaked and perfected so that you can't
+                  go wrong with anything on the diligently genuine, yet
+                  approachable menu.
+                </p>
+              </div>
+              <br />
+              <div class="col-lg-4">
+                <h3 class="text-uppercase lined mb-4" style="color:#ff286c">
+                  Information
+                </h3>
+                <h4 class="h5 text-uppercase">Cuisine</h4>
+                <p class="text-muted text-sm">
+                  Bar, Italian, All-Day Breakfast, Vegetarian Friendly
+                </p>
+                <h4 class="h5 text-uppercase">Hours</h4>
+                <p class="text-muted text-sm">
+                  Mon-Thu: 5-10:30pm<br />
+                  Fri-Sat: 3-10:30pm<br />
+                  Sun: 12-10pm
+                </p>
+                <h4 class="h5 text-uppercase">Good for:</h4>
+                <p class="text-muted text-sm">
+                  Al Fresco, Business Meetings, Casual Dining, Kid Friendly,
+                  Drinks, Pet Friendly, Private Functions, Large Parties (16+)
+                </p>
+                <h4 class="h5 text-uppercase">Location</h4>
+                <p class="text-muted text-sm">East Coast</p>
+                <h4 class="h5 text-uppercase">Address</h4>
+                <p class="text-muted text-sm">
+                  693A East Coast Road <br />
+                  Singapore (459058)
                 </p>
 
-                <br>
-              <h3 class="text-uppercase lined mb-4" style="color:#ff286c">Favourite</h3>
-              <md-button class="md-primary md-just-icon md-round" style="margin:auto;"><md-icon>favorite</md-icon></md-button>
+                <br />
+                <h3 class="text-uppercase lined mb-4" style="color:#ff286c">
+                  Favourite
+                </h3>
+                <md-button
+                  class="md-primary md-just-icon md-round"
+                  style="margin:auto;"
+                  ><md-icon>favorite</md-icon></md-button
+                >
+              </div>
             </div>
           </div>
         </div>
 
-        
+        <br />
+        <br />
 
-      </div>
-      
+        <!-- Google API -->
 
-      <br>
-      <br>
+        <div style="width:1000px; margin:auto;">
+          <div>
+            <label>
+              <gmap-autocomplete
+                @place_changed="initMarker"
+                value="Al Forno Tapas and Wine Bar"
+                readonly
+              ></gmap-autocomplete>
 
-      <!-- Google API -->
-
-      <div style="width:1000px; margin:auto;">
-        <div>
-          <label>
-            <gmap-autocomplete @place_changed="initMarker" value="Al Forno Tapas and Wine Bar" readonly></gmap-autocomplete>
-
-            <button @click="addLocationMarker">Add</button>
-          </label>
-          <br/>
-    
-        </div>
-        <br>
-        <gmap-map
-            :zoom="14"    
+              <button @click="addLocationMarker">Add</button>
+            </label>
+            <br />
+          </div>
+          <br />
+          <gmap-map
+            :zoom="14"
             :center="center"
             style="width:100%;  height: 600px;"
           >
-          <gmap-marker
-            :key="index"
-            v-for="(m, index) in locationMarkers"
-            :position="m.position"
-            @click="center=m.position"
-          ></gmap-marker>
-        </gmap-map>
+            <gmap-marker
+              :key="index"
+              v-for="(m, index) in locationMarkers"
+              :position="m.position"
+              @click="center = m.position"
+            ></gmap-marker>
+          </gmap-map>
+        </div>
       </div>
-
-
-          
-        
     </div>
   </div>
-</div>
 </template>
 
 <script>
-
 //import BasicElements from "./components/BasicElementsSection";
 // import Navigation from "./components/NavigationSection";
 // import SmallNavigation from "./components/SmallNavigationSection";
@@ -208,8 +227,8 @@ export default {
       password: null,
       leafShow: false,
 
-      center: { 
-        lat: 1.290270,
+      center: {
+        lat: 1.29027,
         lng: 103.851959
       },
       locationMarkers: [],
@@ -271,12 +290,7 @@ export default {
     window.removeEventListener("resize", this.leafActive);
   }
 };
-
-
-
-
 </script>
-
 
 <style scoped>
 .section-download {
@@ -302,7 +316,7 @@ export default {
 }
 
 .lined::after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   bottom: 0;
@@ -321,21 +335,31 @@ export default {
 }
 
 .text-sm-start {
-    text-align: left !important;
-  }
-  .text-sm-end {
-    text-align: right !important;
-  }
-  .text-sm-center {
-    text-align: center !important;
-  }
+  text-align: left !important;
+}
+.text-sm-end {
+  text-align: right !important;
+}
+.text-sm-center {
+  text-align: center !important;
+}
 
 .text-sm {
   font-size: 0.9rem !important;
 }
 
-
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-weight: 700;
@@ -458,8 +482,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   background-color: #4fbfa8;
   border: 0;
   border-radius: 1rem;
-  -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  -webkit-transition: background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
   -webkit-appearance: none;
   appearance: none;
 }
@@ -514,5 +540,4 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-
 </style>

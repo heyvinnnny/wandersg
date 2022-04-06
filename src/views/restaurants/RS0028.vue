@@ -6,7 +6,9 @@
           <div class="image-wrapper">
             <div class="brand">
               <h1 style="color:white;">Description</h1>
-              <h3 style="color:white;">Information of your favourite activity and restaurant.</h3>
+              <h3 style="color:white;">
+                Information of your favourite activity and restaurant.
+              </h3>
             </div>
           </div>
         </div>
@@ -15,157 +17,176 @@
 
     <div class="main main-raised">
       <div class="section section-basic">
-
         <!-- RESTAURANT CAROUSEL SECTION-->
 
-      
+        <div class="md-layout">
+          <div class="md-layout-item md-size-66 mx-auto md-small-size-100">
+            <h1 class="text-uppercase lined mb-4" style="color:palevioletred">
+              béni Singapore
+              <md-button
+                class="md-primary md-just-icon md-round"
+                style="margin-left:525px; margin-top:10px"
+                ><md-icon>favorite</md-icon></md-button
+              >
+            </h1>
 
-      <div class="md-layout">
-        <div class="md-layout-item md-size-66 mx-auto md-small-size-100">
-          <h1 class="text-uppercase lined mb-4" style="color:palevioletred">béni Singapore
-            <md-button class="md-primary md-just-icon md-round" style="margin-left:525px; margin-top:10px"><md-icon>favorite</md-icon></md-button>
-          </h1>
-          
-          <md-card>
-            <carousel
-              :per-page="1"
-              loop
-              :speed="700"
-              autoplay
-              :autoplay-timeout="5000"
-              :mouse-drag="false"
-              navigationEnabled
-              navigationNextLabel="<i class='material-icons'>keyboard_arrow_right</i>"
-              navigationPrevLabel="<i class='material-icons'>keyboard_arrow_left</i>"
-            >
-              <slide>
-                <div class="carousel-caption">
-                  <h4>
-                    
-                  </h4>
-                </div>
-                <img src="@/assets/res-img/rs0028-1.jpg" alt="carousel1" />
-              </slide>
-              <slide>
-                <div class="carousel-caption">
-                  <h4>
-                   
-                  </h4>
-                </div>
-                <img src="@/assets/res-img/rs0028-2.jpg" alt="carousel2" />
-              </slide>
-              <slide>
-                <div class="carousel-caption">
-                  <h4>
-                    
-                  </h4>
-                </div>
-                <img src="@/assets/res-img/rs0028-3.jpg" alt="carousel2" />
-              </slide>
-              <slide>
-                <div class="carousel-caption">
-                  <h4>
-                    
-                  </h4>
-                </div>
-                <img src="@/assets/res-img/rs0028-4.jpg" alt="carousel2" />
-              </slide>
-            </carousel>
-          </md-card>
+            <md-card>
+              <carousel
+                :per-page="1"
+                loop
+                :speed="700"
+                autoplay
+                :autoplay-timeout="5000"
+                :mouse-drag="false"
+                navigationEnabled
+                navigationNextLabel="<i class='material-icons'>keyboard_arrow_right</i>"
+                navigationPrevLabel="<i class='material-icons'>keyboard_arrow_left</i>"
+              >
+                <slide>
+                  <div class="carousel-caption">
+                    <h4></h4>
+                  </div>
+                  <img src="@/assets/res-img/rs0028-1.jpg" alt="carousel1" />
+                </slide>
+                <slide>
+                  <div class="carousel-caption">
+                    <h4></h4>
+                  </div>
+                  <img src="@/assets/res-img/rs0028-2.jpg" alt="carousel2" />
+                </slide>
+                <slide>
+                  <div class="carousel-caption">
+                    <h4></h4>
+                  </div>
+                  <img src="@/assets/res-img/rs0028-3.jpg" alt="carousel2" />
+                </slide>
+                <slide>
+                  <div class="carousel-caption">
+                    <h4></h4>
+                  </div>
+                  <img src="@/assets/res-img/rs0028-4.jpg" alt="carousel2" />
+                </slide>
+              </carousel>
+            </md-card>
+          </div>
         </div>
-      </div>
 
-      <br>
-      
-      <!-- DESCRIPTION SECTION        -->
-      <div class="pb-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8">
-              <h3 class="text-uppercase lined mb-4" style="color:#ff286c">Restaurant Information</h3>
-              <p class="text-muted">
-               béni, a French term which translates to "blessing", offers one of the most exclusive epicurean experiences available in Singapore, showcasing fine authentic French cuisine with a Japanese touch. Helmed by Executive Chef Kenji Yamanaka, who has built up a formidable gamut of experience with a portfolio that includes stints at three-star Michelin restaurants Georges Blanc in Vonnas, France, and LOsier in Ginza, Tokyo, this charming eatery has earned several accolades including the prestigious 1-Michelin Star.
+        <br />
 
-              </p>
-              <p class="text-muted">Chef Kenji's thoughtfully crafted discovery menus feature fresh produce, with meats and fish sourced and flown in from artisanal producers in Japan, and seasonal fresh vegetables from France. Highlights include Kenji's signature Amadai dish. The Amadai fish from Kyoto Prefecture is cooked in the traditional "Matsukasayaki" style where the scales are left on the fish and fried to a crisp resembling pine cones. This gives the fish a very unique combination of crispy and tender textures. While the cooking method remains the same, Chef Kenji comes up with new flavours to pair the Amadai with, based on the season, a reflection of his dedication to the craft.
-
-              </p>
-            </div>
-            <br>
-            <div class="col-lg-4">
-              <h3 class="text-uppercase lined mb-4" style="color:#ff286c">Information</h3>
-              <h4 class="h5 text-uppercase">Cuisine</h4>
-              <p class="text-muted text-sm">Japanese, French</p>
-              <h4 class="h5 text-uppercase">Hours</h4>
-              <p class="text-muted text-sm">Mon-Sat: 12-3pm, 7-10pm <br>
-Closed Sunday<br></p>
-              <h4 class="h5 text-uppercase">Good for: </h4>
-              <p class="text-muted text-sm">Business Meetings, Fine Dining, Private Functions, Quiet Dinner, Romantic Dates</p>
-              <h4 class="h5 text-uppercase">Location</h4>
-              <p class="text-muted text-sm">Orchard</p>
-              <h4 class="h5 text-uppercase">Address</h4>
-              <p class="text-muted text-sm">333A Orchard Road<br>
-#02-37<br>
-Mandarin Gallery<br>
-Singapore (238897)<br>
+        <!-- DESCRIPTION SECTION        -->
+        <div class="pb-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8">
+                <h3 class="text-uppercase lined mb-4" style="color:#ff286c">
+                  Restaurant Information
+                </h3>
+                <p class="text-muted">
+                  béni, a French term which translates to "blessing", offers one
+                  of the most exclusive epicurean experiences available in
+                  Singapore, showcasing fine authentic French cuisine with a
+                  Japanese touch. Helmed by Executive Chef Kenji Yamanaka, who
+                  has built up a formidable gamut of experience with a portfolio
+                  that includes stints at three-star Michelin restaurants
+                  Georges Blanc in Vonnas, France, and LOsier in Ginza, Tokyo,
+                  this charming eatery has earned several accolades including
+                  the prestigious 1-Michelin Star.
                 </p>
-              <h3 class="text-uppercase lined mb-4" style="color:#ff286c">Favourite</h3>
-              <md-button class="md-primary md-just-icon md-round" style="margin:auto;"><md-icon>favorite</md-icon></md-button>
+                <p class="text-muted">
+                  Chef Kenji's thoughtfully crafted discovery menus feature
+                  fresh produce, with meats and fish sourced and flown in from
+                  artisanal producers in Japan, and seasonal fresh vegetables
+                  from France. Highlights include Kenji's signature Amadai dish.
+                  The Amadai fish from Kyoto Prefecture is cooked in the
+                  traditional "Matsukasayaki" style where the scales are left on
+                  the fish and fried to a crisp resembling pine cones. This
+                  gives the fish a very unique combination of crispy and tender
+                  textures. While the cooking method remains the same, Chef
+                  Kenji comes up with new flavours to pair the Amadai with,
+                  based on the season, a reflection of his dedication to the
+                  craft.
+                </p>
+              </div>
+              <br />
+              <div class="col-lg-4">
+                <h3 class="text-uppercase lined mb-4" style="color:#ff286c">
+                  Information
+                </h3>
+                <h4 class="h5 text-uppercase">Cuisine</h4>
+                <p class="text-muted text-sm">Japanese, French</p>
+                <h4 class="h5 text-uppercase">Hours</h4>
+                <p class="text-muted text-sm">
+                  Mon-Sat: 12-3pm, 7-10pm <br />
+                  Closed Sunday<br />
+                </p>
+
+                <h4 class="h5 text-uppercase">Good for:</h4>
+                <p class="text-muted text-sm">
+                  Business Meetings, Fine Dining, Private Functions, Quiet
+                  Dinner, Romantic Dates
+                </p>
+                <h4 class="h5 text-uppercase">Location</h4>
+                <p class="text-muted text-sm">Orchard</p>
+                <h4 class="h5 text-uppercase">Address</h4>
+                <p class="text-muted text-sm">
+                  333A Orchard Road<br />
+                  #02-37<br />
+                  Mandarin Gallery<br />
+                  Singapore (238897)<br />
+                </p>
+                <h3 class="text-uppercase lined mb-4" style="color:#ff286c">
+                  Favourite
+                </h3>
+                <md-button
+                  class="md-primary md-just-icon md-round"
+                  style="margin:auto;"
+                  ><md-icon>favorite</md-icon></md-button
+                >
+              </div>
             </div>
           </div>
         </div>
 
-        
+        <br />
+        <br />
 
-      </div>
-      
+        <!-- Google API -->
 
-      <br>
-      <br>
+        <div style="width:1000px; margin:auto;">
+          <div>
+            <label>
+              <gmap-autocomplete
+                @place_changed="initMarker"
+                value="béni Singapore"
+                readonly
+              ></gmap-autocomplete>
 
-      <!-- Google API -->
-
-      <div style="width:1000px; margin:auto;">
-        <div>
-          <label>
-            <gmap-autocomplete @place_changed="initMarker" value="béni Singapore" readonly></gmap-autocomplete>
-
-            <button @click="addLocationMarker">Add</button>
-          </label>
-          <br/>
-    
-        </div>
-        <br>
-        <gmap-map
-            :zoom="14"    
+              <button @click="addLocationMarker">Add</button>
+            </label>
+            <br />
+          </div>
+          <br />
+          <gmap-map
+            :zoom="14"
             :center="center"
             style="width:100%;  height: 600px;"
           >
-          <gmap-marker
-            :key="index"
-            v-for="(m, index) in locationMarkers"
-            :position="m.position"
-            @click="center=m.position"
-          ></gmap-marker>
-        </gmap-map>
+            <gmap-marker
+              :key="index"
+              v-for="(m, index) in locationMarkers"
+              :position="m.position"
+              @click="center = m.position"
+            ></gmap-marker>
+          </gmap-map>
+        </div>
       </div>
-
-
-          
-        
     </div>
   </div>
-</div>
 </template>
 
 <script>
-
-
-
 export default {
-  components: {
-    
-  },
+  components: {},
   name: "RS0028",
   bodyClass: "RS0028-page",
   props: {
@@ -173,7 +194,7 @@ export default {
       type: String,
       default: require("@/assets/img/bg7.jpg")
     },
-   
+
     signup: {
       type: String,
       default: require("@/assets/img/city.jpg")
@@ -194,8 +215,8 @@ export default {
       password: null,
       leafShow: false,
 
-      center: { 
-        lat: 1.290270,
+      center: {
+        lat: 1.29027,
         lng: 103.851959
       },
       locationMarkers: [],
@@ -257,12 +278,7 @@ export default {
     window.removeEventListener("resize", this.leafActive);
   }
 };
-
-
-
-
 </script>
-
 
 <style scoped>
 .section-download {
@@ -288,7 +304,7 @@ export default {
 }
 
 .lined::after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   bottom: 0;
@@ -307,21 +323,31 @@ export default {
 }
 
 .text-sm-start {
-    text-align: left !important;
-  }
-  .text-sm-end {
-    text-align: right !important;
-  }
-  .text-sm-center {
-    text-align: center !important;
-  }
+  text-align: left !important;
+}
+.text-sm-end {
+  text-align: right !important;
+}
+.text-sm-center {
+  text-align: center !important;
+}
 
 .text-sm {
   font-size: 0.9rem !important;
 }
 
-
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-weight: 700;
@@ -444,8 +470,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   background-color: #4fbfa8;
   border: 0;
   border-radius: 1rem;
-  -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  -webkit-transition: background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
   -webkit-appearance: none;
   appearance: none;
 }
@@ -500,5 +528,4 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-
 </style>

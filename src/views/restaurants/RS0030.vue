@@ -6,7 +6,9 @@
           <div class="image-wrapper">
             <div class="brand">
               <h1 style="color:white;">Description</h1>
-              <h3 style="color:white;">Information of your favourite activity and restaurant.</h3>
+              <h3 style="color:white;">
+                Information of your favourite activity and restaurant.
+              </h3>
             </div>
           </div>
         </div>
@@ -15,148 +17,166 @@
 
     <div class="main main-raised">
       <div class="section section-basic">
-
         <!-- RESTAURANT CAROUSEL SECTION-->
 
-      
+        <div class="md-layout">
+          <div class="md-layout-item md-size-66 mx-auto md-small-size-100">
+            <h1 class="text-uppercase lined mb-4" style="color:palevioletred">
+              Restaurant Labyrinth
+              <md-button
+                class="md-primary md-just-icon md-round"
+                style="margin-left:525px; margin-top:10px"
+                ><md-icon>favorite</md-icon></md-button
+              >
+            </h1>
 
-      <div class="md-layout">
-        <div class="md-layout-item md-size-66 mx-auto md-small-size-100">
-          <h1 class="text-uppercase lined mb-4" style="color:palevioletred">Restaurant Labyrinth
-            <md-button class="md-primary md-just-icon md-round" style="margin-left:525px; margin-top:10px"><md-icon>favorite</md-icon></md-button>
-          </h1>
-          
-          <md-card>
-            <carousel
-              :per-page="1"
-              loop
-              :speed="700"
-              autoplay
-              :autoplay-timeout="5000"
-              :mouse-drag="false"
-              navigationEnabled
-              navigationNextLabel="<i class='material-icons'>keyboard_arrow_right</i>"
-              navigationPrevLabel="<i class='material-icons'>keyboard_arrow_left</i>"
-            >
-              <slide>
-                <div class="carousel-caption">
-                  <h4>
-                    
-                  </h4>
-                </div>
-                <img src="@/assets/res-img/rs0030-1.jpg" alt="carousel1" />
-              </slide>
-              <slide>
-                <div class="carousel-caption">
-                  <h4>
-                    
-                  </h4>
-                </div>
-                <img src="@/assets/res-img/rs0030-2.jpg" alt="carousel2" />
-              </slide>
-            </carousel>
-          </md-card>
+            <md-card>
+              <carousel
+                :per-page="1"
+                loop
+                :speed="700"
+                autoplay
+                :autoplay-timeout="5000"
+                :mouse-drag="false"
+                navigationEnabled
+                navigationNextLabel="<i class='material-icons'>keyboard_arrow_right</i>"
+                navigationPrevLabel="<i class='material-icons'>keyboard_arrow_left</i>"
+              >
+                <slide>
+                  <div class="carousel-caption">
+                    <h4></h4>
+                  </div>
+                  <img src="@/assets/res-img/rs0030-1.jpg" alt="carousel1" />
+                </slide>
+                <slide>
+                  <div class="carousel-caption">
+                    <h4></h4>
+                  </div>
+                  <img src="@/assets/res-img/rs0030-2.jpg" alt="carousel2" />
+                </slide>
+              </carousel>
+            </md-card>
+          </div>
         </div>
-      </div>
 
-      <br>
-      
-      <!-- DESCRIPTION SECTION        -->
-      <div class="pb-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8">
-              <h3 class="text-uppercase lined mb-4" style="color:#ff286c">Restaurant Information</h3>
-              <p class="text-muted">
-                The idea for Restaurant Labyrinth came about when Chef LG Han realised that whilst Singapore is a bastion of great street food, the quality of dishes vary widely from hawker centre to hawker centre. Thus, Restaurant Labyrinth was conceptualized to provide a consistent level of top-notch, elevated Singaporean street food under one roof, complete with an edgy ambience.
+        <br />
 
-              </p>
-              <p class="text-muted">Starting with a menu featuring some of Chef LG’s most-loved local dishes, diners will now be able to indulge in his signature “Ang Moh” Chicken Rice, the recipe of which was left to him by his beloved late grandmother, as well as Laksa featuring Local Green Lipped Mussels stuffed with homemade Fish Paste, Crab Meat Her Geow and Grilled Argentinian Red Prawns in a luscious broth.
-
-              </p>
-            </div>
-            <br>
-            <div class="col-lg-4">
-              <h3 class="text-uppercase lined mb-4" style="color:#ff286c">Information</h3>
-              <h4 class="h5 text-uppercase">Cuisine</h4>
-              <p class="text-muted text-sm">Local, Southeast Asian, Modern Asian</p>
-              <h4 class="h5 text-uppercase">Hours</h4>
-              <p class="text-muted text-sm">Wed: 6:30-10:30pm (Last Seating: 8pm) <br>
-Thu-Sun: 12-2:30pm (Last Order: 1pm), 6:30-10:30pm (Last Seating: 8pm) <br>
-Closed Monday and Tuesday</p>
-              <h4 class="h5 text-uppercase">Good for: </h4>
-              <p class="text-muted text-sm">Business Meetings, Fine Dining, Drinks, Private Functions, Romantic Dates</p>
-              <h4 class="h5 text-uppercase">Location</h4>
-              <p class="text-muted text-sm">Marina Bay, Promenade, Esplanade</p>
-              <h4 class="h5 text-uppercase">Address</h4>
-              <p class="text-muted text-sm">8 Raffles Avenue <br>
-                #02-23 <br>
-                Esplanade Mall <br>
-                Singapore (039802)<br>
+        <!-- DESCRIPTION SECTION        -->
+        <div class="pb-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8">
+                <h3 class="text-uppercase lined mb-4" style="color:#ff286c">
+                  Restaurant Information
+                </h3>
+                <p class="text-muted">
+                  The idea for Restaurant Labyrinth came about when Chef LG Han
+                  realised that whilst Singapore is a bastion of great street
+                  food, the quality of dishes vary widely from hawker centre to
+                  hawker centre. Thus, Restaurant Labyrinth was conceptualized
+                  to provide a consistent level of top-notch, elevated
+                  Singaporean street food under one roof, complete with an edgy
+                  ambience.
+                </p>
+                <p class="text-muted">
+                  Starting with a menu featuring some of Chef LG’s most-loved
+                  local dishes, diners will now be able to indulge in his
+                  signature “Ang Moh” Chicken Rice, the recipe of which was left
+                  to him by his beloved late grandmother, as well as Laksa
+                  featuring Local Green Lipped Mussels stuffed with homemade
+                  Fish Paste, Crab Meat Her Geow and Grilled Argentinian Red
+                  Prawns in a luscious broth.
+                </p>
+              </div>
+              <br />
+              <div class="col-lg-4">
+                <h3 class="text-uppercase lined mb-4" style="color:#ff286c">
+                  Information
+                </h3>
+                <h4 class="h5 text-uppercase">Cuisine</h4>
+                <p class="text-muted text-sm">
+                  Local, Southeast Asian, Modern Asian
+                </p>
+                <h4 class="h5 text-uppercase">Hours</h4>
+                <p class="text-muted text-sm">
+                  Wed: 6:30-10:30pm (Last Seating: 8pm) <br />
+                  Thu-Sun: 12-2:30pm (Last Order: 1pm), 6:30-10:30pm (Last
+                  Seating: 8pm) <br />
+                  Closed Monday and Tuesday
+                </p>
+                <h4 class="h5 text-uppercase">Good for:</h4>
+                <p class="text-muted text-sm">
+                  Business Meetings, Fine Dining, Drinks, Private Functions,
+                  Romantic Dates
+                </p>
+                <h4 class="h5 text-uppercase">Location</h4>
+                <p class="text-muted text-sm">
+                  Marina Bay, Promenade, Esplanade
+                </p>
+                <h4 class="h5 text-uppercase">Address</h4>
+                <p class="text-muted text-sm">
+                  8 Raffles Avenue <br />
+                  #02-23 <br />
+                  Esplanade Mall <br />
+                  Singapore (039802)<br />
                 </p>
 
-                <br>
-              <h3 class="text-uppercase lined mb-4" style="color:#ff286c">Favourite</h3>
-              <md-button class="md-primary md-just-icon md-round" style="margin:auto;"><md-icon>favorite</md-icon></md-button>
+                <br />
+                <h3 class="text-uppercase lined mb-4" style="color:#ff286c">
+                  Favourite
+                </h3>
+                <md-button
+                  class="md-primary md-just-icon md-round"
+                  style="margin:auto;"
+                  ><md-icon>favorite</md-icon></md-button
+                >
+              </div>
             </div>
           </div>
         </div>
 
-        
+        <br />
+        <br />
 
-      </div>
-      
+        <!-- Google API -->
 
-      <br>
-      <br>
-
-      <!-- Google API -->
-
-      <div style="width:1000px; margin:auto;">
-        <div>
-          <label>
-            <!-- <gmap-autocomplete @place_changed="initMarker" value="Restaurant Labyrinth" readonly></gmap-autocomplete> -->
-            <GmapAutocomplete
-        @place_changed='setPlace' value="Restaurant Labyrinth"/>
-      <button
-        @click='addMarker'
-      >
-        Add
-      </button>
-            <!-- <button @click="addLocationMarker">Add</button> -->
-          </label>
-          <br/>
-    
+        <div style="width:1000px; margin:auto;">
+          <div>
+            <label>
+              <!-- <gmap-autocomplete @place_changed="initMarker" value="Restaurant Labyrinth" readonly></gmap-autocomplete> -->
+              <GmapAutocomplete
+                @place_changed="setPlace"
+                value="Restaurant Labyrinth"
+              />
+              <button @click="addMarker">
+                Add
+              </button>
+              <!-- <button @click="addLocationMarker">Add</button> -->
+            </label>
+            <br />
+          </div>
+          <br />
+          <GmapMap
+            :center="center"
+            :zoom="12"
+            style="width:100%;  height: 400px;"
+          >
+            <GmapMarker
+              :key="index"
+              v-for="(m, index) in markers"
+              :position="m.position"
+              @click="center = m.position"
+            />
+          </GmapMap>
         </div>
-        <br>
-        <GmapMap
-      :center='center'
-      :zoom='12'
-      style='width:100%;  height: 400px;'
-    >
-      <GmapMarker
-        :key="index"
-        v-for="(m, index) in markers"
-        :position="m.position"
-        @click="center=m.position"
-      />
-    </GmapMap>
       </div>
-
-
-          
-        
     </div>
   </div>
-</div>
 </template>
 
 <script>
-
 export default {
-  components: {
-    
-  },
+  components: {},
   name: "RS0030",
   bodyClass: "RS0030-page",
   props: {
@@ -164,7 +184,7 @@ export default {
       type: String,
       default: require("@/assets/img/bg7.jpg")
     },
-    
+
     signup: {
       type: String,
       default: require("@/assets/img/city.jpg")
@@ -183,12 +203,11 @@ export default {
       firstname: null,
       email: null,
       password: null,
-      
 
       center: { lat: 45.508, lng: -73.587 },
       currentPlace: null,
       markers: [],
-      places: [],
+      places: []
     };
   },
   methods: {
@@ -207,7 +226,7 @@ export default {
       if (this.currentPlace) {
         const marker = {
           lat: this.currentPlace.geometry.location.lat(),
-          lng: this.currentPlace.geometry.location.lng(),
+          lng: this.currentPlace.geometry.location.lng()
         };
         this.markers.push({ position: marker });
         this.places.push(this.currentPlace);
@@ -219,7 +238,7 @@ export default {
       navigator.geolocation.getCurrentPosition(position => {
         this.center = {
           lat: position.coords.latitude,
-          lng: position.coords.longitude,
+          lng: position.coords.longitude
         };
       });
     }
@@ -245,12 +264,7 @@ export default {
     window.removeEventListener("resize", this.leafActive);
   }
 };
-
-
-
-
 </script>
-
 
 <style scoped>
 .section-download {
@@ -276,7 +290,7 @@ export default {
 }
 
 .lined::after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   bottom: 0;
@@ -295,21 +309,31 @@ export default {
 }
 
 .text-sm-start {
-    text-align: left !important;
-  }
-  .text-sm-end {
-    text-align: right !important;
-  }
-  .text-sm-center {
-    text-align: center !important;
-  }
+  text-align: left !important;
+}
+.text-sm-end {
+  text-align: right !important;
+}
+.text-sm-center {
+  text-align: center !important;
+}
 
 .text-sm {
   font-size: 0.9rem !important;
 }
 
-
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-weight: 700;
@@ -432,8 +456,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   background-color: #4fbfa8;
   border: 0;
   border-radius: 1rem;
-  -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  -webkit-transition: background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
   -webkit-appearance: none;
   appearance: none;
 }
@@ -488,5 +514,4 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-
 </style>

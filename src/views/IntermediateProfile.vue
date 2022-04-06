@@ -136,7 +136,9 @@ export default {
         { image: require("@/assets/img/preferences/Cafe\ unclicked.jpg") },
         { image: require("@/assets/img/preferences/Family\ unclicked.jpg") },
         { image: require("@/assets/img/preferences/Lifestyle\ unclicked.jpg") },
-        { image: require("@/assets/img/preferences/Mediterranean\ unclicked.jpg") },
+        {
+          image: require("@/assets/img/preferences/Mediterranean\ unclicked.jpg")
+        },
         { image: require("@/assets/img/preferences/Nature\ unclicked.jpg") },
         { image: require("@/assets/img/preferences/Romantic\ unclicked.jpg") },
         { image: require("@/assets/img/preferences/Social\ unclicked.jpg") },

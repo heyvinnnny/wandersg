@@ -24,7 +24,9 @@
             <h1 class="text-uppercase lined mb-4" style="color:palevioletred">
               Singapore Zoo
               <md-button
-                class="md-primary md-just-icon md-round"
+                v-if="loggedIn"
+                v-bind:class="getClass()"
+                v-on:click="checkIfFav()"
                 style="margin-left:70px; margin-top:10px"
                 ><md-icon>favorite</md-icon></md-button
               >
@@ -131,7 +133,9 @@
                   Favourite
                 </h3>
                 <md-button
-                  class="md-primary md-just-icon md-round"
+                  v-if="loggedIn"
+                  v-bind:class="getClass()"
+                  v-on:click="checkIfFav()"
                   style="margin:auto;"
                   ><md-icon>favorite</md-icon></md-button
                 >
@@ -188,6 +192,19 @@
 // import TypographyImages from "./components/TypographyImagesSection";
 //import JavascriptComponents from "./components/JavascriptComponentsSection";
 //import { LoginCard } from "@/components";
+import firebaseApp from "@/firebase.js";
+import { getFirestore } from "firebase/firestore";
+import {
+  doc,
+  setDoc,
+  addDoc,
+  deleteDoc,
+  updateDoc,
+  getDoc
+} from "firebase/firestore";
+import { getAuth } from "firebase/auth";
+
+const db = getFirestore(firebaseApp);
 
 export default {
   components: {
@@ -235,6 +252,8 @@ export default {
       email: null,
       password: null,
       leafShow: false,
+      loggedIn: false,
+      liked: false,
 
       center: {
         lat: 1.29027,
@@ -276,6 +295,75 @@ export default {
           lng: res.coords.longitude
         };
       });
+    },
+    getClass() {
+      return {
+        "md-primary md-just-icon md-round": this.liked,
+        "md-just-icon md-round": !this.liked
+      };
+    },
+    checkIfFav() {
+      if (this.liked) {
+        this.removeFromFav();
+      } else {
+        this.addToFav();
+      }
+    },
+    async addToFav() {
+      this.liked = true;
+      // const auth = getAuth();
+      // const user = auth.currentUser.email;
+      // alert("Saving Item: " + this.name);
+      try {
+        const auth = getAuth();
+        const user = auth.currentUser.email;
+        await setDoc(doc(db, "users", user, "wishlist", "S.E.A Aquarium"), {
+          objectID: "A0001",
+          name: "S.E.A Aquarium",
+          category: "Aquariums, zoos & farms",
+          image:
+            "https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1295,h_864/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/ccfgnagsrilolytkoegu/SEAAquarium%E2%84%A2One-DayTicket.webp",
+          address: "8 Sentosa Gateway, Sentosa Island, S098269",
+          website:
+            "https://www.rwsentosa.com/en/attractions/sea-aquarium/tickets",
+          latitude: 1.2583462651555766,
+          longtitude: 103.82056881757651
+        });
+      } catch (error) {
+        console.error("Error adding document: ", error);
+      }
+    },
+    async removeFromFav() {
+      // const auth = getAuth();
+      // this.fbuser = auth.currentUser.email;
+      // const auth = getAuth();
+      // const user = auth.currentUser.email;
+      this.liked = false;
+      // alert("Removing Item: " + this.name);
+      try {
+        const auth = getAuth();
+        const user = auth.currentUser.email;
+        // const colRef = collection(db, "users", "eltonng123@gmail.com");
+        await deleteDoc(doc(db, "users", user, "wishlist", "S.E.A Aquarium"));
+      } catch (error) {
+        console.error("Error adding document: ", error);
+      }
+    }
+  },
+  async created() {
+    const db = getFirestore(firebaseApp);
+    const auth = getAuth();
+    const user = auth.currentUser.email;
+    if (user) {
+      this.loggedIn = true;
+      const docRef = doc(db, "users", user, "wishlist", "S.E.A Aquarium");
+      const docSnap = await getDoc(docRef);
+      console.log(docSnap.exists());
+      if (docSnap.exists()) {
+        this.liked = true;
+      } else {
+        this.liked = false;
+      }
     }
   },
   computed: {

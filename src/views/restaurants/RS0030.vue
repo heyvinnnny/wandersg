@@ -265,13 +265,13 @@ export default {
     }
   },
   methods: {
-    // leafActive() {
-    //   if (window.innerWidth < 768) {
-    //     this.leafShow = false;
-    //   } else {
-    //     this.leafShow = true;
-    //   }
-    // },
+    leafActive() {
+      if (window.innerWidth < 768) {
+        this.leafShow = false;
+      } else {
+        this.leafShow = true;
+      }
+    },
 
     setPlace(place) {
       this.currentPlace = place;

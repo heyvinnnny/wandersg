@@ -5,10 +5,10 @@
         <div class="md-layout-item">
           <div class="image-wrapper">
             <div class="brand">
-              <h1 style="color:white;">Search</h1>
+              <!-- <h1 style="color:white;">Search</h1>
               <h3 style="color:white;">
                 Search for your favourite activity and restaurant.
-              </h3>
+              </h3> -->
             </div>
           </div>
         </div>
@@ -26,6 +26,7 @@
             style="padding-left:20px; margin-left: 200px; font-family: monaco,Consolas,Lucida Console,monospace;"
           >
             <ais-clear-refinements style="color:palevioletred;" />
+            <br>
             <h2>Restaurants</h2>
             <h3>Category</h3>
             <ais-refinement-list
@@ -176,7 +177,7 @@ export default {
   props: {
     image: {
       type: String,
-      default: require("@/assets/img/bg7.jpg")
+      default: require("@/assets/img/fg5.jpg")
     },
 
     signup: {

@@ -161,7 +161,7 @@
                         slot="title"
                         data-toggle="dropdown"
                       >
-                        <img :src="img" alt="Circle Image" id="myimg" />
+                        <img id="myimg" />
                       </div>
                       <ul class="dropdown-menu dropdown-menu-right">
                         <li class="dropdown-header">
@@ -169,7 +169,7 @@
                         </li>
                         <!-- <li class="dropdown-header">My Information</li> -->
                         <li>
-                          <a href="#pablo" class="dropdown-item"
+                          <a href="#/updateinfo" class="dropdown-item"
                             >Update Profile Information</a
                           >
                         </li>
@@ -237,7 +237,7 @@ export default {
     },
     img: {
       type: String,
-      default: require("@/assets/img/faces/isaac.jpg")
+      default: require("@/assets/img/blankprofile.webp")
     }
   },
   data() {
@@ -315,10 +315,15 @@ export default {
           console.log("signed in");
           this.loggedIn = true;
           const storageRef = ref(storage, "users/" + user.uid + "/profile.jpg");
-          getDownloadURL(storageRef).then(url => {
-            const img = document.getElementById("myimg");
-            img.setAttribute("src", url);
-          });
+          getDownloadURL(storageRef)
+            .then(url => {
+              const img = document.getElementById("myimg");
+              console.log(url);
+              img.setAttribute("src", url);
+            })
+            .catch(error => {
+              console.log(error);
+            });
         } else {
           // No user is signed in.
           this.loggedIn = false;

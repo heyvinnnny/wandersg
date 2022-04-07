@@ -14,14 +14,15 @@
                   <img
                     :src="img"
                     alt="Circle Image"
+                    id="myImg"
                     class="img-raised rounded-circle img-fluid"
                   />
                 </div>
                 <div class="name">
                   <form>
                     <div>
-                      <label for="image_uploads">
-                        Change Profile Picture
+                      <label for="image_uploads" class="title">
+                        Change Profile Picture:
                       </label>
                       <br />
                       <input
@@ -37,10 +38,11 @@
                     @click="uploadImage()"
                     class="md-simple md-success md-lg"
                     style="margin:0px;"
+                    :disabled="checkFile"
                   >
                     Save Changes
                   </md-button>
-                  <h3 class="title">Carla Hortensia</h3>
+                  <!-- <h3 class="title">Carla Hortensia</h3>
                   <h6>Designer</h6>
                   <md-button
                     href="javascript:void(0)"
@@ -56,29 +58,29 @@
                     href="javascript:void(0)"
                     class="md-just-icon md-simple md-pinterest"
                     ><i class="fab fa-pinterest"></i
-                  ></md-button>
+                  ></md-button> -->
                 </div>
               </div>
             </div>
           </div>
-          <div class="description text-center">
+          <!-- <div class="description text-center">
             <p>
               An artist of considerable range, Chet Faker — the name taken by
               Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs
               and records all of his own music, giving it a warm, intimate feel
               with a solid groove structure.
             </p>
-          </div>
-          <div class="profile-tabs">
+          </div> -->
+          <!-- <div class="profile-tabs">
             <tabs
               :tab-name="['Studio', 'Work', 'Favorite']"
               :tab-icon="['camera', 'palette', 'favorite']"
               plain
               nav-pills-icons
               color-button="success"
-            >
-              <!-- here you can add your content for tab-content -->
-              <template slot="tab-pane-1">
+            > -->
+          <!-- here you can add your content for tab-content -->
+          <!-- <template slot="tab-pane-1">
                 <div class="md-layout">
                   <div class="md-layout-item md-size-25 ml-auto">
                     <img :src="tabPane1[0].image" class="rounded" />
@@ -117,6 +119,72 @@
                 </div>
               </template>
             </tabs>
+          </div> -->
+          <div>
+            <div class="description text-center">
+              <h3 class="title">
+                Change your preferences for attractions:
+              </h3>
+            </div>
+            <div class="md-layout md-gutter md-alignment-top-center">
+              <PreferenceCard
+                :name="Adventure"
+                :image="tabPane1[0].image"
+              ></PreferenceCard>
+              <PreferenceCard
+                :name="Animals"
+                :image="tabPane1[1].image"
+              ></PreferenceCard>
+              <PreferenceCard
+                :name="Arts"
+                :image="tabPane1[2].image"
+              ></PreferenceCard>
+              <PreferenceCard
+                :name="Asian"
+                :image="tabPane1[3].image"
+              ></PreferenceCard>
+              <PreferenceCard
+                :name="Cafe"
+                :image="tabPane1[4].image"
+              ></PreferenceCard>
+              <PreferenceCard
+                :name="Family"
+                :image="tabPane1[5].image"
+              ></PreferenceCard>
+              <PreferenceCard
+                :name="Lifestyle"
+                :image="tabPane1[6].image"
+              ></PreferenceCard>
+              <PreferenceCard
+                :name="Mediterranean"
+                :image="tabPane1[7].image"
+              ></PreferenceCard>
+              <PreferenceCard
+                :name="Nature"
+                :image="tabPane1[8].image"
+              ></PreferenceCard>
+              <PreferenceCard
+                :name="Romantic"
+                :image="tabPane1[9].image"
+              ></PreferenceCard>
+              <PreferenceCard
+                :name="Social"
+                :image="tabPane1[10].image"
+              ></PreferenceCard>
+              <PreferenceCard
+                :name="Western"
+                :image="tabPane1[11].image"
+              ></PreferenceCard>
+            </div>
+            <div class="container">
+              <md-button
+                @click="register()"
+                class="md-simple md-success md-lg"
+                style="margin:0px;"
+              >
+                <h3>Save Changes</h3>
+              </md-button>
+            </div>
           </div>
         </div>
       </div>
@@ -125,38 +193,60 @@
 </template>
 
 <script>
-import { Tabs } from "@/components";
-import { getStorage, ref, uploadBytes } from "firebase/storage";
+// import { Tabs } from "@/components";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { getAuth } from "firebase/auth";
+import PreferenceCard from "@/views/components/PreferenceCard.vue";
 
 export default {
   components: {
-    Tabs
+    PreferenceCard
   },
   bodyClass: "profile-page",
   data() {
     return {
+      file: undefined,
       tabPane1: [
-        { image: require("@/assets/img/examples/studio-1.jpg") },
-        { image: require("@/assets/img/examples/studio-2.jpg") },
-        { image: require("@/assets/img/examples/studio-4.jpg") },
-        { image: require("@/assets/img/examples/studio-5.jpg") }
+        { image: require("@/assets/img/preferences/Adventure\ unclicked.jpg") },
+        { image: require("@/assets/img/preferences/Animals\ unclicked.jpg") },
+        { image: require("@/assets/img/preferences/Arts\ unclicked.jpg") },
+        { image: require("@/assets/img/preferences/Asian\ unclicked.jpg") },
+        { image: require("@/assets/img/preferences/Cafe\ unclicked.jpg") },
+        { image: require("@/assets/img/preferences/Family\ unclicked.jpg") },
+        { image: require("@/assets/img/preferences/Lifestyle\ unclicked.jpg") },
+        {
+          image: require("@/assets/img/preferences/Mediterranean\ unclicked.jpg")
+        },
+        { image: require("@/assets/img/preferences/Nature\ unclicked.jpg") },
+        { image: require("@/assets/img/preferences/Romantic\ unclicked.jpg") },
+        { image: require("@/assets/img/preferences/Social\ unclicked.jpg") },
+        { image: require("@/assets/img/preferences/Western\ unclicked.jpg") }
       ],
-      tabPane2: [
-        { image: require("@/assets/img/examples/olu-eletu.jpg") },
-        { image: require("@/assets/img/examples/clem-onojeghuo.jpg") },
-        { image: require("@/assets/img/examples/cynthia-del-rio.jpg") },
-        { image: require("@/assets/img/examples/mariya-georgieva.jpg") },
-        { image: require("@/assets/img/examples/clem-onojegaw.jpg") }
-      ],
-      tabPane3: [
-        { image: require("@/assets/img/examples/mariya-georgieva.jpg") },
-        { image: require("@/assets/img/examples/studio-3.jpg") },
-        { image: require("@/assets/img/examples/clem-onojeghuo.jpg") },
-        { image: require("@/assets/img/examples/olu-eletu.jpg") },
-        { image: require("@/assets/img/examples/studio-1.jpg") }
-      ],
-      file: {}
+      email: getAuth().currentUser.email,
+      adventure: false,
+      Adventure: "Adventure",
+      animals: false,
+      Animals: "Animals",
+      arts: false,
+      Arts: "Arts",
+      asian: false,
+      Asian: "Asian",
+      cafe: false,
+      Cafe: "Cafe",
+      family: false,
+      Family: "Family",
+      lifestyle: false,
+      Lifestyle: "Lifestyle",
+      mediterranean: false,
+      Mediterranean: "Mediterranean",
+      nature: false,
+      Nature: "Nature",
+      romantic: false,
+      Romantic: "Romantic",
+      social: false,
+      Social: "Social",
+      western: false,
+      Western: "Western"
     };
   },
   methods: {
@@ -173,8 +263,48 @@ export default {
       );
       uploadBytes(storageRef, this.file).then(snapshot => {
         console.log("Uploaded a blob or file!");
+        window.alert(
+          "You have successfully changed your profile picture!\nReloading this page..."
+        );
+        this.$router.go();
       });
       console.log("uploadImage");
+    },
+    register() {
+      let z = setDoc(
+        doc(db, "users", String(this.email), "preference", "preferences"),
+        {
+          Adventure: this.adventure,
+          Animals: this.animals,
+          Arts: this.arts,
+          Asian: this.asian,
+          Cafe: this.cafe,
+          Family: this.family,
+          Lifestyle: this.lifestyle,
+          Mediterranean: this.mediterranean,
+          Nature: this.nature,
+          Romantic: this.romantic,
+          Social: this.social,
+          Western: this.western
+        }
+      );
+      console.log("user with email:" + this.email + " created");
+      this.$router.push({ name: "landing" });
+    },
+    setupFirebase() {
+      const auth = getAuth();
+      const user = auth.currentUser;
+      const storage = getStorage();
+      const storageRef = ref(storage, "users/" + user.uid + "/profile.jpg");
+      getDownloadURL(storageRef)
+        .then(url => {
+          const img = document.getElementById("myImg");
+          console.log(url);
+          img.setAttribute("src", url);
+        })
+        .catch(error => {
+          console.log(error);
+        });
     }
   },
   props: {
@@ -184,7 +314,7 @@ export default {
     },
     img: {
       type: String,
-      default: require("@/assets/img/faces/christian.jpg")
+      default: require("@/assets/img/blankprofile.webp")
     }
   },
   computed: {
@@ -192,7 +322,13 @@ export default {
       return {
         backgroundImage: `url(${this.header})`
       };
+    },
+    checkFile() {
+      return this.file == undefined;
     }
+  },
+  mounted() {
+    this.setupFirebase();
   }
 };
 </script>

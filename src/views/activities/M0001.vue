@@ -22,7 +22,7 @@
         <div class="md-layout">
           <div class="md-layout-item md-size-66 mx-auto md-small-size-100">
             <h1 class="text-uppercase lined mb-4" style="color:palevioletred">
-              SArtScience Museum
+              ArtScience Museum
               <md-button
                 v-if="loggedIn"
                 v-bind:class="getClass()"
@@ -279,7 +279,7 @@ export default {
     this.objectID = querySnapshot.data().objectID;
     this.name = querySnapshot.data().activityname;
     this.category = querySnapshot.data().category;
-    this.image = querySnapshot.data().image;
+    this.img = querySnapshot.data().image;
     this.address = querySnapshot.data().address;
     this.website = querySnapshot.data().website;
     this.latitude = querySnapshot.data().latitude;

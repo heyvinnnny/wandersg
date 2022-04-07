@@ -10,8 +10,8 @@
           <div
             class="md-layout-item md-size-50 md-small-size-70 md-xsmall-size-100"
           >
-            <h1 class="title" style="color:black;">You may like these...</h1>
-            <h4 class="title" style="color:black;">
+            <h1 class="title" style="color:white;">You may like these...</h1>
+            <h4 class="title" style="color:white;">
               Fully customized day trip based on your interests
             </h4>
             <br />
@@ -146,7 +146,13 @@ export default {
       // activities: []
     };
   },
-
+  computed: {
+    headerStyle() {
+      return {
+        backgroundImage: `url(${"https://images.pexels.com/photos/8506357/pexels-photo-8506357.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"})`
+      };
+    },
+  },
   methods: {
     change() {
       window.location.reload();

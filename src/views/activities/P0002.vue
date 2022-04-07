@@ -254,13 +254,13 @@ export default {
     const db = getFirestore(firebaseApp);
     const auth = getAuth();
     const user = auth.currentUser.email;
-    
+
     const item = doc(db, "wander-activity", "Sentosa Fun Pass");
     const querySnapshot = await getDoc(item);
     this.objectID = querySnapshot.data().objectID;
     this.name = querySnapshot.data().activityname;
     this.category = querySnapshot.data().category;
-    this.image = querySnapshot.data().image;
+    this.img = querySnapshot.data().image;
     this.address = querySnapshot.data().address;
     this.website = querySnapshot.data().website;
     this.latitude = querySnapshot.data().latitude;

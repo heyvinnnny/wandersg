@@ -5,10 +5,16 @@
         <div class="md-layout-item">
           <div class="image-wrapper">
             <div class="brand">
-              <h1 style="color:white;">Description</h1>
-              <h3 style="color:white;">
+              <!-- <h1
+                style="color:white;text-shadow: 0.05px 0 0 #000, 0 -0.05px 0 #000, 0 0.05px 0 #000, -0.05px 0 0 #000;"
+              >
+                Description
+              </h1>
+              <h3
+                style="color:white;text-shadow: 0.2px 0 0 #000, 0 -0.2px 0 #000, 0 0.2px 0 #000, -0.2px 0 0 #000;"
+              >
                 Information of your favourite activity and restaurant.
-              </h3>
+              </h3> -->
             </div>
           </div>
         </div>
@@ -282,7 +288,7 @@ export default {
     this.objectID = querySnapshot.data().objectID;
     this.name = querySnapshot.data().activityname;
     this.category = querySnapshot.data().category;
-    this.image = querySnapshot.data().image;
+    this.img = querySnapshot.data().image;
     this.address = querySnapshot.data().address;
     this.website = querySnapshot.data().website;
     this.latitude = querySnapshot.data().latitude;

@@ -11,7 +11,7 @@
             <div class="brand">
               <h1 style="color:white;">Search</h1>
               <h3 style="color:white;">
-                Search for your favourite activity and restaurant.
+                Search for your favourite activity.
               </h3>
             </div>
           </div>
@@ -526,8 +526,6 @@ h1,
 .h1,
 h2,
 .h2,
-h3,
-.h3,
 h4,
 .h4,
 h5,

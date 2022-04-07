@@ -274,7 +274,7 @@ export default {
     this.objectID = querySnapshot.data().objectID;
     this.name = querySnapshot.data().activityname;
     this.category = querySnapshot.data().category;
-    this.image = querySnapshot.data().image;
+    this.img = querySnapshot.data().image;
     this.address = querySnapshot.data().address;
     this.website = querySnapshot.data().website;
     this.latitude = querySnapshot.data().latitude;

@@ -295,6 +295,22 @@ export default {
 </script>
 
 <style scoped>
+h1,
+.h1,
+h2,
+.h2,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
 .section-download {
   .md-button + .md-button {
     margin-left: 5px;

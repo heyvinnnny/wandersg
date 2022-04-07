@@ -17,8 +17,6 @@
 
     <div class="main main-raised">
       <div class="section section-basic">
-        <!-- activity CAROUSEL SECTION-->
-
         <div class="md-layout">
           <div class="md-layout-item md-size-66 mx-auto md-small-size-100">
             <h1 class="text-uppercase lined mb-4" style="color:palevioletred">
@@ -190,15 +188,6 @@
 </template>
 
 <script>
-//import BasicElements from "./components/BasicElementsSection";
-// import Navigation from "./components/NavigationSection";
-// import SmallNavigation from "./components/SmallNavigationSection";
-// import Tabs from "./components/TabsSection";
-// import NavPills from "./components/NavPillsSection";
-// import Notifications from "./components/NotificationsSection";
-// import TypographyImages from "./components/TypographyImagesSection";
-//import JavascriptComponents from "./components/JavascriptComponentsSection";
-//import { LoginCard } from "@/components";
 import firebaseApp from "@/firebase.js";
 import { getFirestore } from "firebase/firestore";
 import {
@@ -207,7 +196,9 @@ import {
   addDoc,
   deleteDoc,
   updateDoc,
-  getDoc
+  getDoc,
+  query,
+  where
 } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
@@ -224,22 +215,6 @@ export default {
       type: String,
       default: require("@/assets/img/bg7.jpg")
     },
-    // leaf4: {
-    //   type: String,
-    //   default: require("@/assets/img/leaf4.png")
-    // },
-    // leaf3: {
-    //   type: String,
-    //   default: require("@/assets/img/leaf3.png")
-    // },
-    // leaf2: {
-    //   type: String,
-    //   default: require("@/assets/img/leaf2.png")
-    // },
-    // leaf1: {
-    //   type: String,
-    //   default: require("@/assets/img/leaf1.png")
-    // },
     signup: {
       type: String,
       default: require("@/assets/img/city.jpg")
@@ -268,7 +243,15 @@ export default {
       },
       locationMarkers: [],
       locPlaces: [],
-      existingPlace: null
+      existingPlace: null,
+      objectID: "",
+      name: "",
+      category: "",
+      img: "",
+      address: "",
+      website: "",
+      latitude: 1,
+      longtitude: 1
     };
   },
   async created() {
@@ -281,12 +264,11 @@ export default {
     this.objectID = querySnapshot.data().objectID;
     this.name = querySnapshot.data().activityname;
     this.category = querySnapshot.data().category;
-    this.image = querySnapshot.data().image;
+    this.img = querySnapshot.data().image;
     this.address = querySnapshot.data().address;
     this.website = querySnapshot.data().website;
     this.latitude = querySnapshot.data().latitude;
     this.longtitude = querySnapshot.data().longtitude;
-
 
     if (user) {
       this.loggedIn = true;

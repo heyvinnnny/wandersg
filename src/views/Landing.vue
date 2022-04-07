@@ -8,7 +8,7 @@
           >
             <h1 class="title">Your Adventure Begins With Us.</h1>
             <h4>
-              A one-stop Singapore Itinerary Planner, designed to meet your
+              An all-in-one Singapore Itinerary Planner, designed to meet your
               every need.
             </h4>
             <br />
@@ -19,7 +19,7 @@
         </div>
       </div>
     </parallax>
-    <div class="main main-raised">
+    <div class="main main-raised" id="about">
       <div class="section">
         <div class="container">
           <div class="md-layout">
@@ -139,6 +139,38 @@
 
       <div class="section text-center">
         <div class="container">
+          <h2 class="title">Trending Tiktok Videos</h2>
+          <div class = "parent" style="
+  margin: 1rem;
+  padding: 2rem 2rem;
+  text-align: center;">
+            <div class ="child" style ="display: inline-block;
+  padding: 1rem 1rem;
+  vertical-align: middle;">
+          <iframe 
+          src="https://v16-webapp.tiktok.com/c0ce3d1859313324e636b0372a266708/624e0098/video/tos/alisg/tos-alisg-pve-0037/16944323e63e49069e6e4be98604faf8/?a=1988&amp;br=3058&amp;bt=1529&amp;cd=0%7C0%7C1%7C0&amp;ch=0&amp;cr=0&amp;cs=0&amp;cv=1&amp;dr=0&amp;ds=3&amp;er=&amp;ft=XOQ9-3zqnz7ThDgfSDXq&amp;l=20220406150459010245245003123071E5&amp;lr=tiktok&amp;mime_type=video_mp4&amp;net=0&amp;pl=0&amp;qs=0&amp;rc=ajhteTw6Znh3NzMzODgzNEApPGZpNjQ1Zzw6N2llPGU2OWcwcjAycjQwamBgLS1kLy1zczExM2IzMGMwNl42XzIuMl46Yw%3D%3D&amp;vl=&amp;vr=" scrolling="no" 
+          style="height: 500px; border: 0px none; width: 450px; margin-top: -55px; margin-left: 5px; 
+          margin-right: 0px; ">
+          </iframe>
+
+        
+          </div>
+          <div class = "child" style ="display: inline-block;
+              padding: 1rem 1rem;
+              vertical-align: middle;">
+          <iframe 
+          src="https://v16-webapp.tiktok.com/22ad0df31cc8a55ce353762ce26d1d7e/624e0580/video/tos/alisg/tos-alisg-pve-0037/65fced4e17574060a0f5398af609e891/?a=1988&amp;br=4408&amp;bt=2204&amp;cd=0%7C0%7C1%7C0&amp;ch=0&amp;cr=0&amp;cs=0&amp;cv=1&amp;dr=0&amp;ds=3&amp;er=&amp;ft=XOQ9-3zqnz7ThEV2SDXq&amp;l=2022040615260401024524610521312073&amp;lr=tiktok&amp;mime_type=video_mp4&amp;net=0&amp;pl=0&amp;qs=0&amp;rc=Mzh1bzw6ZnU7ODMzODgzNEApNWhnM2hnaTs6NzhoNjQ3OmdzYmgwcjRnaDVgLS1kLy1zczFfMGFhX15jX18wYDAzXzA6Yw%3D%3D&amp;vl=&amp;vr=" scrolling="no" 
+          style="height: 500px; border: 0px none; width: 450px; margin-top: -55px; margin-left: 5px; 
+          margin-right: 0px; ">
+          
+          </iframe>
+          </div>
+          </div>
+        </div>
+        </div>
+
+      <div class="section text-center">
+        <div class="container">
           <h2 class="title">Our Team</h2>
           <div class="team">
             <div class="md-layout">
@@ -187,7 +219,7 @@
                         <i class="fab fa-facebook-square"></i>
                       </md-button> -->
                       <md-button
-                        href="javascript:void(0)"
+                        onclick="window.open('https://www.linkedin.com/in/wee-hng-chua-495616221/', '_blank');"
                         class="md-just-icon md-simple"
                       >
                         <i class="fab fa-linkedin"></i>
@@ -216,7 +248,7 @@
 
                     <md-card-actions class="text-center">
                       <md-button
-                        href="javascript:void(0)"
+                        onclick="window.open('https://www.linkedin.com/in/isaac-hay-81a7261a7/', '_blank');"
                         class="md-just-icon md-simple"
                       >
                         <i class="fab fa-linkedin"></i>
@@ -276,7 +308,7 @@
 
                     <md-card-actions class="text-center">
                       <md-button
-                        href="javascript:void(0)"
+                        onclick="window.open('https://www.linkedin.com/in/elton-ng-aa81091b7/', '_blank');"
                         class="md-just-icon md-simple"
                       >
                         <i class="fab fa-linkedin"></i>
@@ -306,7 +338,7 @@
 
                     <md-card-actions class="text-center">
                       <md-button
-                        href="javascript:void(0)"
+                        onclick="window.open('https://www.linkedin.com/in/oliver-gui/', '_blank');"
                         class="md-just-icon md-simple"
                       >
                         <i class="fab fa-linkedin"></i>
@@ -378,24 +410,24 @@
         </div>
       </div> -->
     </div>
-    <test-register />
+    <!-- <test-register />
     <top-header />
-    <test-login />
+    <test-login /> -->
   </div>
 </template>
 
 <script>
-import TestRegister from "./components/TestRegister.vue";
-import TopHeader from "./components/TopHeader.vue";
-import TestLogin from "./components/TestLogin.vue";
+// import TestRegister from "./components/TestRegister.vue";
+// import TopHeader from "./components/TopHeader.vue";
+// import TestLogin from "./components/TestLogin.vue";
 
 export default {
   bodyClass: "landing-page",
-  components: {
-    "test-register": TestRegister,
-    "top-header": TopHeader,
-    "test-login": TestLogin
-  },
+  // components: {
+  //   "test-register": TestRegister,
+  //   "top-header": TopHeader,
+  //   "test-login": TestLogin
+  // },
   props: {
     header: {
       type: String,

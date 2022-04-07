@@ -27,7 +27,7 @@
                 v-if="loggedIn"
                 v-bind:class="getClass()"
                 v-on:click="checkIfFav()"
-                style="margin-left:70px; margin-top:10px"
+                style="margin-left:10px; margin-top:10px"
                 ><md-icon>favorite</md-icon></md-button
               >
             </h1>
@@ -310,7 +310,7 @@ export default {
           objectID: this.objectID,
           name: this.name,
           category: this.category,
-          image: this.img,
+          image: this.image,
           address: this.address,
           website: this.website,
           latitude: this.latitude,
@@ -325,6 +325,7 @@ export default {
       try {
         const auth = getAuth();
         const user = auth.currentUser.email;
+        // const colRef = collection(db, "users", "eltonng123@gmail.com");
         await deleteDoc(doc(db, "users", user, "wishlist", this.name));
       } catch (error) {
         console.error("Error adding document: ", error);
@@ -338,11 +339,10 @@ export default {
 
     const item = doc(db, "wander-activity", "Singapore Zoo");
     const querySnapshot = await getDoc(item);
-    // console.log(querySnapshot.data());
     this.objectID = querySnapshot.data().objectID;
     this.name = querySnapshot.data().activityname;
     this.category = querySnapshot.data().category;
-    this.img = querySnapshot.data().image;
+    this.image = querySnapshot.data().image;
     this.address = querySnapshot.data().address;
     this.website = querySnapshot.data().website;
     this.latitude = querySnapshot.data().latitude;

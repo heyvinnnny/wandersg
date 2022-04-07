@@ -17,13 +17,12 @@
 
     <div class="main main-raised">
       <div class="section section-basic">
-
         <div class="md-layout">
           <div class="md-layout-item md-size-66 mx-auto md-small-size-100">
             <h1 class="text-uppercase lined mb-4" style="color:palevioletred">
               S.E.A Aquarium
               <md-button
-                style="margin-left:70px; margin-top:10px"
+                style="margin-left:10px; margin-top:10px"
                 v-if="loggedIn"
                 v-bind:class="getClass()"
                 v-on:click="checkIfFav()"
@@ -265,7 +264,7 @@ export default {
     this.objectID = querySnapshot.data().objectID;
     this.name = querySnapshot.data().activityname;
     this.category = querySnapshot.data().category;
-    this.img = querySnapshot.data().image;
+    this.image = querySnapshot.data().image;
     this.address = querySnapshot.data().address;
     this.website = querySnapshot.data().website;
     this.latitude = querySnapshot.data().latitude;
@@ -337,7 +336,7 @@ export default {
           objectID: this.objectID,
           name: this.name,
           category: this.category,
-          image: this.img,
+          image: this.image,
           address: this.address,
           website: this.website,
           latitude: this.latitude,

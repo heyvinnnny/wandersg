@@ -161,7 +161,7 @@
                         slot="title"
                         data-toggle="dropdown"
                       >
-                        <img id="myimg" />
+                        <img src="@/assets/img/blankprofile.webp" id="myimg" />
                       </div>
                       <ul class="dropdown-menu dropdown-menu-right">
                         <li class="dropdown-header">

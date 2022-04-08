@@ -41,15 +41,36 @@
 <script>
 import firebaseApp from "@/firebase.js";
 import { getFirestore } from "firebase/firestore";
-import { doc, setDoc, addDoc, deleteDoc } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  doc,
+  query,
+  where,
+  setDoc,
+  deleteDoc
+} from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 const db = getFirestore(firebaseApp);
+
+// const auth = getAuth();
+// const user = auth.currentUser;
+// const email = user.email;
+// const path = "test/" + user.email + "/preferences";
+// console.log(path);
+// const queryCategory = query(collection(db, path));
+// const querySnapshot = getDocs(queryCategory);
+// querySnapshot.forEach(doc => {
+//   // doc.data() is never undefined for query doc snapshots
+//   console.log(doc.id, " => ", doc.data());
+// });
 
 export default {
   data() {
     return {
       email: "",
       category: false
+      // retrieve from firebase
     };
   },
   props: {

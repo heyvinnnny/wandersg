@@ -12,7 +12,10 @@
               every need.
             </h4>
             <br />
-            <md-button href="#/register" class="md-success md-lg"
+            <md-button
+              href="#/register"
+              class="md-success md-lg"
+              v-if="!loggedIn"
               ><i class="fas fa-play"></i>Register now</md-button
             >
           </div>
@@ -140,34 +143,44 @@
       <div class="section text-center">
         <div class="container">
           <h2 class="title">Trending Tiktok Videos</h2>
-          <div class = "parent" style="
+          <div
+            class="parent"
+            style="
   margin: 1rem;
   padding: 2rem 2rem;
-  text-align: center;">
-            <div class ="child" style ="display: inline-block;
+  text-align: center;"
+          >
+            <div
+              class="child"
+              style="display: inline-block;
   padding: 1rem 1rem;
-  vertical-align: middle;">
-          <iframe 
-          src="https://v16-webapp.tiktok.com/c0ce3d1859313324e636b0372a266708/624e0098/video/tos/alisg/tos-alisg-pve-0037/16944323e63e49069e6e4be98604faf8/?a=1988&amp;br=3058&amp;bt=1529&amp;cd=0%7C0%7C1%7C0&amp;ch=0&amp;cr=0&amp;cs=0&amp;cv=1&amp;dr=0&amp;ds=3&amp;er=&amp;ft=XOQ9-3zqnz7ThDgfSDXq&amp;l=20220406150459010245245003123071E5&amp;lr=tiktok&amp;mime_type=video_mp4&amp;net=0&amp;pl=0&amp;qs=0&amp;rc=ajhteTw6Znh3NzMzODgzNEApPGZpNjQ1Zzw6N2llPGU2OWcwcjAycjQwamBgLS1kLy1zczExM2IzMGMwNl42XzIuMl46Yw%3D%3D&amp;vl=&amp;vr=" scrolling="no" 
-          style="height: 500px; border: 0px none; width: 450px; margin-top: -55px; margin-left: 5px; 
-          margin-right: 0px; ">
-          </iframe>
-
-        
-          </div>
-          <div class = "child" style ="display: inline-block;
+  vertical-align: middle;"
+            >
+              <iframe
+                src="https://v16-webapp.tiktok.com/c0ce3d1859313324e636b0372a266708/624e0098/video/tos/alisg/tos-alisg-pve-0037/16944323e63e49069e6e4be98604faf8/?a=1988&amp;br=3058&amp;bt=1529&amp;cd=0%7C0%7C1%7C0&amp;ch=0&amp;cr=0&amp;cs=0&amp;cv=1&amp;dr=0&amp;ds=3&amp;er=&amp;ft=XOQ9-3zqnz7ThDgfSDXq&amp;l=20220406150459010245245003123071E5&amp;lr=tiktok&amp;mime_type=video_mp4&amp;net=0&amp;pl=0&amp;qs=0&amp;rc=ajhteTw6Znh3NzMzODgzNEApPGZpNjQ1Zzw6N2llPGU2OWcwcjAycjQwamBgLS1kLy1zczExM2IzMGMwNl42XzIuMl46Yw%3D%3D&amp;vl=&amp;vr="
+                scrolling="no"
+                style="height: 500px; border: 0px none; width: 450px; margin-top: -55px; margin-left: 5px; 
+          margin-right: 0px; "
+              >
+              </iframe>
+            </div>
+            <div
+              class="child"
+              style="display: inline-block;
               padding: 1rem 1rem;
-              vertical-align: middle;">
-          <iframe 
-          src="https://v16-webapp.tiktok.com/22ad0df31cc8a55ce353762ce26d1d7e/624e0580/video/tos/alisg/tos-alisg-pve-0037/65fced4e17574060a0f5398af609e891/?a=1988&amp;br=4408&amp;bt=2204&amp;cd=0%7C0%7C1%7C0&amp;ch=0&amp;cr=0&amp;cs=0&amp;cv=1&amp;dr=0&amp;ds=3&amp;er=&amp;ft=XOQ9-3zqnz7ThEV2SDXq&amp;l=2022040615260401024524610521312073&amp;lr=tiktok&amp;mime_type=video_mp4&amp;net=0&amp;pl=0&amp;qs=0&amp;rc=Mzh1bzw6ZnU7ODMzODgzNEApNWhnM2hnaTs6NzhoNjQ3OmdzYmgwcjRnaDVgLS1kLy1zczFfMGFhX15jX18wYDAzXzA6Yw%3D%3D&amp;vl=&amp;vr=" scrolling="no" 
-          style="height: 500px; border: 0px none; width: 450px; margin-top: -55px; margin-left: 5px; 
-          margin-right: 0px; ">
-          
-          </iframe>
-          </div>
+              vertical-align: middle;"
+            >
+              <iframe
+                src="https://v16-webapp.tiktok.com/22ad0df31cc8a55ce353762ce26d1d7e/624e0580/video/tos/alisg/tos-alisg-pve-0037/65fced4e17574060a0f5398af609e891/?a=1988&amp;br=4408&amp;bt=2204&amp;cd=0%7C0%7C1%7C0&amp;ch=0&amp;cr=0&amp;cs=0&amp;cv=1&amp;dr=0&amp;ds=3&amp;er=&amp;ft=XOQ9-3zqnz7ThEV2SDXq&amp;l=2022040615260401024524610521312073&amp;lr=tiktok&amp;mime_type=video_mp4&amp;net=0&amp;pl=0&amp;qs=0&amp;rc=Mzh1bzw6ZnU7ODMzODgzNEApNWhnM2hnaTs6NzhoNjQ3OmdzYmgwcjRnaDVgLS1kLy1zczFfMGFhX15jX18wYDAzXzA6Yw%3D%3D&amp;vl=&amp;vr="
+                scrolling="no"
+                style="height: 500px; border: 0px none; width: 450px; margin-top: -55px; margin-left: 5px; 
+          margin-right: 0px; "
+              >
+              </iframe>
+            </div>
           </div>
         </div>
-        </div>
+      </div>
 
       <div class="section text-center">
         <div class="container">
@@ -420,6 +433,7 @@
 // import TestRegister from "./components/TestRegister.vue";
 // import TopHeader from "./components/TopHeader.vue";
 // import TestLogin from "./components/TestLogin.vue";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default {
   bodyClass: "landing-page",
@@ -461,8 +475,28 @@ export default {
       message: null,
       carousel1: require("@/assets/img/gbtb.jpg"),
       carousel2: require("@/assets/img/newton.jpg"),
-      carousel3: require("@/assets/img/uss.jpg")
+      carousel3: require("@/assets/img/uss.jpg"),
+      loggedIn: false
     };
+  },
+  methods: {
+    setupFirebase() {
+      const auth = getAuth();
+      const user = auth.currentUser;
+      onAuthStateChanged(auth, user => {
+        if (user) {
+          // User is signed in.
+          console.log("signed in");
+          this.loggedIn = true;
+          console.log(this.loggedIn);
+        } else {
+          // No user is signed in.
+          this.loggedIn = false;
+          console.log("signed out", this.loggedIn);
+          console.log(this.loggedIn);
+        }
+      });
+    }
   },
   computed: {
     headerStyle() {
@@ -470,6 +504,9 @@ export default {
         backgroundImage: `url(${this.header})`
       };
     }
+  },
+  mounted() {
+    this.setupFirebase();
   }
 };
 </script>

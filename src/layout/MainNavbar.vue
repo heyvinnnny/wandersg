@@ -91,49 +91,6 @@
                 <i class="material-icons">bookmark</i>
                 <a href="#/wishlist">WishList</a>
               </md-list-item>
-              <!-- end of saved item -->
-
-              <!-- Examples item -->
-              <!-- <li class="md-list-item" v-else>
-                <a
-                  href="javascript:void(0)"
-                  class="md-list-item-router md-list-item-container md-button-clean dropdown"
-                >
-                  <div class="md-list-item-content">
-                    <drop-down direction="down">
-                      <md-button
-                        slot="title"
-                        class="md-button md-button-link md-white md-simple dropdown-toggle"
-                        data-toggle="dropdown"
-                      >
-                        <i class="material-icons">view_carousel</i>
-                        <p>Examples</p>
-                      </md-button>
-                      <ul class="dropdown-menu dropdown-with-icons">
-                        <li>
-                          <a href="#/landing">
-                            <i class="material-icons">view_day</i>
-                            <p>Landing Page</p>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#/login">
-                            <i class="material-icons">fingerprint</i>
-                            <p>Login Page</p>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#/profile">
-                            <i class="material-icons">account_circle</i>
-                            <p>Profile Page</p>
-                          </a>
-                        </li>
-                      </ul>
-                    </drop-down>
-                  </div>
-                </a>
-              </li> -->
-              <!-- end of examples item -->
 
               <!-- register button -->
               <li class="md-list-item" v-if="!loggedIn">
@@ -161,7 +118,7 @@
                         slot="title"
                         data-toggle="dropdown"
                       >
-                        <img src="@/assets/img/blankprofile.webp" id="myimg" />
+                        <img :src="tabPane1[0].image" id="myimg" />
                       </div>
                       <ul class="dropdown-menu dropdown-menu-right">
                         <li class="dropdown-header">
@@ -234,25 +191,20 @@ export default {
     colorOnScroll: {
       type: Number,
       default: 0
-    },
-    img: {
-      type: String,
-      default: require("@/assets/img/blankprofile.webp")
     }
+    // img: {
+    //   type: String,
+    //   default: require("@/assets/img/blankprofile.webp")
+    // }
   },
   data() {
     return {
       extraNavClasses: "",
       toggledClass: false,
-      loggedIn: false
+      loggedIn: false,
+      tabPane1: [{ image: require("@/assets/img/blankprofile.webp") }]
     };
   },
-  // computed: {
-  //   showDownload() {
-  //     const excludedRoutes = ["login", "profile"];
-  //     return excludedRoutes.every(r => r !== this.$route.name);
-  //   }
-  // },
   computed: {
     fetchUserEmail() {
       const auth = getAuth();
@@ -318,8 +270,8 @@ export default {
           getDownloadURL(storageRef)
             .then(url => {
               const img = document.getElementById("myimg");
-              console.log(url);
-              img.setAttribute("src", url);
+              // console.log(url);
+              // img.setAttribute("src", url);
             })
             .catch(error => {
               console.log(error);
@@ -331,18 +283,45 @@ export default {
         }
       });
     },
+    getProfileImageURL() {
+      const auth = getAuth();
+      const user = auth.currentUser;
+      const storage = getStorage();
+      onAuthStateChanged(auth, user => {
+        if (user) {
+          this.loggedIn = true;
+          const storageRef = ref(storage, "users/" + user.uid + "/profile.jpg");
+          getDownloadURL(storageRef)
+            .then(url => {
+              const img = document.getElementById("myimg");
+              console.log(url);
+              this.tabPane1[0].image = url;
+              console.log("changed in profile function");
+            })
+            .catch(error => {
+              console.log(error);
+            });
+        } else {
+          this.loggedIn = false;
+        }
+      });
+    },
     signOut() {
       const auth = getAuth();
       signOut(auth)
         .then(() => {
           console.log("signed out");
           this.$router.push({ name: "landing" });
+          this.$router.go();
         })
         .catch(error => {
           console.log(error);
         });
       // after signout, remember to push to landing page
     }
+  },
+  created() {
+    this.getProfileImageURL();
   },
   mounted() {
     document.addEventListener("scroll", this.scrollListener);

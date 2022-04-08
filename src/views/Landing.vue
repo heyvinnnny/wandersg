@@ -145,16 +145,15 @@
           <h2 class="title">Trending Tiktok Videos</h2>
           <div
             class="parent"
-            style="
-  margin: 1rem;
-  padding: 2rem 2rem;
-  text-align: center;"
+            style="margin: 1rem;
+            padding: 2rem 2rem;
+            text-align: center;"
           >
             <div
               class="child"
               style="display: inline-block;
-  padding: 1rem 1rem;
-  vertical-align: middle;"
+              padding: 1rem 1rem;
+              vertical-align: middle;"
             >
               <video
                 src="https://v16-webapp.tiktok.com/b66b3b570d24bebe9e79c143f4e92cab/624f3ba9/video/tos/alisg/tos-alisg-pve-0037/16944323e63e49069e6e4be98604faf8/?a=1988&amp;br=3058&amp;bt=1529&amp;cd=0%7C0%7C1%7C0&amp;ch=0&amp;cr=0&amp;cs=0&amp;cv=1&amp;dr=0&amp;ds=3&amp;er=&amp;ft=eXd.6Hy2Myq8ZyNqGwe2NKkhml7Gb&amp;l=2022040713291501024406903501287B0C&amp;lr=tiktok&amp;mime_type=video_mp4&amp;net=0&amp;pl=0&amp;qs=0&amp;rc=ajhteTw6Znh3NzMzODgzNEApPGZpNjQ1Zzw6N2llPGU2OWcwcjAycjQwamBgLS1kLy1zczExM2IzMGMwNl42XzIuMl46Yw%3D%3D&amp;vl=&amp;vr="

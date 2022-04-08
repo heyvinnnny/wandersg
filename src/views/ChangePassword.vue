@@ -38,7 +38,7 @@
                 slot="footer"
                 class="md-simple md-success md-lg"
                 style="margin:0px;"
-                :disabled="!checkSame"
+                :disabled="!checkValid"
               >
                 Save Changes
               </md-button>
@@ -125,6 +125,9 @@ export default {
     },
     checkSame() {
       return this.newPassword1 === this.newPassword2;
+    },
+    checkValid() {
+      return this.newPassword1 === this.newPassword2 && this.newPassword1 != "";
     }
   }
 };

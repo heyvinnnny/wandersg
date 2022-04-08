@@ -46,7 +46,7 @@
               </div>
             </div>
           </div>
-          <div>
+          <!-- <div>
             <div class="description text-center">
               <h3 class="title">
                 Change your preferences for attractions:
@@ -111,7 +111,7 @@
                 <h3>Save Changes</h3>
               </md-button>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -119,70 +119,69 @@
 </template>
 
 <script>
-// import { Tabs } from "@/components";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { getAuth } from "firebase/auth";
-import {
-  collection,
-  getDocs,
-  doc,
-  setDoc,
-  getFirestore
-} from "firebase/firestore";
-import { firebaseApp } from "../firebase.js";
-import PreferenceCard from "@/views/components/PreferenceCard.vue";
+// import {
+//   collection,
+//   getDocs,
+//   doc,
+//   setDoc,
+//   getFirestore
+// } from "firebase/firestore";
+// import { firebaseApp } from "../firebase.js";
+// import PreferenceCard from "@/views/components/PreferenceCard.vue";
 
-const db = getFirestore(firebaseApp);
+// const db = getFirestore(firebaseApp);
 
 export default {
-  components: {
-    PreferenceCard
-  },
+  // components: {
+  //   PreferenceCard
+  // },
   bodyClass: "profile-page",
   data() {
     return {
-      file: undefined,
-      tabPane1: [
-        { image: require("@/assets/img/preferences/Adventure\ unclicked.jpg") },
-        { image: require("@/assets/img/preferences/Animals\ unclicked.jpg") },
-        { image: require("@/assets/img/preferences/Arts\ unclicked.jpg") },
-        { image: require("@/assets/img/preferences/Asian\ unclicked.jpg") },
-        { image: require("@/assets/img/preferences/Cafe\ unclicked.jpg") },
-        { image: require("@/assets/img/preferences/Family\ unclicked.jpg") },
-        { image: require("@/assets/img/preferences/Lifestyle\ unclicked.jpg") },
-        {
-          image: require("@/assets/img/preferences/Mediterranean\ unclicked.jpg")
-        },
-        { image: require("@/assets/img/preferences/Nature\ unclicked.jpg") },
-        { image: require("@/assets/img/preferences/Romantic\ unclicked.jpg") },
-        { image: require("@/assets/img/preferences/Social\ unclicked.jpg") },
-        { image: require("@/assets/img/preferences/Western\ unclicked.jpg") }
-      ],
-      email: getAuth().currentUser.email,
-      adventure: false,
-      Adventure: "Adventure",
-      animals: false,
-      Animals: "Animals",
-      arts: false,
-      Arts: "Arts",
-      asian: false,
-      Asian: "Asian",
-      cafe: false,
-      Cafe: "Cafe",
-      family: false,
-      Family: "Family",
-      lifestyle: false,
-      Lifestyle: "Lifestyle",
-      mediterranean: false,
-      Mediterranean: "Mediterranean",
-      nature: false,
-      Nature: "Nature",
-      romantic: false,
-      Romantic: "Romantic",
-      social: false,
-      Social: "Social",
-      western: false,
-      Western: "Western"
+      file: undefined
+      // tabPane1: [
+      //   { image: require("@/assets/img/preferences/Adventure\ unclicked.jpg") },
+      //   { image: require("@/assets/img/preferences/Animals\ unclicked.jpg") },
+      //   { image: require("@/assets/img/preferences/Arts\ unclicked.jpg") },
+      //   { image: require("@/assets/img/preferences/Asian\ unclicked.jpg") },
+      //   { image: require("@/assets/img/preferences/Cafe\ unclicked.jpg") },
+      //   { image: require("@/assets/img/preferences/Family\ unclicked.jpg") },
+      //   { image: require("@/assets/img/preferences/Lifestyle\ unclicked.jpg") },
+      //   {
+      //     image: require("@/assets/img/preferences/Mediterranean\ unclicked.jpg")
+      //   },
+      //   { image: require("@/assets/img/preferences/Nature\ unclicked.jpg") },
+      //   { image: require("@/assets/img/preferences/Romantic\ unclicked.jpg") },
+      //   { image: require("@/assets/img/preferences/Social\ unclicked.jpg") },
+      //   { image: require("@/assets/img/preferences/Western\ unclicked.jpg") }
+      // ],
+      // email: getAuth().currentUser.email,
+      // adventure: false,
+      // Adventure: "Adventure",
+      // animals: false,
+      // Animals: "Animals",
+      // arts: false,
+      // Arts: "Arts",
+      // asian: false,
+      // Asian: "Asian",
+      // cafe: false,
+      // Cafe: "Cafe",
+      // family: false,
+      // Family: "Family",
+      // lifestyle: false,
+      // Lifestyle: "Lifestyle",
+      // mediterranean: false,
+      // Mediterranean: "Mediterranean",
+      // nature: false,
+      // Nature: "Nature",
+      // romantic: false,
+      // Romantic: "Romantic",
+      // social: false,
+      // Social: "Social",
+      // western: false,
+      // Western: "Western"
     };
   },
   methods: {
@@ -206,27 +205,27 @@ export default {
       });
       console.log("uploadImage");
     },
-    register() {
-      let z = setDoc(
-        doc(db, "users", String(this.email), "preference", "preferences"),
-        {
-          Adventure: this.adventure,
-          Animals: this.animals,
-          Arts: this.arts,
-          Asian: this.asian,
-          Cafe: this.cafe,
-          Family: this.family,
-          Lifestyle: this.lifestyle,
-          Mediterranean: this.mediterranean,
-          Nature: this.nature,
-          Romantic: this.romantic,
-          Social: this.social,
-          Western: this.western
-        }
-      );
-      console.log("user with email:" + this.email + " created");
-      this.$router.push({ name: "landing" });
-    },
+    // register() {
+    //   let z = setDoc(
+    //     doc(db, "users", String(this.email), "preference", "preferences"),
+    //     {
+    //       Adventure: this.adventure,
+    //       Animals: this.animals,
+    //       Arts: this.arts,
+    //       Asian: this.asian,
+    //       Cafe: this.cafe,
+    //       Family: this.family,
+    //       Lifestyle: this.lifestyle,
+    //       Mediterranean: this.mediterranean,
+    //       Nature: this.nature,
+    //       Romantic: this.romantic,
+    //       Social: this.social,
+    //       Western: this.western
+    //     }
+    //   );
+    //   console.log("user with email:" + this.email + " created");
+    //   this.$router.push({ name: "landing" });
+    // },
     setupFirebase() {
       const auth = getAuth();
       const user = auth.currentUser;
@@ -246,7 +245,7 @@ export default {
   props: {
     header: {
       type: String,
-      default: require("@/assets/img/city-profile.jpg")
+      default: require("@/assets/img/sg4.jpg")
     },
     img: {
       type: String,

@@ -203,34 +203,8 @@
                       <br />
                       <small class="card-description text-muted">Founder</small>
                     </h4>
-                    <!-- <md-card-content>
-                      <p class="card-description">
-                        You can write here details about one of your team
-                        members. You can give more details about what they do.
-                        Feel free to add some <a href="#">links</a> for people
-                        to be able to follow them outside the site.
-                      </p>
-                    </md-card-content> -->
 
                     <md-card-actions class="text-center">
-                      <!-- <md-button
-                        href="javascript:void(0)"
-                        class="md-just-icon md-simple"
-                      >
-                        <i class="fab fa-twitter"></i>
-                      </md-button>
-                      <md-button
-                        href="javascript:void(0)"
-                        class="md-just-icon md-simple"
-                      >
-                        <i class="fab fa-instagram"></i>
-                      </md-button>
-                      <md-button
-                        href="javascript:void(0)"
-                        class="md-just-icon md-simple"
-                      >
-                        <i class="fab fa-facebook-square"></i>
-                      </md-button> -->
                       <md-button
                         onclick="window.open('https://www.linkedin.com/in/wee-hng-chua-495616221/', '_blank');"
                         class="md-just-icon md-simple"
@@ -241,7 +215,6 @@
                   </md-card>
                 </div>
               </div>
-              <!-- end of team member 1 -->
 
               <div class="md-layout-item md-medium-size-33 md-small-size-100">
                 <div class="team-player">
@@ -364,84 +337,15 @@
           </div>
         </div>
       </div>
-      <!-- <div class="section section-contacts">
-        <div class="container">
-          <div class="md-layout">
-            <div class="md-layout-item md-size-66 md-xsmall-size-100 mx-auto">
-              <h2 class="text-center title">Work with us</h2>
-              <h4 class="text-center description">
-                Divide details about your product or agency work into parts.
-                Write a few lines about each one and contact us about any
-                further collaboration. We will responde get back to you in a
-                couple of hours.
-              </h4>
-              <form class="contact-form">
-                <div class="md-layout">
-                  <div class="md-layout-item md-size-50">
-                    <md-field>
-                      <label>Your Name</label>
-                      <md-input v-model="name" type="text"></md-input>
-                    </md-field>
-                  </div>
-                  <div class="md-layout-item md-size-50">
-                    <md-field>
-                      <label>Your Email</label>
-                      <md-input v-model="email" type="email"></md-input>
-                    </md-field>
-                  </div>
-                </div>
-                <md-field maxlength="5">
-                  <label>Your Message</label>
-                  <md-textarea v-model="message"></md-textarea>
-                </md-field>
-                <div class="md-layout">
-                  <div class="md-layout-item md-size-33 mx-auto text-center">
-                    <md-button class="md-success">Send Message</md-button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
-      <!-- <div class="section">
-        <div class="container">
-          <div class="md-layout">
-            <div
-              class="md-layout-item md-size-66 md-xsmall-size-100 mx-auto text-center"
-            >
-              <h2 class="title text-center">From the Blog</h2>
-              <h5 class="description">
-                Wander@SG curates and recommends a collection of blog articles
-                on the hottest places to go to in Singapore at the moment! These
-                cover a variety of interests, from scenic attractions to the
-                tastiest food in town!
-              </h5>
-            </div>
-          </div>
-        </div>
-      </div> -->
     </div>
-    <!-- <test-register />
-    <top-header />
-    <test-login /> -->
   </div>
 </template>
 
 <script>
-// import TestRegister from "./components/TestRegister.vue";
-// import TopHeader from "./components/TopHeader.vue";
-// import TestLogin from "./components/TestLogin.vue";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default {
   bodyClass: "landing-page",
-  // components: {
-  //   "test-register": TestRegister,
-  //   "top-header": TopHeader,
-  //   "test-login": TestLogin
-  // },
   props: {
     header: {
       type: String,

@@ -14,7 +14,7 @@ import ChangePassword from "./views/ChangePassword.vue";
 import WishList from "./views/WishList";
 import PageNotFound from "./views/components/PageNotFound.vue";
 import UpdateInfo from "./views/UpdateInfo.vue";
-
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 //Import for Search page (Restaurant)
 import Search from "./views/Search.vue";
@@ -78,7 +78,7 @@ import A0004 from "./views/activities/A0004.vue";
 
 Vue.use(Router);
 
-export default new Router({
+const routerr = new Router({
   routes: [
     // {
     //   path: "/",
@@ -107,22 +107,18 @@ export default new Router({
       },
     },
     {
-      path: "/profile",
-      name: "profile",
-      components: { default: Profile, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" },
-      },
-    },
-    {
       path: "/updateinfo",
       name: "updateinfo",
-      components: { default: UpdateInfo, header: MainNavbar, footer: MainFooter },
+      components: {
+        default: UpdateInfo,
+        header: MainNavbar,
+        footer: MainFooter,
+      },
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "black" },
       },
+      meta: { requiresAuth: true },
     },
     {
       path: "/profile2",
@@ -136,6 +132,7 @@ export default new Router({
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "black" },
       },
+      meta: { requiresAuth: true },
     },
     {
       path: "/register",
@@ -158,6 +155,7 @@ export default new Router({
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "black" },
       },
+      meta: { requiresAuth: true },
     },
     {
       path: "/suggested",
@@ -171,6 +169,7 @@ export default new Router({
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "black" },
       },
+      meta: { requiresAuth: true },
     },
     {
       path: "/wishlist",
@@ -184,6 +183,7 @@ export default new Router({
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "black" },
       },
+      meta: { requiresAuth: true },
     },
 
     //Import for all the relevant search pages
@@ -193,17 +193,21 @@ export default new Router({
       components: { default: Search, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/searchact",
       name: "searchact",
-      components: { default: SearchAct, header: MainNavbar, footer: MainFooter },
+      components: {
+        default: SearchAct,
+        header: MainNavbar,
+        footer: MainFooter,
+      },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0030",
@@ -211,8 +215,8 @@ export default new Router({
       components: { default: RS0030, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0029",
@@ -220,8 +224,8 @@ export default new Router({
       components: { default: RS0029, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0028",
@@ -229,8 +233,8 @@ export default new Router({
       components: { default: RS0028, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0027",
@@ -238,8 +242,8 @@ export default new Router({
       components: { default: RS0027, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0026",
@@ -247,8 +251,8 @@ export default new Router({
       components: { default: RS0026, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0025",
@@ -256,8 +260,8 @@ export default new Router({
       components: { default: RS0025, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0024",
@@ -265,8 +269,8 @@ export default new Router({
       components: { default: RS0024, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0023",
@@ -274,8 +278,8 @@ export default new Router({
       components: { default: RS0023, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0022",
@@ -283,8 +287,8 @@ export default new Router({
       components: { default: RS0022, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0021",
@@ -292,8 +296,8 @@ export default new Router({
       components: { default: RS0021, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0020",
@@ -301,8 +305,8 @@ export default new Router({
       components: { default: RS0020, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0019",
@@ -310,8 +314,8 @@ export default new Router({
       components: { default: RS0019, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0018",
@@ -319,8 +323,8 @@ export default new Router({
       components: { default: RS0018, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0017",
@@ -328,8 +332,8 @@ export default new Router({
       components: { default: RS0017, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0016",
@@ -337,8 +341,8 @@ export default new Router({
       components: { default: RS0016, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0015",
@@ -346,8 +350,8 @@ export default new Router({
       components: { default: RS0015, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0014",
@@ -355,8 +359,8 @@ export default new Router({
       components: { default: RS0014, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0013",
@@ -364,8 +368,8 @@ export default new Router({
       components: { default: RS0013, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0012",
@@ -373,8 +377,8 @@ export default new Router({
       components: { default: RS0012, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0011",
@@ -382,8 +386,8 @@ export default new Router({
       components: { default: RS0011, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0010",
@@ -391,8 +395,8 @@ export default new Router({
       components: { default: RS0010, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0009",
@@ -400,8 +404,8 @@ export default new Router({
       components: { default: RS0009, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0008",
@@ -409,8 +413,8 @@ export default new Router({
       components: { default: RS0008, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0007",
@@ -418,8 +422,8 @@ export default new Router({
       components: { default: RS0007, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0006",
@@ -427,8 +431,8 @@ export default new Router({
       components: { default: RS0006, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0005",
@@ -436,8 +440,8 @@ export default new Router({
       components: { default: RS0005, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0004",
@@ -445,8 +449,8 @@ export default new Router({
       components: { default: RS0004, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0003",
@@ -454,8 +458,8 @@ export default new Router({
       components: { default: RS0003, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0002",
@@ -463,8 +467,8 @@ export default new Router({
       components: { default: RS0002, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/RS0001",
@@ -472,8 +476,8 @@ export default new Router({
       components: { default: RS0001, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/T0003",
@@ -481,8 +485,8 @@ export default new Router({
       components: { default: T0003, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/T0004",
@@ -490,8 +494,8 @@ export default new Router({
       components: { default: T0004, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/T0005",
@@ -499,8 +503,8 @@ export default new Router({
       components: { default: T0005, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/T0002",
@@ -508,8 +512,8 @@ export default new Router({
       components: { default: T0002, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/T0001",
@@ -517,8 +521,8 @@ export default new Router({
       components: { default: T0001, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/P0001",
@@ -526,8 +530,8 @@ export default new Router({
       components: { default: P0001, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/T0003",
@@ -535,8 +539,8 @@ export default new Router({
       components: { default: T0003, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/M0002",
@@ -544,8 +548,8 @@ export default new Router({
       components: { default: M0002, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/M0001",
@@ -553,8 +557,8 @@ export default new Router({
       components: { default: M0001, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/L0001",
@@ -562,8 +566,8 @@ export default new Router({
       components: { default: L0001, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/C0001",
@@ -571,8 +575,8 @@ export default new Router({
       components: { default: C0001, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/A0002",
@@ -580,8 +584,8 @@ export default new Router({
       components: { default: A0002, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/A0001",
@@ -589,8 +593,8 @@ export default new Router({
       components: { default: A0001, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/A0003",
@@ -598,8 +602,8 @@ export default new Router({
       components: { default: A0003, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/A0004",
@@ -607,8 +611,8 @@ export default new Router({
       components: { default: A0004, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/C0002",
@@ -616,8 +620,8 @@ export default new Router({
       components: { default: C0002, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/M0003",
@@ -625,8 +629,8 @@ export default new Router({
       components: { default: M0003, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/M0004",
@@ -634,8 +638,8 @@ export default new Router({
       components: { default: M0004, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/M0005",
@@ -643,8 +647,8 @@ export default new Router({
       components: { default: M0005, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/M0006",
@@ -652,8 +656,8 @@ export default new Router({
       components: { default: M0006, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/P0002",
@@ -661,10 +665,9 @@ export default new Router({
       components: { default: P0002, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
-
 
     {
       path: "/:catchAll(.*)",
@@ -680,3 +683,16 @@ export default new Router({
     }
   },
 });
+
+routerr.beforeEach((to, from, next) => {
+  const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
+  const isAuthenticated = getAuth().currentUser;
+  console.log("isauthenticated", isAuthenticated);
+  if (requiresAuth && !isAuthenticated) {
+    next("/login");
+  } else {
+    next();
+  }
+});
+
+export default routerr;

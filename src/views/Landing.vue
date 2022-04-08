@@ -143,43 +143,27 @@
       <div class="section text-center">
         <div class="container">
           <h2 class="title">Trending Tiktok Videos</h2>
-          <div
-            class="parent"
-            style="margin: 1rem;
-            padding: 2rem 2rem;
-            text-align: center;"
-          >
-            <div
-              class="child"
-              style="display: inline-block;
+          <div class = "parent" style="margin: 1rem; padding: 2rem 2rem; text-align: center;">
+
+            <div class ="child" style ="display: inline-block; padding: 1rem 1rem; vertical-align: middle;">
+
+  <video src ="@/assets/vid/uss1.mp4" playsinline="" controls=""
+  style="height: 500px; border: 0px none; width: 450px; margin-top: -55px; margin-left: 5px; margin-right: 0px; "></video>
+        
+          </div>
+
+          <div class = "child" style ="display: inline-block;
               padding: 1rem 1rem;
-              vertical-align: middle;"
-            >
-              <video
-                src="https://v16-webapp.tiktok.com/b66b3b570d24bebe9e79c143f4e92cab/624f3ba9/video/tos/alisg/tos-alisg-pve-0037/16944323e63e49069e6e4be98604faf8/?a=1988&amp;br=3058&amp;bt=1529&amp;cd=0%7C0%7C1%7C0&amp;ch=0&amp;cr=0&amp;cs=0&amp;cv=1&amp;dr=0&amp;ds=3&amp;er=&amp;ft=eXd.6Hy2Myq8ZyNqGwe2NKkhml7Gb&amp;l=2022040713291501024406903501287B0C&amp;lr=tiktok&amp;mime_type=video_mp4&amp;net=0&amp;pl=0&amp;qs=0&amp;rc=ajhteTw6Znh3NzMzODgzNEApPGZpNjQ1Zzw6N2llPGU2OWcwcjAycjQwamBgLS1kLy1zczExM2IzMGMwNl42XzIuMl46Yw%3D%3D&amp;vl=&amp;vr="
-                playsinline=""
-                controls=""
-                class="tiktok-1sm3sg-VideoBasic e1yey0rl4"
-                style="height: 500px; border: 0px none; width: 450px; margin-top: -55px; margin-left: 5px; margin-right: 0px; "
-              ></video>
-            </div>
-            <div
-              class="child"
-              style="display: inline-block;
-              padding: 1rem 1rem;
-              vertical-align: middle;"
-            >
-              <video
-                src="https://v16-webapp.tiktok.com/1c55982e46ee5efde8cf906ad7480112/624f3c68/video/tos/alisg/tos-alisg-pve-0037/0bed5082626a40c19bd3cf822592fd90/?a=1988&amp;br=3006&amp;bt=1503&amp;cd=0%7C0%7C1%7C0&amp;ch=0&amp;cr=0&amp;cs=0&amp;cv=1&amp;dr=0&amp;ds=3&amp;er=&amp;ft=eXd.6Hy2Myq8ZBMqGwe2N5ZQml7Gb&amp;l=202204071332150102450041490A28513C&amp;lr=tiktok&amp;mime_type=video_mp4&amp;net=0&amp;pl=0&amp;qs=0&amp;rc=anlvOTo6Zjo5OTMzODgzNEApZjdkNzw3NTxlNztlPDg8aWdkMGRicjQwcHBgLS1kLy1zc14vYTMwL19gYS80YC9jNjI6Yw%3D%3D&amp;vl=&amp;vr="
-                playsinline=""
-                controls=""
-                class="tiktok-1sm3sg-VideoBasic e1yey0rl4"
-                style="height: 500px; border: 0px none; width: 450px; margin-top: -55px; margin-left: 5px; margin-right: 0px; "
-              ></video>
-            </div>
+              vertical-align: middle;">
+        
+          <video src="@/assets/vid/res-laby.mp4" playsinline="" controls="" 
+          style="height: 500px; border: 0px none; width: 450px; margin-top: -55px; margin-left: 5px; margin-right: 0px; "></video>
+          </div>
+
           </div>
         </div>
-      </div>
+        </div>
+
 
       <div class="section text-center">
         <div class="container">

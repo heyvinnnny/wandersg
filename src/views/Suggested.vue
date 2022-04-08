@@ -15,12 +15,12 @@
               Fully customized day trip based on your interests
             </h4>
             <br />
-            <md-button
+            <!-- <md-button
               href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
               class="md-success md-lg"
               target="_blank"
               ><i class="fa fa-play"></i> Generate</md-button
-            >
+            > -->
           </div>
         </div>
       </div>

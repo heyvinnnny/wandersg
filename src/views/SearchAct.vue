@@ -4,15 +4,11 @@
       <div class="md-layout">
         <div class="md-layout-item">
           <div class="image-wrapper">
-            <img :src="leaf4" alt="leaf4" class="leaf4" v-show="leafShow" />
-            <img :src="leaf3" alt="leaf3" class="leaf3" v-show="leafShow" />
-            <img :src="leaf2" alt="leaf2" class="leaf2" v-show="leafShow" />
-            <img :src="leaf1" alt="leaf1" class="leaf1" v-show="leafShow" />
             <div class="brand">
-              <h1 style="color:white;">Search</h1>
+              <!-- <h1 style="color:white;">Search</h1>
               <h3 style="color:white;">
                 Search for your favourite activity.
-              </h3>
+              </h3> -->
             </div>
           </div>
         </div>
@@ -174,7 +170,7 @@ export default {
   props: {
     image: {
       type: String,
-      default: require("@/assets/img/bg7.jpg")
+      default: require("@/assets/img/bg5.jpg")
     },
 
     signup: {

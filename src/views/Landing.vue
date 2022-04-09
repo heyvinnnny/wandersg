@@ -184,7 +184,9 @@
                     <h4 class="card-title">
                       Chua Wee Hng
                       <br />
-                      <small class="card-description text-muted">Founder</small>
+                      <small class="card-description text-muted"
+                        >Product Owner</small
+                      >
                     </h4>
 
                     <md-card-actions class="text-center">
@@ -212,7 +214,9 @@
                     <h4 class="card-title">
                       Isaac Hay
                       <br />
-                      <small class="card-description text-muted">CTO</small>
+                      <small class="card-description text-muted"
+                        >Scrum Master</small
+                      >
                     </h4>
 
                     <md-card-actions class="text-center">
@@ -241,7 +245,7 @@
                       Kevin Yew
                       <br />
                       <small class="card-description text-muted"
-                        >Team Leader</small
+                        >Developer</small
                       >
                     </h4>
 
@@ -271,7 +275,7 @@
                       Elton Ng
                       <br />
                       <small class="card-description text-muted"
-                        >Lead Developer</small
+                        >Developer</small
                       >
                     </h4>
 
@@ -301,7 +305,7 @@
                       Oliver Gui
                       <br />
                       <small class="card-description text-muted"
-                        >Solutions Architect</small
+                        >Developer</small
                       >
                     </h4>
 

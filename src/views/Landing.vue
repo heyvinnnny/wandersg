@@ -251,7 +251,7 @@
 
                     <md-card-actions class="text-center">
                       <md-button
-                        href="javascript:void(0)"
+                         onclick="window.open('https://www.linkedin.com/in/kyew/', '_blank');"
                         class="md-just-icon md-simple"
                       >
                         <i class="fab fa-linkedin"></i>

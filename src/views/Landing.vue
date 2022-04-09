@@ -348,7 +348,7 @@ export default {
     },
     teamImg3: {
       type: String,
-      default: require("@/assets/img/faces/kevin.png")
+      default: require("@/assets/img/faces/kevin1.jpg")
     },
     teamImg4: {
       type: String,

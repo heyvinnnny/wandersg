@@ -52,7 +52,7 @@
   },
   "eslintConfig": {
     "rules": {
-      "no-console": false
+      "no-console": "off"
     }
   }
 }

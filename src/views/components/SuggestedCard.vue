@@ -14,7 +14,7 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
           />
           <md-button v-bind:class="getClass()" v-on:click="checkIfFav()"
-            ><md-icon class="heartIcon">favorite</md-icon></md-button
+            ><md-icon class="heartIcon">menu</md-icon></md-button
           >
         </div>
       </div>

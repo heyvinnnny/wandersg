@@ -9,7 +9,7 @@
           <span class="text-span">{{ category }}</span>
         </div>
         <div class="buy">
-          <md-button v-bind:class="getClass()" v-on:click="checkIfFav()"
+          <md-button v-bind:class="getClass()" v-on:click="checkIfFav()" 
             ><md-icon>favorite</md-icon>
           </md-button>
         </div>

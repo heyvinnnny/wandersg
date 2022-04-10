@@ -1,6 +1,6 @@
 <template>
   <div id="border-wrapper">
-    <h1>WishLists</h1>
+    <h1>WishList</h1>
     <div id="border"></div>
     <div class="flex-container">
       <ImageCard
@@ -130,6 +130,7 @@ export default {
 
 #border-wrapper h1 {
   text-align: center;
+  font-weight: bold;
 }
 
 #border {

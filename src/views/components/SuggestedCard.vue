@@ -169,6 +169,7 @@ export default {
 
 <style scoped>
 /* @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap"); */
+/* @import url("https://fonts.googleapis.com/icon?family=Material+Icons"); */
 * {
   margin: 0;
   padding: 0;
@@ -356,6 +357,7 @@ md-icon {
 </style>
 
 <style lang="scss" scoped>
+// @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 .flex-container {
   display: flex;
   flex-wrap: wrap;

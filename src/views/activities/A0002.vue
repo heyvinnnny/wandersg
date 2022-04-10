@@ -183,7 +183,6 @@
 </template>
 
 <script>
- 
 import firebaseApp from "@/firebase.js";
 import { getFirestore } from "firebase/firestore";
 import {

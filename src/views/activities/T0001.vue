@@ -185,7 +185,6 @@
 </template>
 
 <script>
- 
 import firebaseApp from "@/firebase.js";
 import { getFirestore } from "firebase/firestore";
 import {
@@ -273,7 +272,7 @@ export default {
     this.website = querySnapshot.data().website;
     this.latitude = querySnapshot.data().latitude;
     this.longtitude = querySnapshot.data().longtitude;
-    
+
     if (user) {
       this.loggedIn = true;
       const docRef = doc(db, "users", user, "wishlist", this.name);

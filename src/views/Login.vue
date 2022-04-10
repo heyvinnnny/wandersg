@@ -8,7 +8,7 @@
           >
             <login-card header-color="green">
               <h4 slot="title" class="card-title">Login</h4>
-              <br><br>
+              <br /><br />
               <!-- <md-button
                 slot="buttons"
                 href="javascript:void(0)"

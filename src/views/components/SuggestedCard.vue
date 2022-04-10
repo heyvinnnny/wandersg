@@ -350,6 +350,9 @@ p {
 /* .heartIcon {
   color: red;
 } */
+md-icon {
+  font-family: "Material Icons" !important;
+}
 </style>
 
 <style lang="scss" scoped>
@@ -358,5 +361,9 @@ p {
   flex-wrap: wrap;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+md-icon {
+  font-family: "Material Icons" !important;
 }
 </style>

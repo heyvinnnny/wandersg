@@ -71,18 +71,22 @@
               <!-- end of components item -->
 
               <!-- Documentation item (going to be replaced with suggested) -->
-              <md-list-item v-if="loggedIn">
-                <i class="material-icons">explore</i>
-                <a href="#/suggested">Suggested</a>
-              </md-list-item>
+              <a href="#/suggested">
+                <md-list-item @click="scrollToElement()" v-if="loggedIn">
+                  <i class="material-icons">explore</i>
+                  <a href="#/suggested">Suggested</a>
+                </md-list-item>
+              </a>
 
               <!-- end of suggested item -->
 
               <!-- Download item (going to be replaced with saved) -->
-              <md-list-item v-if="loggedIn">
-                <i class="material-icons">bookmark</i>
-                <a href="#/wishlist">WishList</a>
-              </md-list-item>
+              <a href="#/wishlist">
+                <md-list-item @click="scrollToElement()" v-if="loggedIn">
+                  <i class="material-icons">bookmark</i>
+                  <a href="#/wishlist">WishList</a>
+                </md-list-item>
+              </a>
 
               <!-- register button -->
               <li class="md-list-item" v-if="!loggedIn">

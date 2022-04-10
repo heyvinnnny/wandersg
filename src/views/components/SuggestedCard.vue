@@ -9,9 +9,13 @@
           <span class="text-span">{{ category }}</span>
         </div>
         <div class="buy">
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+          />
           <md-button v-bind:class="getClass()" v-on:click="checkIfFav()"
-            ><md-icon>favorite</md-icon>
-          </md-button>
+            ><md-icon class="heartIcon">favorite</md-icon></md-button
+          >
         </div>
       </div>
     </div>
@@ -23,7 +27,7 @@
       <div class="contents">
         <!-- <h1>The Feather Blade</h1>
         <br /> -->
-        <p>Price: {{ price }}</p>
+        <p>Prices: {{ price }}</p>
         <br v-if="isFood" />
         <p v-if="isFood">Ambience: ⭐️⭐️⭐️</p>
         <br v-if="isFood" />

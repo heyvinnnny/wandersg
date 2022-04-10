@@ -9,10 +9,6 @@
           <span class="text-span">{{ category }}</span>
         </div>
         <div class="buy">
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-          />
           <md-button v-bind:class="getClass()" v-on:click="checkIfFav()"
             ><md-icon class="heartIcon">menu</md-icon></md-button
           >

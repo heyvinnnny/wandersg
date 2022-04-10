@@ -1,6 +1,6 @@
 <template>
   <div id="border-wrapper">
-    <h1>WishList</h1>
+    <h1>WishLists</h1>
     <div id="border"></div>
     <div class="flex-container">
       <ImageCard

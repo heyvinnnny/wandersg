@@ -10,7 +10,7 @@
         </div>
         <div class="buy">
           <md-button v-bind:class="getClass()" v-on:click="checkIfFav()"
-            ><md-icon class="heartIcon">menu</md-icon></md-button
+            ><md-icon class="heartIcon">🤍</md-icon></md-button
           >
         </div>
       </div>
@@ -348,9 +348,9 @@ p {
   margin: 0px auto 15px auto;
 }
 
-/* .heartIcon {
-  color: red;
-} */
+.heartIcon {
+  padding-bottom: 5px;
+}
 md-icon {
   font-family: "Material Icons" !important;
 }

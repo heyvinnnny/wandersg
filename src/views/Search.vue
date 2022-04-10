@@ -26,7 +26,7 @@
             style="padding-left:20px; margin-left: 200px; font-family: monaco,Consolas,Lucida Console,monospace;"
           >
             <ais-clear-refinements style="color:palevioletred;" />
-            <br>
+            <br />
             <h2>Restaurants</h2>
             <h3>Category</h3>
             <ais-refinement-list

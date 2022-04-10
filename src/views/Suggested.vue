@@ -151,7 +151,7 @@ export default {
       return {
         backgroundImage: `url(${"https://images.pexels.com/photos/8506357/pexels-photo-8506357.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"})`
       };
-    },
+    }
   },
   methods: {
     change() {

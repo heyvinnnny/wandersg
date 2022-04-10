@@ -143,27 +143,38 @@
       <div class="section text-center">
         <div class="container">
           <h2 class="title">Trending Tiktok Videos</h2>
-          <div class = "parent" style="margin: 1rem; padding: 2rem 2rem; text-align: center;">
+          <div
+            class="parent"
+            style="margin: 1rem; padding: 2rem 2rem; text-align: center;"
+          >
+            <div
+              class="child"
+              style="display: inline-block; padding: 1rem 1rem; vertical-align: middle;"
+            >
+              <video
+                src="@/assets/vid/uss1.mp4"
+                playsinline=""
+                controls=""
+                style="height: 500px; border: 0px none; width: 450px; margin-top: -55px; margin-left: 5px; margin-right: 0px; "
+              ></video>
+            </div>
 
-            <div class ="child" style ="display: inline-block; padding: 1rem 1rem; vertical-align: middle;">
-
-  <video src ="@/assets/vid/uss1.mp4" playsinline="" controls=""
-  style="height: 500px; border: 0px none; width: 450px; margin-top: -55px; margin-left: 5px; margin-right: 0px; "></video>
-        
-          </div>
-
-          <div class = "child" style ="display: inline-block;
+            <div
+              class="child"
+              style="display: inline-block;
               padding: 1rem 1rem;
-              vertical-align: middle;">
-        
-          <video src="@/assets/vid/res-laby.mp4" playsinline="" controls="" 
-          style="height: 500px; border: 0px none; width: 450px; margin-top: -55px; margin-left: 5px; margin-right: 0px; "></video>
-          </div>
-
+              vertical-align: middle;"
+            >
+              <video
+                src="@/assets/vid/res-laby.mp4"
+                playsinline=""
+                controls=""
+                style="height: 500px; border: 0px none; width: 450px; margin-top: -55px; margin-left: 5px; margin-right: 0px; "
+              ></video>
+            </div>
           </div>
         </div>
-        </div>
-
+      </div>
 
       <div class="section text-center">
         <div class="container">
@@ -251,7 +262,7 @@
 
                     <md-card-actions class="text-center">
                       <md-button
-                         onclick="window.open('https://www.linkedin.com/in/kyew/', '_blank');"
+                        onclick="window.open('https://www.linkedin.com/in/kyew/', '_blank');"
                         class="md-just-icon md-simple"
                       >
                         <i class="fab fa-linkedin"></i>

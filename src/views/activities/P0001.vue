@@ -186,7 +186,6 @@
 </template>
 
 <script>
- 
 import firebaseApp from "@/firebase.js";
 import { getFirestore } from "firebase/firestore";
 import {
@@ -264,7 +263,11 @@ export default {
     const auth = getAuth();
     const user = auth.currentUser.email;
 
-    const item = doc(db, "wander-activity", "Sentosa Luge: Skyline Luge & Skyride");
+    const item = doc(
+      db,
+      "wander-activity",
+      "Sentosa Luge: Skyline Luge & Skyride"
+    );
     const querySnapshot = await getDoc(item);
     this.objectID = querySnapshot.data().objectID;
     this.name = querySnapshot.data().activityname;

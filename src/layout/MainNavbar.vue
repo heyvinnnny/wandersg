@@ -71,11 +71,7 @@
               <!-- end of components item -->
 
               <!-- Documentation item (going to be replaced with suggested) -->
-              <md-list-item
-                href="javascript:void(0)"
-                @click="scrollToElement()"
-                v-if="loggedIn"
-              >
+              <md-list-item v-if="loggedIn">
                 <i class="material-icons">explore</i>
                 <a href="#/suggested">Suggested</a>
               </md-list-item>
@@ -83,11 +79,7 @@
               <!-- end of suggested item -->
 
               <!-- Download item (going to be replaced with saved) -->
-              <md-list-item
-                href="javascript:void(0)"
-                @click="scrollToElement()"
-                v-if="loggedIn"
-              >
+              <md-list-item v-if="loggedIn">
                 <i class="material-icons">bookmark</i>
                 <a href="#/wishlist">WishList</a>
               </md-list-item>

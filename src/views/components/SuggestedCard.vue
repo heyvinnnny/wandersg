@@ -348,9 +348,6 @@ p {
   margin: 0px auto 15px auto;
 }
 
-.heartIcon {
-  padding-bottom: 5px;
-}
 md-icon {
   font-family: "Material Icons" !important;
 }

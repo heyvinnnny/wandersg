@@ -9,9 +9,9 @@
           <span class="text-span">{{ category }}</span>
         </div>
         <div class="buy">
-          <md-button v-bind:class="getClass()" v-on:click="checkIfFav()" 
-            ><md-icon>favorite</md-icon>
-          </md-button>
+          <md-button v-bind:class="getClass()" v-on:click="checkIfFav()"
+            ><md-icon class="heartIcon">🤍</md-icon></md-button
+          >
         </div>
       </div>
     </div>
@@ -23,7 +23,7 @@
       <div class="contents">
         <!-- <h1>The Feather Blade</h1>
         <br /> -->
-        <p>Price: {{ price }}</p>
+        <p>Prices: {{ price }}</p>
         <br v-if="isFood" />
         <p v-if="isFood">Ambience: ⭐️⭐️⭐️</p>
         <br v-if="isFood" />
@@ -169,6 +169,7 @@ export default {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+/* @import url("https://fonts.googleapis.com/icon?family=Material+Icons"); */
 * {
   margin: 0;
   padding: 0;
@@ -347,15 +348,13 @@ p {
   margin: 0px auto 15px auto;
 }
 
-/* .heartIcon {
-  color: red;
-} */
 md-icon {
   font-family: "Material Icons" !important;
 }
 </style>
 
 <style lang="scss" scoped>
+// @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 .flex-container {
   display: flex;
   flex-wrap: wrap;

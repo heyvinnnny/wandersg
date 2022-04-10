@@ -10,8 +10,8 @@
         </div>
         <div class="buy">
           <md-button v-bind:class="getClass()" v-on:click="checkIfFav()"
-            ><md-icon class="heartIcon">favorite</md-icon></md-button
-          >
+            ><md-icon>favorite</md-icon>
+          </md-button>
         </div>
       </div>
     </div>
@@ -347,9 +347,9 @@ p {
   margin: 0px auto 15px auto;
 }
 
-.heartIcon {
+/* .heartIcon {
   color: red;
-}
+} */
 </style>
 
 <style lang="scss" scoped>

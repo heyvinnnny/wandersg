@@ -149,7 +149,7 @@
             <label>
               <gmap-autocomplete
                 @place_changed="initMarker"
-                value="Ambling Turtle"
+                value="Ambling Turtle East Coast"
                 readonly
               ></gmap-autocomplete>
 

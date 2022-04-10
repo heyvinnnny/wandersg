@@ -153,7 +153,7 @@
             <label>
               <gmap-autocomplete
                 @place_changed="initMarker"
-                value="Universal Studios Singapore "
+                value="Universal Studios Singapore"
                 style="width:300px;"
                 readonly
               ></gmap-autocomplete>

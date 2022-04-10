@@ -135,7 +135,7 @@
             <label>
               <gmap-autocomplete
                 @place_changed="initMarker"
-                value="Feast Roxy"
+                value="Feast Roxy East Coast"
                 readonly
               ></gmap-autocomplete>
 

@@ -148,7 +148,7 @@
             <label>
               <gmap-autocomplete
                 @place_changed="initMarker"
-                value="Les Amis"
+                value="Les Amis Orchard"
                 readonly
               ></gmap-autocomplete>
 

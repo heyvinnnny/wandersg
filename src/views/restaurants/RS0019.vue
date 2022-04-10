@@ -151,7 +151,7 @@
             <label>
               <gmap-autocomplete
                 @place_changed="initMarker"
-                value="Bōruto"
+                value="Bōruto South Bridge Road"
                 readonly
               ></gmap-autocomplete>
 

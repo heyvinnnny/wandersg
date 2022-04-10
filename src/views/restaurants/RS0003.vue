@@ -144,7 +144,7 @@
             <label>
               <gmap-autocomplete
                 @place_changed="initMarker"
-                value="10 SCOTTS"
+                value="10 SCOTTS Grand Hyatt"
                 readonly
               ></gmap-autocomplete>
 

@@ -154,7 +154,7 @@
             <label>
               <gmap-autocomplete
                 @place_changed="initMarker"
-                value="Singapore Zoo "
+                value="Singapore Zoo"
                 style="width:300px;"
                 readonly
               ></gmap-autocomplete>

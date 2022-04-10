@@ -144,7 +144,7 @@
             <label>
               <gmap-autocomplete
                 @place_changed="initMarker"
-                value="49 Seats"
+                value="49 Seats Orchard"
                 readonly
               ></gmap-autocomplete>
 

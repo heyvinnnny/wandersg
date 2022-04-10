@@ -143,7 +143,7 @@
             <label>
               <gmap-autocomplete
                 @place_changed="initMarker"
-                value="Acid Bar"
+                value="Acid Bar Orchard"
                 readonly
               ></gmap-autocomplete>
 

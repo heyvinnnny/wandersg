@@ -160,7 +160,7 @@
             <label>
               <gmap-autocomplete
                 @place_changed="initMarker"
-                value="Science Centre"
+                value="Singapore Science Centre"
                 style="width:300px;"
                 readonly
               ></gmap-autocomplete>

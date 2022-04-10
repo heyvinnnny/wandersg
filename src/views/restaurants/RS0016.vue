@@ -151,7 +151,7 @@
             <label>
               <gmap-autocomplete
                 @place_changed="initMarker"
-                value="basdban"
+                value="basdban Telok Ayer"
                 readonly
               ></gmap-autocomplete>
 

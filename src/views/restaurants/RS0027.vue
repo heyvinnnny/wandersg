@@ -120,7 +120,7 @@
                   Business Meetings, Fine Dining, Quiet Dinner, Romantic Dates
                 </p>
                 <h4 class="h5 text-uppercase">Location</h4>
-                <p class="text-muted text-sm">Orcharde</p>
+                <p class="text-muted text-sm">Orchard</p>
                 <h4 class="h5 text-uppercase">Address</h4>
                 <p class="text-muted text-sm">
                   391 Orchard Road <br />
@@ -155,7 +155,7 @@
             <label>
               <gmap-autocomplete
                 @place_changed="initMarker"
-                value="Mizuki"
+                value="Mizuki Orchard"
                 readonly
               ></gmap-autocomplete>
 

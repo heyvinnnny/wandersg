@@ -159,7 +159,7 @@
             <label>
               <gmap-autocomplete
                 @place_changed="initMarker"
-                value="ArtScience Museum"
+                value="Singapore ArtScience Museum"
                 style="width:300px;"
                 readonly
               ></gmap-autocomplete>

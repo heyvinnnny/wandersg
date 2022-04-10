@@ -157,7 +157,7 @@
             <label>
               <gmap-autocomplete
                 @place_changed="initMarker"
-                value="Sentosa Luge Ticket: Skyline Luge and Skyride"
+                value="Sentosa Skyline Luge"
                 style="width:300px;"
                 readonly
               ></gmap-autocomplete>

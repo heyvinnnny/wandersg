@@ -156,7 +156,7 @@
             <label>
               <gmap-autocomplete
                 @place_changed="initMarker"
-                value="Wild Wild Wet"
+                value="Singapore Wild Wild Wet"
                 style="width:300px;"
                 readonly
               ></gmap-autocomplete>

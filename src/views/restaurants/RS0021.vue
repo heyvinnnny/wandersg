@@ -158,7 +158,7 @@
             <label>
               <gmap-autocomplete
                 @place_changed="initMarker"
-                value="Cherry Garden"
+                value="Cherry Garden Mandarin Oriental"
                 readonly
               ></gmap-autocomplete>
 

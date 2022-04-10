@@ -160,7 +160,7 @@
             <label>
               <gmap-autocomplete
                 @place_changed="initMarker"
-                value="Gardens by the Bay"
+                value="Singapore Gardens by the Bay"
                 style="width:300px;"
                 readonly
               ></gmap-autocomplete>

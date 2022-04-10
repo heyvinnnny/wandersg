@@ -160,7 +160,7 @@
             <label>
               <gmap-autocomplete
                 @place_changed="initMarker"
-                value="Jurong Bird Park"
+                value="Jurong Bird Park Singapore"
                 style="width:300px;"
                 readonly
               ></gmap-autocomplete>

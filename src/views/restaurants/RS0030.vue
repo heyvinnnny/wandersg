@@ -150,7 +150,7 @@
               <!-- <gmap-autocomplete @place_changed="initMarker" value="Restaurant Labyrinth" readonly></gmap-autocomplete> -->
               <GmapAutocomplete
                 @place_changed="setPlace"
-                value="Restaurant Labyrinth"
+                value="Restaurant Labyrinth Singapore"
               />
               <button @click="addMarker">
                 Add

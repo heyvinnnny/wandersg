@@ -142,7 +142,7 @@
             <label>
               <gmap-autocomplete
                 @place_changed="initMarker"
-                value="Amber West"
+                value="Amber West Choa Chu Kang"
                 readonly
               ></gmap-autocomplete>
 

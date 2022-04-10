@@ -154,7 +154,7 @@
             <label>
               <gmap-autocomplete
                 @place_changed="initMarker"
-                value="Euphoria"
+                value="Euphoria (Tras Street)"
                 readonly
               ></gmap-autocomplete>
 
